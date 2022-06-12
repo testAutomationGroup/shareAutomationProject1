@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-06-12T09:22:58 IDT" name="TestAll" finished-at="2022-06-12T09:23:06 IDT" duration-ms="7918">
+    <groups>
+      <group name="SystemSanityTests">
+        <method signature="runningTests.TestCase1(java.lang.String,java.lang.String)[pri:1, instance:Test.runningTests@441772e]" name="TestCase1" class="Test.runningTests"/>
+        <method signature="runningTests.TestCase2()[pri:2, instance:Test.runningTests@441772e]" name="TestCase2" class="Test.runningTests"/>
+        <method signature="runningTests.TestCase3()[pri:3, instance:Test.runningTests@441772e]" name="TestCase3" class="Test.runningTests"/>
+        <method signature="runningTests.TestCase1(java.lang.String,java.lang.String)[pri:1, instance:Test.runningTests@689604d9]" name="TestCase1" class="Test.runningTests"/>
+        <method signature="runningTests.TestCase2()[pri:2, instance:Test.runningTests@689604d9]" name="TestCase2" class="Test.runningTests"/>
+        <method signature="runningTests.TestCase3()[pri:3, instance:Test.runningTests@689604d9]" name="TestCase3" class="Test.runningTests"/>
+        <method signature="runningTests.TestCase1(java.lang.String,java.lang.String)[pri:1, instance:Test.runningTests@2a65fe7c]" name="TestCase1" class="Test.runningTests"/>
+        <method signature="runningTests.TestCase2()[pri:2, instance:Test.runningTests@2a65fe7c]" name="TestCase2" class="Test.runningTests"/>
+        <method signature="runningTests.TestCase3()[pri:3, instance:Test.runningTests@2a65fe7c]" name="TestCase3" class="Test.runningTests"/>
+      </group> <!-- SystemSanityTests -->
+    </groups>
+    <test started-at="2022-06-12T09:22:58 IDT" name="chromeTest" finished-at="2022-06-12T09:23:03 IDT" duration-ms="5580">
+      <class name="Test.runningTests">
+        <test-method is-config="true" signature="beforeSystemSanityTests(java.lang.String,java.lang.String)[pri:0, instance:Test.runningTests@441772e]" started-at="2022-06-12T09:22:58 IDT" name="beforeSystemSanityTests" finished-at="2022-06-12T09:23:01 IDT" duration-ms="3758" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSystemSanityTests -->
+        <test-method signature="TestCase1(java.lang.String,java.lang.String)[pri:1, instance:Test.runningTests@441772e]" started-at="2022-06-12T09:23:01 IDT" name="TestCase1" finished-at="2022-06-12T09:23:02 IDT" duration-ms="466" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[C:\my files\TestCaseImages]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:\my files\testExcelFiles]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2()[pri:2, instance:Test.runningTests@441772e]" started-at="2022-06-12T09:23:02 IDT" name="TestCase2" finished-at="2022-06-12T09:23:02 IDT" depends-on-methods="Test.runningTests.TestCase1" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3()[pri:3, instance:Test.runningTests@441772e]" started-at="2022-06-12T09:23:02 IDT" name="TestCase3" finished-at="2022-06-12T09:23:02 IDT" depends-on-methods="Test.runningTests.TestCase2" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method is-config="true" signature="AfterSystemSanityTests(java.lang.String)[pri:0, instance:Test.runningTests@441772e]" started-at="2022-06-12T09:23:02 IDT" name="AfterSystemSanityTests" finished-at="2022-06-12T09:23:03 IDT" duration-ms="1317" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterSystemSanityTests -->
+      </class> <!-- Test.runningTests -->
+    </test> <!-- chromeTest -->
+    <test started-at="2022-06-12T09:22:58 IDT" name="EdgeTest" finished-at="2022-06-12T09:23:04 IDT" duration-ms="5990">
+      <class name="Test.runningTests">
+        <test-method is-config="true" signature="beforeSystemSanityTests(java.lang.String,java.lang.String)[pri:0, instance:Test.runningTests@2a65fe7c]" started-at="2022-06-12T09:22:58 IDT" name="beforeSystemSanityTests" finished-at="2022-06-12T09:23:02 IDT" duration-ms="4821" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSystemSanityTests -->
+        <test-method signature="TestCase1(java.lang.String,java.lang.String)[pri:1, instance:Test.runningTests@2a65fe7c]" started-at="2022-06-12T09:23:02 IDT" name="TestCase1" finished-at="2022-06-12T09:23:03 IDT" duration-ms="523" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[C:\my files\TestCaseImages]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:\my files\testExcelFiles]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2()[pri:2, instance:Test.runningTests@2a65fe7c]" started-at="2022-06-12T09:23:03 IDT" name="TestCase2" finished-at="2022-06-12T09:23:03 IDT" depends-on-methods="Test.runningTests.TestCase1" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3()[pri:3, instance:Test.runningTests@2a65fe7c]" started-at="2022-06-12T09:23:03 IDT" name="TestCase3" finished-at="2022-06-12T09:23:03 IDT" depends-on-methods="Test.runningTests.TestCase2" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method is-config="true" signature="AfterSystemSanityTests(java.lang.String)[pri:0, instance:Test.runningTests@2a65fe7c]" started-at="2022-06-12T09:23:03 IDT" name="AfterSystemSanityTests" finished-at="2022-06-12T09:23:04 IDT" duration-ms="611" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterSystemSanityTests -->
+      </class> <!-- Test.runningTests -->
+    </test> <!-- EdgeTest -->
+    <test started-at="2022-06-12T09:22:58 IDT" name="FirefoxTest" finished-at="2022-06-12T09:23:06 IDT" duration-ms="7918">
+      <class name="Test.runningTests">
+        <test-method is-config="true" signature="beforeSystemSanityTests(java.lang.String,java.lang.String)[pri:0, instance:Test.runningTests@689604d9]" started-at="2022-06-12T09:22:58 IDT" name="beforeSystemSanityTests" finished-at="2022-06-12T09:23:04 IDT" duration-ms="6158" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSystemSanityTests -->
+        <test-method signature="TestCase1(java.lang.String,java.lang.String)[pri:1, instance:Test.runningTests@689604d9]" started-at="2022-06-12T09:23:04 IDT" name="TestCase1" finished-at="2022-06-12T09:23:04 IDT" duration-ms="172" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[C:\my files\TestCaseImages]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:\my files\testExcelFiles]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2()[pri:2, instance:Test.runningTests@689604d9]" started-at="2022-06-12T09:23:04 IDT" name="TestCase2" finished-at="2022-06-12T09:23:04 IDT" depends-on-methods="Test.runningTests.TestCase1" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3()[pri:3, instance:Test.runningTests@689604d9]" started-at="2022-06-12T09:23:04 IDT" name="TestCase3" finished-at="2022-06-12T09:23:04 IDT" depends-on-methods="Test.runningTests.TestCase2" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method is-config="true" signature="AfterSystemSanityTests(java.lang.String)[pri:0, instance:Test.runningTests@689604d9]" started-at="2022-06-12T09:23:04 IDT" name="AfterSystemSanityTests" finished-at="2022-06-12T09:23:06 IDT" duration-ms="1557" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterSystemSanityTests -->
+      </class> <!-- Test.runningTests -->
+    </test> <!-- FirefoxTest -->
+  </suite> <!-- TestAll -->
+</testng-results>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [TestAll]" guice-stage="DEVELOPMENT">
+  <parameter name="path" value="https://www.tripadvisor.co.il"/>
+  <parameter name="testExcelFilesPath" value="C:\my files\testExcelFiles"/>
+  <parameter name="TestVideoPath" value="C:\my files\TestCaseVideos"/>
+  <parameter name="logFilesPath" value="C:\my files\logFiles"/>
+  <parameter name="inputImageSikuli" value="C:\my files\inputImagesSikuli"/>
+  <parameter name="TestImagesPath" value="C:\my files\TestCaseImages"/>
+  <test thread-count="5" parallel="tests" name="chromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+      <run>
+        <include name="SystemSanityTests"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="Test.runningTests">
+        <methods>
+          <include name="TestCase1" invocation-numbers="0"/>
+          <include name="TestCase2"/>
+          <include name="TestCase3"/>
+        </methods>
+      </class> <!-- Test.runningTests -->
+    </classes>
+  </test> <!-- chromeTest(failed) -->
+</suite> <!-- Failed suite [TestAll] -->

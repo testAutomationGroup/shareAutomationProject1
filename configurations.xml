@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<environment>
+  <TestImagesPath>>"C:\\my files\\TestCaseImages"</TestImagesPath>
+  <PageLoadingTime>500</PageLoadingTime>
+  <browser1>Chrome</browser1>
+  <browser2>Firefox</browser2>
+  <browser3>>Edge</browser3>
+  <category1>חשמלאים</category1>
+  <category2>אינסטלטורים</category2> 
+  <category3>מוניות</category3>  
+</environment>
