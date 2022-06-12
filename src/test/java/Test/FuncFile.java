@@ -6,8 +6,8 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
+
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -23,12 +23,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.time.StopWatch;
-import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -210,7 +205,7 @@ public class FuncFile {
 		}
 		
 		/*Create excel file*/
-		public static String createFile(String folder) throws IOException {
+	/*	public static String createFile(String folder) throws IOException {
 			SimpleDateFormat formatter = new SimpleDateFormat("ddMMyy_HHmmss"); 
 			Date date = new Date(System.currentTimeMillis());
 			String fileName = "testFile_" + formatter.format(date);
@@ -233,16 +228,6 @@ public class FuncFile {
 						System.out.println(e.getMessage());
 					}
 				}
-			    
-//			  	outputStream.close();
-//			  	FuncFile.waitForTimeThread(400);
-//			  	FileInputStream inputStream = new FileInputStream(new File(path));
-//				XSSFWorkbook workbook = (XSSFWorkbook) WorkbookFactory.create(inputStream); 
-//				XSSFSheet sheet = workbook.createSheet("TestCases");
-//				XSSFRow row = sheet.createRow(1);
-//				XSSFCell cell = row.createCell(1);
-//				cell.setCellValue("File created");
-//				FileOutputStream outputStream1 = new FileOutputStream(path);
 			  	
 			} catch (Exception e) {
 			
@@ -251,29 +236,44 @@ public class FuncFile {
 			return path; 
 			
 			
-		}
+		}*/
+		
 		/*Import data from excel file*/
 		/*Add data into existing excel file*/
-		public static void addFileData(String filePath1, String value, int rowNumber, int cellNumber) throws IOException {
-			String filePath =  "C:\\my files\\testExcelFiles\\testFile1.xlsx";
-			FileInputStream inputstream = new FileInputStream(new File(filePath));
-			XSSFWorkbook workbook = new XSSFWorkbook(inputstream);
-			org.apache.poi.ss.usermodel.Sheet sheet = workbook.getSheetAt(0);
-			Row row = sheet.getRow(rowNumber);
-			if (row==null) {
-				row = sheet.createRow(rowNumber);
-			}
-			org.apache.poi.ss.usermodel.Cell cell = row.getCell(cellNumber);
-			if (cell==null) {
-				cell = row.createCell(cellNumber);
-			}
-			cell.setCellValue(value);
-			
-			FileOutputStream outputstream = new FileOutputStream(filePath);
-			workbook.write(outputstream);
-			//workbook.setSheetName(0, "names");
-			workbook.close();
-			outputstream.close();
+		public static void addFileData(String filePath, String value, int rowNumber, int cellNumber) throws IOException {
+				
+				FileInputStream inputstream = new FileInputStream(new File(filePath));
+				System.out.println("before workbook");
+				XSSFWorkbook workbook = null;
+				try {
+					workbook = new XSSFWorkbook(inputstream);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.getMessage();
+					e.printStackTrace();
+				}
+				System.out.println("after workbook");
+				org.apache.poi.ss.usermodel.Sheet sheet = workbook.getSheetAt(0);
+				Row row = sheet.getRow(rowNumber);
+				if (row==null) {
+					row = sheet.createRow(rowNumber);
+				}
+				org.apache.poi.ss.usermodel.Cell cell = row.getCell(cellNumber);
+				if (cell==null) {
+					cell = row.createCell(cellNumber);
+				}
+				cell.setCellValue(value);
+				
+				FileOutputStream outputstream = new FileOutputStream(filePath);
+				try {
+					workbook.write(outputstream);
+					//workbook.setSheetName(0, "names");
+					workbook.close();
+					outputstream.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
 		}
 		/*Delete data from existing excel file*/

@@ -4,7 +4,7 @@
    <parameter name = "TestImagesPath" value = "C:\my files\TestCaseImages"/>
    <parameter name = "TestVideoPath" value = "C:\my files\TestCaseVideos"/>
    <parameter name = "inputImageSikuli" value = "C:\my files\inputImagesSikuli"/>
-   <parameter name = "testExcelFilesPath" value = "C:\my files\testExcelFiles"/>
+   <parameter name = "testExcelFilesPath" value = "C:\\my files\\testExcelFiles\\testFile1.xlsx"/>
    <parameter name = "logFilesPath" value = "C:\my files\logFiles"/>
    <test name = "chromeTest">
    	  <parameter name = "browser" value = "chrome"/>

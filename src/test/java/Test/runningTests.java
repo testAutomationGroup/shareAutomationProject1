@@ -1,17 +1,12 @@
 package Test;
-
-import java.io.FileInputStream;
 import java.io.IOException;
 
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterGroups;
 import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class runningTests {
   
@@ -20,9 +15,10 @@ public class runningTests {
 	  @Parameters({"browser","path"})
 	  @BeforeGroups("SystemSanityTests")
 	  public void beforeSystemSanityTests(String browser, String path) {
-		  System.out.println("Here1");
 		  
 		  try {
+			  System.out.println("Start testing");
+			
 			  //load pageLoadingTime for runningTests class functions
 			  String pageLoadingTime = FuncFile.importConfigurationsData("PageLoadingTime");
 			  System.out.println("Parameter page loading value is " + pageLoadingTime);
@@ -70,12 +66,9 @@ public class runningTests {
 			/* Open a file*/
 			try {
 				//String path = FuncFile.createFile(testExcelFilesPath);
-				String path = "C:\\my files\\testExcelFiles\\testFile1.xlsx";
-				String value = "File Created";
-				FileInputStream fis = new FileInputStream (path);
-				XSSFWorkbook workbook = new XSSFWorkbook(fis);
-				System.out.println("Here1" + path);
-				FuncFile.addFileData(path, value, 0, 0);
+				String filePath =  "C:\\my files\\testExcelFiles\\testFile1.xlsx";
+				FuncFile.addFileData(filePath,"גבדיקה1 3בדיקה בדיקה",0,0);
+				System.out.println("Here1 " + filePath);
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
