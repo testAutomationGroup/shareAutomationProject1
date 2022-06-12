@@ -17,7 +17,7 @@
     <classes>
       <class name="Test.runningTests">
         <methods>
-          <include name="TestCase1" invocation-numbers="0"/>
+          <include name="TestCase1"/>
           <include name="TestCase2"/>
           <include name="TestCase3"/>
         </methods>
@@ -34,7 +34,7 @@
     <classes>
       <class name="Test.runningTests">
         <methods>
-          <include name="TestCase1" invocation-numbers="0"/>
+          <include name="TestCase1"/>
           <include name="TestCase2"/>
           <include name="TestCase3"/>
         </methods>

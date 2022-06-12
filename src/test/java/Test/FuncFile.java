@@ -117,7 +117,7 @@ public class FuncFile {
 		}
 		
 		/*Take a screen shot for the page in test without URL with takeScreenshot*/
-		public static void takeScreenImage(WebDriver driver, String path) throws IOException {
+		public static String takeScreenImage(WebDriver driver, String path, String text) throws IOException {
 			//save date and time for image name
 			SimpleDateFormat formatter = new SimpleDateFormat("ddMMyy_HHmmss");
 			Date date = new Date(System.currentTimeMillis());
@@ -125,8 +125,10 @@ public class FuncFile {
 			
 			TakesScreenshot scrShot = ((TakesScreenshot)driver);
 			File scrFile = scrShot.getScreenshotAs(OutputType.FILE);
-			System.out.println("Saved image into path " + path + "\\screenImage_" + dateForImage);
-			FileUtils.copyFile(scrFile, new File(path + "\\screenImage_" + dateForImage + ".jpg"));
+			System.out.println("Saved image into path " + path + "\\screenImage_" + dateForImage + "_" + text);
+			String imagepath = path + "\\screenImage_" + dateForImage + "_" + text+ ".jpg";
+			FileUtils.copyFile(scrFile, new File(imagepath));
+			return imagepath;
 		}
 		
 		/*Take screen image like print screen for whatever is shown on screen with createScreenCapture*/
@@ -140,7 +142,6 @@ public class FuncFile {
 			BufferedImage PrintScreen = robot.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
 			ImageIO.write(PrintScreen, "JPG", new File(path + "\\screenImage_" + dateForImage + ".jpg"));
 		}
-		
 		
 		/*Take full page image including scrolling with AShot*/
 		public static void takePageScrollImage(WebDriver driver, String path) throws IOException {

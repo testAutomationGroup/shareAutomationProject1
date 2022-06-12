@@ -10,6 +10,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterGroups;
 import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.Parameters;
@@ -33,11 +34,9 @@ public class runningTests {
 	  @BeforeGroups("SystemSanityTests")
 	  public void beforeSystemSanityTests(String browser, String path) throws AWTException, IOException {
 		  System.out.println("Here we start");
-		  //create tests for report manager
-		  extent = exm.GetExtent();
+		  //Create test report for report system sanity tests
+		  extent = exm.GetExtent("System sanity tests");
 		  System.out.println("Here we start again");
-		  //test.pass("text",MediaEntityBuilder.createScreenCaptureFromPath(exm.CaptureScreen(driver)).build());
-		  //test.addScreenCaptureFromPath("path");
 		  
 		  
 		  try {
@@ -79,40 +78,32 @@ public class runningTests {
 	  @Parameters({"TestImagesPath", "testExcelFilesPath"})
 	  @Test(alwaysRun = true, groups = "SystemSanityTests", priority = 1)
 	  public void TestCase1(String TestImagesPath, String testExcelFilesPath) throws IOException {
-		  System.out.println("TestCase1");
 		  test = exm.createTest("TestCase1", "description1");
-		  test.pass("text1");
-		  test.fail("text2");
-		  /*Take a screen image*/
-///			try {
-///				FuncFile.takeScreenImage(driver, TestImagesPath);
-///			} catch (IOException e) {
-///				System.out.println("\nError" + e.getMessage());
-///				e.printStackTrace();
-///			} 
-			/* Open a file*/
+		  exm.testResult(test,driver, "PASS");
+		  Assert.assertTrue(true);
+			/* Open a file*//*
 			try {
 				///String path = FuncFile.createFile(testExcelFilesPath);
 				String filePath =  "C:\\my files\\testExcelFiles\\testFile1.xlsx";
-				///addFileData1(filePath,"βαγιχδ1 3αγιχδ αγιχδ",0,0);
+				///addFileData1(filePath,"Χ‘Χ“Χ™Χ§Χ” 1 Χ‘Χ“Χ™Χ§Χ” Χ‘Χ“Χ™Χ§Χ”",0,0);
 				System.out.println("Here1 " + filePath);
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
-			}
+			}*/
 	  }
 	  
 	  @Test(enabled = true, groups = "SystemSanityTests", priority = 2, dependsOnMethods = "TestCase1")
 	  public void TestCase2() {
-		  System.out.println("TestCase2");
 		  test = exm.createTest("TestCase2", "description2");
-		  test.pass("text1");
+		  exm.testResult(test,driver, "FAIL");
+		  Assert.assertTrue(false);
 	  }
 	  
 	  @Test(groups = "SystemSanityTests", priority = 3, dependsOnMethods = "TestCase2")
 	  public void TestCase3() {
-		  System.out.println("TestCase3");
 		  test = exm.createTest("TestCase3", "description3");
-		  test.pass("text1");
+		  exm.testResult(test,driver, "PASS");
+		  Assert.assertTrue(true);
 	  } 
 	  
 	  /*Add data into existing excel file*/

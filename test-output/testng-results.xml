@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="2" failed="2" skipped="2">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-12T15:24:08 IDT" name="TestAll" finished-at="2022-06-12T15:24:14 IDT" duration-ms="5664">
+  <suite started-at="2022-06-12T17:56:00 IDT" name="TestAll" finished-at="2022-06-12T17:56:06 IDT" duration-ms="5594">
     <groups>
       <group name="SystemSanityTests">
         <method signature="runningTests.TestCase1(java.lang.String,java.lang.String)[pri:1, instance:Test.runningTests@38c6f217]" name="TestCase1" class="Test.runningTests"/>
@@ -13,9 +13,9 @@
         <method signature="runningTests.TestCase3()[pri:3, instance:Test.runningTests@75d4a5c2]" name="TestCase3" class="Test.runningTests"/>
       </group> <!-- SystemSanityTests -->
     </groups>
-    <test started-at="2022-06-12T15:24:08 IDT" name="chromeTest" finished-at="2022-06-12T15:24:13 IDT" duration-ms="4753">
+    <test started-at="2022-06-12T17:56:00 IDT" name="chromeTest" finished-at="2022-06-12T17:56:05 IDT" duration-ms="5041">
       <class name="Test.runningTests">
-        <test-method is-config="true" signature="beforeSystemSanityTests(java.lang.String,java.lang.String)[pri:0, instance:Test.runningTests@38c6f217]" started-at="2022-06-12T15:24:08 IDT" name="beforeSystemSanityTests" finished-at="2022-06-12T15:24:12 IDT" duration-ms="3268" status="PASS">
+        <test-method is-config="true" signature="beforeSystemSanityTests(java.lang.String,java.lang.String)[pri:0, instance:Test.runningTests@38c6f217]" started-at="2022-06-12T17:56:00 IDT" name="beforeSystemSanityTests" finished-at="2022-06-12T17:56:03 IDT" duration-ms="3286" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -31,7 +31,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSystemSanityTests -->
-        <test-method signature="TestCase1(java.lang.String,java.lang.String)[pri:1, instance:Test.runningTests@38c6f217]" started-at="2022-06-12T15:24:12 IDT" name="TestCase1" finished-at="2022-06-12T15:24:12 IDT" duration-ms="30" status="PASS">
+        <test-method signature="TestCase1(java.lang.String,java.lang.String)[pri:1, instance:Test.runningTests@38c6f217]" started-at="2022-06-12T17:56:03 IDT" name="TestCase1" finished-at="2022-06-12T17:56:04 IDT" duration-ms="334" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -47,15 +47,75 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase1 -->
-        <test-method signature="TestCase2()[pri:2, instance:Test.runningTests@38c6f217]" started-at="2022-06-12T15:24:12 IDT" name="TestCase2" finished-at="2022-06-12T15:24:12 IDT" depends-on-methods="Test.runningTests.TestCase1" duration-ms="6" status="PASS">
+        <test-method signature="TestCase2()[pri:2, instance:Test.runningTests@38c6f217]" started-at="2022-06-12T17:56:04 IDT" name="TestCase2" finished-at="2022-06-12T17:56:04 IDT" depends-on-methods="Test.runningTests.TestCase1" duration-ms="207" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at org.testng.Assert.assertTrue(Assert.java:55)
+at Test.runningTests.TestCase2(runningTests.java:99)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase2 -->
-        <test-method signature="TestCase3()[pri:3, instance:Test.runningTests@38c6f217]" started-at="2022-06-12T15:24:12 IDT" name="TestCase3" finished-at="2022-06-12T15:24:12 IDT" depends-on-methods="Test.runningTests.TestCase2" duration-ms="1" status="PASS">
+        <test-method signature="TestCase3()[pri:3, instance:Test.runningTests@38c6f217]" started-at="2022-06-12T17:56:04 IDT" name="TestCase3" finished-at="2022-06-12T17:56:04 IDT" depends-on-methods="Test.runningTests.TestCase2" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method runningTests.TestCase3()[pri:3, instance:Test.runningTests@38c6f217] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method runningTests.TestCase3()[pri:3, instance:Test.runningTests@38c6f217] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase3 -->
-        <test-method is-config="true" signature="AfterSystemSanityTests(java.lang.String)[pri:0, instance:Test.runningTests@38c6f217]" started-at="2022-06-12T15:24:12 IDT" name="AfterSystemSanityTests" finished-at="2022-06-12T15:24:13 IDT" duration-ms="1411" status="PASS">
+        <test-method is-config="true" signature="AfterSystemSanityTests(java.lang.String)[pri:0, instance:Test.runningTests@38c6f217]" started-at="2022-06-12T17:56:04 IDT" name="AfterSystemSanityTests" finished-at="2022-06-12T17:56:05 IDT" duration-ms="1182" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -68,9 +128,9 @@
         </test-method> <!-- AfterSystemSanityTests -->
       </class> <!-- Test.runningTests -->
     </test> <!-- chromeTest -->
-    <test started-at="2022-06-12T15:24:08 IDT" name="EdgeTest" finished-at="2022-06-12T15:24:14 IDT" duration-ms="5664">
+    <test started-at="2022-06-12T17:56:00 IDT" name="EdgeTest" finished-at="2022-06-12T17:56:06 IDT" duration-ms="5594">
       <class name="Test.runningTests">
-        <test-method is-config="true" signature="beforeSystemSanityTests(java.lang.String,java.lang.String)[pri:0, instance:Test.runningTests@75d4a5c2]" started-at="2022-06-12T15:24:08 IDT" name="beforeSystemSanityTests" finished-at="2022-06-12T15:24:13 IDT" duration-ms="4759" status="PASS">
+        <test-method is-config="true" signature="beforeSystemSanityTests(java.lang.String,java.lang.String)[pri:0, instance:Test.runningTests@75d4a5c2]" started-at="2022-06-12T17:56:00 IDT" name="beforeSystemSanityTests" finished-at="2022-06-12T17:56:05 IDT" duration-ms="4519" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -86,7 +146,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSystemSanityTests -->
-        <test-method signature="TestCase1(java.lang.String,java.lang.String)[pri:1, instance:Test.runningTests@75d4a5c2]" started-at="2022-06-12T15:24:13 IDT" name="TestCase1" finished-at="2022-06-12T15:24:13 IDT" duration-ms="1" status="PASS">
+        <test-method signature="TestCase1(java.lang.String,java.lang.String)[pri:1, instance:Test.runningTests@75d4a5c2]" started-at="2022-06-12T17:56:05 IDT" name="TestCase1" finished-at="2022-06-12T17:56:05 IDT" duration-ms="329" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -102,15 +162,100 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase1 -->
-        <test-method signature="TestCase2()[pri:2, instance:Test.runningTests@75d4a5c2]" started-at="2022-06-12T15:24:13 IDT" name="TestCase2" finished-at="2022-06-12T15:24:13 IDT" depends-on-methods="Test.runningTests.TestCase1" duration-ms="2" status="PASS">
+        <test-method signature="TestCase2()[pri:2, instance:Test.runningTests@75d4a5c2]" started-at="2022-06-12T17:56:05 IDT" name="TestCase2" finished-at="2022-06-12T17:56:05 IDT" depends-on-methods="Test.runningTests.TestCase1" duration-ms="88" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[invalid session id
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'LAPTOP-NB3AD5GO', ip: '192.168.1.161', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3.1'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [96eefff89b6f5888b730fa4fcf826c90, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 102.0.1245.39, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:49828}, msedge: {msedgedriverVersion: 102.0.1245.39 (14b303d1f780..., userDataDir: C:\Users\arnon\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49828/devtoo..., se:cdpVersion: 102.0.1245.39, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 96eefff89b6f5888b730fa4fcf826c90]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'LAPTOP-NB3AD5GO', ip: '192.168.1.161', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3.1'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [96eefff89b6f5888b730fa4fcf826c90, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 102.0.1245.39, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:49828}, msedge: {msedgedriverVersion: 102.0.1245.39 (14b303d1f780..., userDataDir: C:\Users\arnon\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49828/devtoo..., se:cdpVersion: 102.0.1245.39, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 96eefff89b6f5888b730fa4fcf826c90
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:626)
+at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:351)
+at Test.FuncFile.takeScreenImage(FuncFile.java:127)
+at Test.ExtentManager.testResult(ExtentManager.java:114)
+at Test.runningTests.TestCase2(runningTests.java:98)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase2 -->
-        <test-method signature="TestCase3()[pri:3, instance:Test.runningTests@75d4a5c2]" started-at="2022-06-12T15:24:13 IDT" name="TestCase3" finished-at="2022-06-12T15:24:13 IDT" depends-on-methods="Test.runningTests.TestCase2" duration-ms="2" status="PASS">
+        <test-method signature="TestCase3()[pri:3, instance:Test.runningTests@75d4a5c2]" started-at="2022-06-12T17:56:05 IDT" name="TestCase3" finished-at="2022-06-12T17:56:05 IDT" depends-on-methods="Test.runningTests.TestCase2" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method runningTests.TestCase3()[pri:3, instance:Test.runningTests@75d4a5c2] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method runningTests.TestCase3()[pri:3, instance:Test.runningTests@75d4a5c2] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase3 -->
-        <test-method is-config="true" signature="AfterSystemSanityTests(java.lang.String)[pri:0, instance:Test.runningTests@75d4a5c2]" started-at="2022-06-12T15:24:13 IDT" name="AfterSystemSanityTests" finished-at="2022-06-12T15:24:14 IDT" duration-ms="876" status="PASS">
+        <test-method is-config="true" signature="AfterSystemSanityTests(java.lang.String)[pri:0, instance:Test.runningTests@75d4a5c2]" started-at="2022-06-12T17:56:05 IDT" name="AfterSystemSanityTests" finished-at="2022-06-12T17:56:06 IDT" duration-ms="622" status="PASS">
           <params>
             <param index="0">
               <value>
