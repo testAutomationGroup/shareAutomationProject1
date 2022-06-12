@@ -1,7 +1,9 @@
 package Test;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterGroups;
@@ -59,18 +61,24 @@ public class runningTests {
 		  System.out.println("TestCase1");
 		  
 		  /*Take a screen image*/
-			try {
-				FuncFile.takeScreenImage(driver, TestImagesPath);
-			} catch (IOException e) {
-				System.out.println("\nError" + e.getMessage());
-				e.printStackTrace();
-			} 
-			/* Open a file*/
 //			try {
-//				FuncFile.createFile(testExcelFilesPath);
-//			} catch (Exception e) {
-//				System.out.println(e.getMessage());
-//			}
+//				FuncFile.takeScreenImage(driver, TestImagesPath);
+//			} catch (IOException e) {
+//				System.out.println("\nError" + e.getMessage());
+//				e.printStackTrace();
+//			} 
+			/* Open a file*/
+			try {
+				//String path = FuncFile.createFile(testExcelFilesPath);
+				String path = "C:\\my files\\testExcelFiles\\testFile1.xlsx";
+				String value = "File Created";
+				FileInputStream fis = new FileInputStream (path);
+				XSSFWorkbook workbook = new XSSFWorkbook(fis);
+				System.out.println("Here1" + path);
+				FuncFile.addFileData(path, value, 0, 0);
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
 	  }
 	  
 	  @Test(enabled = true, groups = "SystemSanityTests", priority = 2, dependsOnMethods = "TestCase1")

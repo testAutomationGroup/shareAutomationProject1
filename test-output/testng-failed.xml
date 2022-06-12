@@ -24,4 +24,21 @@
       </class> <!-- Test.runningTests -->
     </classes>
   </test> <!-- chromeTest(failed) -->
+  <test thread-count="5" parallel="tests" name="EdgeTest(failed)">
+    <parameter name="browser" value="Edge"/>
+    <groups>
+      <run>
+        <include name="SystemSanityTests"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="Test.runningTests">
+        <methods>
+          <include name="TestCase1" invocation-numbers="0"/>
+          <include name="TestCase2"/>
+          <include name="TestCase3"/>
+        </methods>
+      </class> <!-- Test.runningTests -->
+    </classes>
+  </test> <!-- EdgeTest(failed) -->
 </suite> <!-- Failed suite [TestAll] -->

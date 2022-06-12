@@ -18,7 +18,7 @@
       </classes>
    </test>
   <!-- For version 101-->
-  <test name="FirefoxTest">
+  <!-- <test name="FirefoxTest">
    	  <parameter name = "browser" value = "Firefox"/>
    	   <groups>
    	  	<run>
@@ -28,7 +28,7 @@
    	  <classes>
    		  <class name = "Test.runningTests"/>
    	  </classes>
-   </test>
+   </test>-->
    <test name="EdgeTest">
       <parameter name = "browser" value = "Edge"/>
        <groups>

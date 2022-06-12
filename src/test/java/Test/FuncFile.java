@@ -6,6 +6,9 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -20,6 +23,13 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.time.StopWatch;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -44,7 +54,7 @@ import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class FuncFile {
 	/// issue - how to import value from inner function importConfigurationsData?
-		static int pageLoadingTime = 500;
+		static int pageLoadingTime = 900;
 		
 		/*open Chrome web browser*/
 		public static String importConfigurationsData(String propertyName) throws ParserConfigurationException, SAXException, IOException{
@@ -62,8 +72,8 @@ public class FuncFile {
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			//waitForElementToPresent(driver, pageLoadingTime, By.cssSelector("[alt='Tripadvisor']"));
-			waitForImplicitTime(driver, pageLoadingTime);
 			driver.get(path);
+			waitForImplicitTime(driver, pageLoadingTime);
 			System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
 			return driver;
 		}
@@ -74,8 +84,8 @@ public class FuncFile {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
-			waitForImplicitTime(driver, pageLoadingTime);
 			driver.get(path);
+			waitForImplicitTime(driver, pageLoadingTime);
 			System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
 			return driver;
 		}
@@ -86,8 +96,8 @@ public class FuncFile {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 			driver.manage().window().maximize();
-			waitForImplicitTime(driver, pageLoadingTime);
 			driver.get(path);
+			waitForImplicitTime(driver, pageLoadingTime);
 			System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
 			return driver;
 		}
@@ -200,8 +210,72 @@ public class FuncFile {
 		}
 		
 		/*Create excel file*/
+		public static String createFile(String folder) throws IOException {
+			SimpleDateFormat formatter = new SimpleDateFormat("ddMMyy_HHmmss"); 
+			Date date = new Date(System.currentTimeMillis());
+			String fileName = "testFile_" + formatter.format(date);
+			String path = folder + "\\" + fileName + ".xlsx";
+			System.out.println("Path is " + path);
+			
+			try {
+				System.out.println("Path is " + path);
+				try (XSSFWorkbook workbook = new XSSFWorkbook()) {
+					XSSFSheet sheet = workbook.createSheet("Java Books");
+					
+					Row row = sheet.createRow(0);
+					Cell cell = row.createCell(0);
+					cell.setCellValue(1);
+					try(FileOutputStream outputStream = new FileOutputStream(new File(path))){
+						System.out.println("Excel File has been created successfully."); 
+						workbook.write(outputStream);
+						outputStream.close();
+					}catch(Exception e){
+						System.out.println(e.getMessage());
+					}
+				}
+			    
+//			  	outputStream.close();
+//			  	FuncFile.waitForTimeThread(400);
+//			  	FileInputStream inputStream = new FileInputStream(new File(path));
+//				XSSFWorkbook workbook = (XSSFWorkbook) WorkbookFactory.create(inputStream); 
+//				XSSFSheet sheet = workbook.createSheet("TestCases");
+//				XSSFRow row = sheet.createRow(1);
+//				XSSFCell cell = row.createCell(1);
+//				cell.setCellValue("File created");
+//				FileOutputStream outputStream1 = new FileOutputStream(path);
+			  	
+			} catch (Exception e) {
+			
+				System.out.println("Error" + e.getMessage());
+			}
+			return path; 
+			
+			
+		}
 		/*Import data from excel file*/
 		/*Add data into existing excel file*/
+		public static void addFileData(String filePath1, String value, int rowNumber, int cellNumber) throws IOException {
+			String filePath =  "C:\\my files\\testExcelFiles\\testFile1.xlsx";
+			FileInputStream inputstream = new FileInputStream(new File(filePath));
+			XSSFWorkbook workbook = new XSSFWorkbook(inputstream);
+			org.apache.poi.ss.usermodel.Sheet sheet = workbook.getSheetAt(0);
+			Row row = sheet.getRow(rowNumber);
+			if (row==null) {
+				row = sheet.createRow(rowNumber);
+			}
+			org.apache.poi.ss.usermodel.Cell cell = row.getCell(cellNumber);
+			if (cell==null) {
+				cell = row.createCell(cellNumber);
+			}
+			cell.setCellValue(value);
+			
+			FileOutputStream outputstream = new FileOutputStream(filePath);
+			workbook.write(outputstream);
+			//workbook.setSheetName(0, "names");
+			workbook.close();
+			outputstream.close();
+				
+		}
 		/*Delete data from existing excel file*/
 		/*Create test case report excel file*/
 			
