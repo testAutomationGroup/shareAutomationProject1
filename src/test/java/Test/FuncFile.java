@@ -49,7 +49,7 @@ import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class FuncFile {
 	/// issue - how to import value from inner function importConfigurationsData?
-		static int pageLoadingTime = 900;
+		static int pageLoadingTime = 19000;
 		
 		/*open Chrome web browser*/
 		public static String importConfigurationsData(String propertyName) throws ParserConfigurationException, SAXException, IOException{
@@ -66,9 +66,9 @@ public class FuncFile {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
-			//waitForElementToPresent(driver, pageLoadingTime, By.cssSelector("[alt='Tripadvisor']"));
+			//waitForImplicitTime(driver, pageLoadingTime);
 			driver.get(path);
-			waitForImplicitTime(driver, pageLoadingTime);
+			WebElement result = new WebDriverWait(driver, Duration.ofMillis(pageLoadingTime)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[alt='Tripadvisor']")));
 			System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
 			return driver;
 		}
@@ -80,7 +80,7 @@ public class FuncFile {
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
 			driver.get(path);
-			waitForImplicitTime(driver, pageLoadingTime);
+			WebElement result = new WebDriverWait(driver, Duration.ofMillis(pageLoadingTime)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[alt='Tripadvisor']")));
 			System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
 			return driver;
 		}
@@ -92,7 +92,7 @@ public class FuncFile {
 			driver = new EdgeDriver();
 			driver.manage().window().maximize();
 			driver.get(path);
-			waitForImplicitTime(driver, pageLoadingTime);
+			WebElement result = new WebDriverWait(driver, Duration.ofMillis(pageLoadingTime)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[alt='Tripadvisor']")));
 			System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
 			return driver;
 		}
@@ -113,20 +113,20 @@ public class FuncFile {
 		
 		/*wait until specific element present with time limit using explicit wait*/
 		public static void waitForElementToPresent(WebDriver driver, int millis,  By by) {
-			new WebDriverWait(driver, Duration.ofMillis(millis)).until(ExpectedConditions.elementToBeClickable(by));
+			WebElement result = new WebDriverWait(driver, Duration.ofMillis(millis)).until(ExpectedConditions.presenceOfElementLocated(by));
 		}
 		
 		/*Take a screen shot for the page in test without URL with takeScreenshot*/
-		public static String takeScreenImage(WebDriver driver, String path, String text) throws IOException {
+		public static String takeScreenImage(WebDriver driver, String path, String text, String testName) throws IOException {
 			//save date and time for image name
-			SimpleDateFormat formatter = new SimpleDateFormat("ddMMyy_HHmmss");
+			SimpleDateFormat formatter = new SimpleDateFormat("ddMMyy_HHmmss.SSS");
 			Date date = new Date(System.currentTimeMillis());
 			String dateForImage = formatter.format(date);
 			
 			TakesScreenshot scrShot = ((TakesScreenshot)driver);
 			File scrFile = scrShot.getScreenshotAs(OutputType.FILE);
-			System.out.println("Saved image into path " + path + "\\screenImage_" + dateForImage + "_" + text);
-			String imagepath = path + "\\screenImage_" + dateForImage + "_" + text+ ".jpg";
+			System.out.println("Saved image into path " + path + "\\" + testName + "_"+ dateForImage + "_" + text);
+			String imagepath = path + "\\" + testName + "_"+ dateForImage + "_" + text+ ".jpg";
 			FileUtils.copyFile(scrFile, new File(imagepath));
 			return imagepath;
 		}

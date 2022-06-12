@@ -18,7 +18,6 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
 
 public class runningTests {
   
@@ -37,7 +36,6 @@ public class runningTests {
 		  //Create test report for report system sanity tests
 		  extent = exm.GetExtent("System sanity tests");
 		  System.out.println("Here we start again");
-		  
 		  
 		  try {
 			  System.out.println("Start testing");
@@ -69,17 +67,17 @@ public class runningTests {
 	  @AfterGroups("SystemSanityTests")
 	  public void AfterSystemSanityTests(String browser) throws InterruptedException {
 		  System.out.println("System sanity tests ended for browser " + browser);
-		  FuncFile.waitForTimeThread(600);
+		  FuncFile.waitForTimeThread(200);
 		  extent.flush();
 		  driver.quit();
 	  }
 	  
 	  /*Code for all test cases in System Sanity Tests group*/
-	  @Parameters({"TestImagesPath", "testExcelFilesPath"})
+	  @Parameters({"TestImagesPath", "testExcelFilesPath", "browser"})
 	  @Test(alwaysRun = true, groups = "SystemSanityTests", priority = 1)
-	  public void TestCase1(String TestImagesPath, String testExcelFilesPath) throws IOException {
-		  test = exm.createTest("TestCase1", "description1");
-		  exm.testResult(test,driver, "PASS");
+	  public void TestCase1(String TestImagesPath, String testExcelFilesPath, String browser) throws IOException {
+		  test = extent.createTest("TestCase1_"+browser, "description1");
+		  exm.ReportTestResult(test,driver, "PASS", "TestCase1", browser);
 		  Assert.assertTrue(true);
 			/* Open a file*//*
 			try {
@@ -91,18 +89,20 @@ public class runningTests {
 				System.out.println(e.getMessage());
 			}*/
 	  }
-	  
+
+	  @Parameters({"browser"})
 	  @Test(enabled = true, groups = "SystemSanityTests", priority = 2, dependsOnMethods = "TestCase1")
-	  public void TestCase2() {
-		  test = exm.createTest("TestCase2", "description2");
-		  exm.testResult(test,driver, "FAIL");
-		  Assert.assertTrue(false);
+	  public void TestCase2(String browser) {
+		  test = extent.createTest("TestCase2_"+browser, "description2");
+		  exm.ReportTestResult(test, driver, "PASS", "TestCase2", browser);
+		  Assert.assertTrue(true);
 	  }
 	  
-	  @Test(groups = "SystemSanityTests", priority = 3, dependsOnMethods = "TestCase2")
-	  public void TestCase3() {
-		  test = exm.createTest("TestCase3", "description3");
-		  exm.testResult(test,driver, "PASS");
+	  @Parameters({"browser"})
+	  @Test(groups = "SystemSanityTests", priority = 3, dependsOnMethods = "TestCase1")
+	  public void TestCase3(String browser) {
+		  test = extent.createTest("TestCase3_"+browser, "description3");
+		  exm.ReportTestResult(test,driver, "PASS", "TestCase3", browser);
 		  Assert.assertTrue(true);
 	  } 
 	  
