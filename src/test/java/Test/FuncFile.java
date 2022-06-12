@@ -240,9 +240,9 @@ public class FuncFile {
 		
 		/*Import data from excel file*/
 		/*Add data into existing excel file*/
-		public static void addFileData(String filePath, String value, int rowNumber, int cellNumber) throws IOException {
+		/*public static void addFileData(String filePath, String value, int rowNumber, int cellNumber) throws IOException {
 				
-				FileInputStream inputstream = new FileInputStream(new File(filePath));
+				FileInputStream inputstream = new FileInputStream(filePath);
 				System.out.println("before workbook");
 				XSSFWorkbook workbook = null;
 				try {
@@ -275,7 +275,7 @@ public class FuncFile {
 					e.printStackTrace();
 				}
 				
-		}
+		}*/
 		/*Delete data from existing excel file*/
 		/*Create test case report excel file*/
 			
