@@ -24,41 +24,42 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-public class ExtentManager{
-	
+public class ResultsFileBuilder {
+
 	public static WebDriver driver;
-	//Constractor for report infrustructure class
-	public ExtentManager(WebDriver driver){
-		System.out.println("In constructor function");
+	//Constructor for report infrastructure class
+	public ResultsFileBuilder(WebDriver driver){
+		System.out.println("ResultsFileBuilder constructor");
 		this.driver = driver;
 	}
 	public static ExtentReports extent;
 	public static ExtentSparkReporter htmlReporter;
-	//יצירת תיקיה ששמה הוא התאריך
+	//Create folder with todays date name
 	static DateFormat df = new SimpleDateFormat("ddMMyy_HHmmss");
 	static Date today = Calendar.getInstance().getTime();
-	static String reportDate = df.format(today);
-	static String reportFolder = "C:\\my files\\reportFile\\" + "TestReport" + reportDate;
-	public static String reportPath = reportFolder + "\\TestReport" + reportDate + ".html";
+	static String ResultsFileDate = df.format(today);
+	static String ResultsFolder = "C:\\my files\\ResultsFile" + "\\" + "TestResults_" + ResultsFileDate;
+	public static String ResultsPath = ResultsFolder + "\\TestResults_" + ResultsFileDate + ".html";
 	
 	/*Create reports folders and report file*/ 
-	public ExtentReports GetExtent(String reportName) {
+	public ExtentReports GetExtent(String ResultsFileName) {
 		System.out.println("In GetExtent function");
-		new File(reportFolder).mkdirs();
+		new File(ResultsFolder).mkdirs();
 		if (extent != null) {
 			return extent; //avoid creating new instance of html file
 			}
 		extent = new ExtentReports();
-		extent.attachReporter(getHtmlReporter(reportName));
+		extent.attachReporter(getHtmlReporter(ResultsFileName));
 		return extent;
 	}
 	
 	/*HTML file elements configuration*/
-	private static ExtentSparkReporter getHtmlReporter(String reportName) {
-		htmlReporter = new ExtentSparkReporter(reportPath);
+	private static ExtentSparkReporter getHtmlReporter(String ResultsFileName) {
+		ResultsPath = ResultsFolder + "\\TestResults_" + ResultsFileName + ResultsFileDate + ".html";
+		htmlReporter = new ExtentSparkReporter(ResultsPath);
 		htmlReporter.config().setTimeStampFormat("dd/MM/yy HH:mm:ss");
 		htmlReporter.config().setDocumentTitle ("QA Automation Report"); 
-		htmlReporter.config().setReportName(reportName);
+		htmlReporter.config().setReportName(ResultsFileName);
 		htmlReporter.config().setEncoding("windows-1255"); 
 		return htmlReporter ;
 	}
@@ -74,7 +75,7 @@ public class ExtentManager{
 			System.out.println("test pass");
 			test.pass("PASS");
 			try {
-				imagepath = FuncFile.takeScreenImage(driver, reportFolder, "PASS", testName + " "+ browser);
+				imagepath = FuncFile.takeScreenImage(driver, ResultsFolder, "PASS", testName + " "+ browser);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -83,20 +84,12 @@ public class ExtentManager{
 			System.out.println("test fail");
 			test.fail("FAIL");
 			try {
-				imagepath = FuncFile.takeScreenImage(driver, reportFolder, "FAIL", testName + " "+ browser);
+				imagepath = FuncFile.takeScreenImage(driver, ResultsFolder, "FAIL", testName + " "+ browser);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			test.fail("FAIL",MediaEntityBuilder.createScreenCaptureFromPath(imagepath).build());
-		}else {
-			test.info("Skip Error");
-			try {
-				imagepath = FuncFile.takeScreenImage(driver, reportFolder, "INFO", testName + " "+ browser);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			test.info("Skip Error",MediaEntityBuilder.createScreenCaptureFromPath(imagepath).build());
-	    }  
+		}
 	}
 	
 }

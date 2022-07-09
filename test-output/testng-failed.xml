@@ -1,44 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Failed suite [TestAll]" guice-stage="DEVELOPMENT">
+<suite thread-count="3" parallel="tests" name="Failed suite [TestAll]" guice-stage="DEVELOPMENT">
   <parameter name="path" value="https://www.tripadvisor.co.il"/>
   <parameter name="testExcelFilesPath" value="C:\\my files\\testExcelFiles\\testFile1.xlsx"/>
   <parameter name="TestVideoPath" value="C:\my files\TestCaseVideos"/>
   <parameter name="logFilesPath" value="C:\my files\logFiles"/>
   <parameter name="inputImageSikuli" value="C:\my files\inputImagesSikuli"/>
   <parameter name="TestImagesPath" value="C:\my files\TestCaseImages"/>
-  <test thread-count="5" parallel="tests" name="chromeTest(failed)">
+  <test thread-count="3" parallel="tests" name="chromeTest(failed)">
     <parameter name="browser" value="chrome"/>
-    <groups>
-      <run>
-        <include name="SystemSanityTests"/>
-      </run>
-    </groups>
     <classes>
-      <class name="Test.runningTests">
+      <class name="Test.Group1_SanityTest">
         <methods>
-          <include name="TestCase1"/>
-          <include name="TestCase2"/>
-          <include name="TestCase3"/>
+          <include name="AfterGroup1_SSystemSanityTests"/>
+          <include name="TestCase3" invocation-numbers="0"/>
+          <include name="beforeGroup1_SystemSanityTests"/>
         </methods>
-      </class> <!-- Test.runningTests -->
+      </class> <!-- Test.Group1_SanityTest -->
     </classes>
   </test> <!-- chromeTest(failed) -->
-  <test thread-count="5" parallel="tests" name="EdgeTest(failed)">
+  <test thread-count="3" parallel="tests" name="EdgeTest(failed)">
     <parameter name="browser" value="Edge"/>
-    <groups>
-      <run>
-        <include name="SystemSanityTests"/>
-      </run>
-    </groups>
     <classes>
-      <class name="Test.runningTests">
+      <class name="Test.Group11_InterfacesTest">
         <methods>
-          <include name="TestCase1"/>
-          <include name="TestCase2"/>
-          <include name="TestCase3"/>
+          <include name="AfterGroup11_InterfacesTest"/>
+          <include name="TestCase2" invocation-numbers="0"/>
+          <include name="beforeGroup11_InterfacesTest"/>
         </methods>
-      </class> <!-- Test.runningTests -->
+      </class> <!-- Test.Group11_InterfacesTest -->
+      <class name="Test.Group1_SanityTest">
+        <methods>
+          <include name="AfterGroup1_SSystemSanityTests"/>
+          <include name="TestCase3" invocation-numbers="0"/>
+          <include name="beforeGroup1_SystemSanityTests"/>
+        </methods>
+      </class> <!-- Test.Group1_SanityTest -->
     </classes>
   </test> <!-- EdgeTest(failed) -->
+  <test thread-count="3" parallel="tests" name="FirefoxTest(failed)">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="Test.Group1_SanityTest">
+        <methods>
+          <include name="AfterGroup1_SSystemSanityTests"/>
+          <include name="TestCase3" invocation-numbers="0"/>
+          <include name="beforeGroup1_SystemSanityTests"/>
+        </methods>
+      </class> <!-- Test.Group1_SanityTest -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
 </suite> <!-- Failed suite [TestAll] -->

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <environment>
-  <TestImagesPath>>"C:\\my files\\TestCaseImages"</TestImagesPath>
+  <TestImagesPath>"C:\\my files\\TestCaseImages"</TestImagesPath>
+  <TestResultsPath>"\\C:\\my files\\ResultsFile\\"</TestResultsPath>
   <PageLoadingTime>500</PageLoadingTime>
   <browser1>Chrome</browser1>
   <browser2>Firefox</browser2>

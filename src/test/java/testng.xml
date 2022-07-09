@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name = "TestAll" parallel = "tests">
+<suite name = "TestAll" parallel = "tests"  thread-count = "3">
    <parameter name = "path" value = "https://www.tripadvisor.co.il"/>
    <parameter name = "TestImagesPath" value = "C:\my files\TestCaseImages"/>
    <parameter name = "TestVideoPath" value = "C:\my files\TestCaseVideos"/>
@@ -8,36 +8,24 @@
    <parameter name = "logFilesPath" value = "C:\my files\logFiles"/>
    <test name = "chromeTest">
    	  <parameter name = "browser" value = "chrome"/>
-   	  <groups>
-   	  	<run>
-   	  		<include name="SystemSanityTests"></include>
-   	  	</run>
-   	  </groups>
       <classes>
-         <class name = "Test.runningTests"/>
+         <class name = "Test.Group1_SanityTest"/>
+         <class name = "Test.Group11_InterfacesTest"/>
       </classes>
    </test>
-  <!-- For version 101-->
-  <test name="FirefoxTest">
-   	  <parameter name = "browser" value = "Firefox"/>
-   	   <groups>
-   	  	<run>
-   	  		<include name="SystemSanityTests"></include>
-   	  	</run>
-   	  </groups>
+   <test name="EdgeTest">
+      <parameter name = "browser" value = "Edge"/>
    	  <classes>
-   		  <class name = "Test.runningTests"/>
+   		  <class name = "Test.Group1_SanityTest"/>
+   		  <class name = "Test.Group11_InterfacesTest"/>
    	  </classes>
    </test>
- <test name="EdgeTest">
-      <parameter name = "browser" value = "Edge"/>
-       <groups>
-   	  	<run>
-   	  		<include name="SystemSanityTests"></include>
-   	  	</run>
-   	  </groups>
+   <!-- For version 101-->
+   <test name="FirefoxTest">
+   	  <parameter name = "browser" value = "Firefox"/>
    	  <classes>
-   		  <class name = "Test.runningTests"/>
+   		  <class name = "Test.Group1_SanityTest"/>
+   		  <class name = "Test.Group11_InterfacesTest"/>
    	  </classes>
    </test>
 </suite>

@@ -24,6 +24,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.time.StopWatch;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -47,12 +48,12 @@ import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
-public class FuncFile {
+public class FuncFile extends HeadClass{
 	/// issue - how to import value from inner function importConfigurationsData?
 		static int pageLoadingTime = 19000;
 		
 		/*open Chrome web browser*/
-		public static String importConfigurationsData(String propertyName) throws ParserConfigurationException, SAXException, IOException{
+		public static String importConfigurationsData(String propertyName) throws ParserConfigurationException, IOException, SAXException{
 			File fXmlFile = new File("configurations.xml");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -97,7 +98,7 @@ public class FuncFile {
 			return driver;
 		}
 		
-		/*wait for constant time using Thread.sleep*/
+		/*Wait for constant time using Thread.sleep*/
 		public static void waitForTimeThread(int millis) throws InterruptedException {
 			try {
 				Thread.sleep(millis);
@@ -106,12 +107,12 @@ public class FuncFile {
 			}
 		}
 		
-		/*wait until page all elements present with time limit using implicit wait*/ 
+		/*Wait until page all elements present with time limit using implicit wait*/ 
 		public static void waitForImplicitTime(WebDriver driver, int millis) {
 			driver.manage().timeouts().implicitlyWait(Duration.ofMillis(millis));
 		}
 		
-		/*wait until specific element present with time limit using explicit wait*/
+		/*Wait until specific element present with time limit using explicit wait*/
 		public static void waitForElementToPresent(WebDriver driver, int millis,  By by) {
 			WebElement result = new WebDriverWait(driver, Duration.ofMillis(millis)).until(ExpectedConditions.presenceOfElementLocated(by));
 		}
@@ -239,7 +240,7 @@ public class FuncFile {
 			
 		}*/
 		
-		/*Import data from excel file*/
+		/*Read data from excel file*/
 		/*Add data into existing excel file*/
 		/*public static void addFileData(String filePath, String value, int rowNumber, int cellNumber) throws IOException {
 				
@@ -279,5 +280,52 @@ public class FuncFile {
 		}*/
 		/*Delete data from existing excel file*/
 		/*Create test case report excel file*/
+		/* Open a file*//*
+			try {
+				///String path = FuncFile.createFile(testExcelFilesPath);
+				String filePath =  "C:\\my files\\testExcelFiles\\testFile1.xlsx";
+				///addFileData1(filePath,"בדיקה 1 בדיקה בדיקה",0,0);
+				System.out.println("Here1 " + filePath);
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}*/
+		
+		/*Add data into existing excel file*/
+		/*public static void addFileData1(String filePath, String value, int rowNumber, int cellNumber) throws IOException {
+				
+				FileInputStream inputstream = new FileInputStream(new File(filePath));
+				System.out.println("before workbook");
+				XSSFWorkbook workbook = null;
+				try {
+					workbook = (XSSFWorkbook) WorkbookFactory.create(inputstream);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.getMessage();
+					e.printStackTrace();
+				}
+				System.out.println("after workbook");
+				org.apache.poi.ss.usermodel.Sheet sheet = workbook.getSheetAt(0);
+				Row row = sheet.getRow(rowNumber);
+				if (row==null) {
+					row = sheet.createRow(rowNumber);
+				}
+				org.apache.poi.ss.usermodel.Cell cell = row.getCell(cellNumber);
+				if (cell==null) {
+					cell = row.createCell(cellNumber);
+				}
+				cell.setCellValue(value);
+				
+				FileOutputStream outputstream = new FileOutputStream(filePath);
+				try {
+					workbook.write(outputstream);
+					//workbook.setSheetName(0, "names");
+					workbook.close();
+					outputstream.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+		} */
 			
 }
