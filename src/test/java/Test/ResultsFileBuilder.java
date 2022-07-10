@@ -24,9 +24,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-public class ResultsFileBuilder {
+public class ResultsFileBuilder extends HeadClass {
 
-	public static WebDriver driver;
 	//Constructor for report infrastructure class
 	public ResultsFileBuilder(WebDriver driver){
 		System.out.println("ResultsFileBuilder constructor");
@@ -61,7 +60,7 @@ public class ResultsFileBuilder {
 		htmlReporter.config().setTimeStampFormat("dd/MM/yy HH:mm:ss");
 		htmlReporter.config().setDocumentTitle ("Tests Results"); 
 		htmlReporter.config().setReportName(ResultsFileName);
-		htmlReporter.config().setEncoding("windows-1255"); 
+		//htmlReporter.config().setEncoding("windows-1255"); 
 		return htmlReporter ;
 	}
 	
@@ -73,23 +72,29 @@ public class ResultsFileBuilder {
 	public void SendTestResult(ExtentTest test, WebDriver driver, String result, String testName, String browser) {
 		String imagepath="";
 		if (result == "PASS") {
-			System.out.println("test pass");
-			test.pass("PASS");
+			
 			try {
-				imagepath = FuncFile.takeScreenImage(driver, ResultsFolder, "PASS", testName + " "+ browser);
+				imagepath = FuncFile.takeScreenImage(driver, ResultsFolder, "PASS", testName + " " + browser);
+				System.out.println("Test passed. Saved into file: " + imagepath);
 			} catch (IOException e) {
+				System.out.println("Image not saved " + e.getMessage());
 				e.printStackTrace();
+			} catch (Exception e) {
+				System.out.println("Test failed. Saved into file:"+ imagepath);
 			}
 			test.pass("PASS",MediaEntityBuilder.createScreenCaptureFromPath(imagepath).build());
+			
 		}else if(result == "FAIL") {
-			System.out.println("test fail");
-			test.fail("FAIL");
+			
 			try {
 				imagepath = FuncFile.takeScreenImage(driver, ResultsFolder, "FAIL", testName + " "+ browser);
+				System.out.println("Test failed. Saved into file:"+ imagepath);
 			} catch (IOException e) {
+				System.out.println("Image not saved " + e.getMessage());
 				e.printStackTrace();
 			}
 			test.fail("FAIL",MediaEntityBuilder.createScreenCaptureFromPath(imagepath).build());
+			
 		}
 	}
 	

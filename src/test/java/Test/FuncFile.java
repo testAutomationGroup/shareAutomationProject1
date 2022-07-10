@@ -49,7 +49,7 @@ import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class FuncFile extends HeadClass{
-	/// issue - how to import value from inner function importConfigurationsData?
+	/// issue - how to import value from inner function import ConfigurationsData?
 		static int pageLoadingTime = 19000;
 		
 		/*open Chrome web browser*/
@@ -70,7 +70,7 @@ public class FuncFile extends HeadClass{
 			//waitForImplicitTime(driver, pageLoadingTime);
 			driver.get(path);
 			WebElement result = new WebDriverWait(driver, Duration.ofMillis(pageLoadingTime)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[alt='Tripadvisor']")));
-			System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
+			//System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
 			return driver;
 		}
 		
@@ -82,7 +82,7 @@ public class FuncFile extends HeadClass{
 			driver.manage().window().maximize();
 			driver.get(path);
 			WebElement result = new WebDriverWait(driver, Duration.ofMillis(pageLoadingTime)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[alt='Tripadvisor']")));
-			System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
+			//System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
 			return driver;
 		}
 		
@@ -94,7 +94,7 @@ public class FuncFile extends HeadClass{
 			driver.manage().window().maximize();
 			driver.get(path);
 			WebElement result = new WebDriverWait(driver, Duration.ofMillis(pageLoadingTime)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[alt='Tripadvisor']")));
-			System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
+			//System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
 			return driver;
 		}
 		
@@ -126,7 +126,7 @@ public class FuncFile extends HeadClass{
 			
 			TakesScreenshot scrShot = ((TakesScreenshot)driver);
 			File scrFile = scrShot.getScreenshotAs(OutputType.FILE);
-			System.out.println("Saved image into path " + path + "\\" + testName + "_"+ dateForImage + "_" + text);
+			//System.out.println("Saved image into path " + path + "\\" + testName + "_"+ dateForImage + "_" + text);
 			String imagepath = path + "\\" + testName + "_"+ dateForImage + "_" + text+ ".jpg";
 			FileUtils.copyFile(scrFile, new File(imagepath));
 			return imagepath;
@@ -145,9 +145,17 @@ public class FuncFile extends HeadClass{
 		}
 		
 		/*Take full page image including scrolling with AShot*/
-		public static void takePageScrollImage(WebDriver driver, String path) throws IOException {
+		public static String takePageScrollImage(WebDriver driver, String path, String text, String testName) throws IOException {
+			SimpleDateFormat formatter = new SimpleDateFormat("ddMMyy_HHmmss");
+			Date date = new Date(System.currentTimeMillis());
+			String dateForImage = formatter.format(date);
+			
+			System.out.println("Saved image into path " + path + "\\" + testName + "_"+ dateForImage + "_" + text);
+			String imagepath = path + "\\" + testName + "_"+ dateForImage + "_" + text+ ".PNG";
+			
 			Screenshot entirePageScreenShot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(100)).takeScreenshot(driver);
-			ImageIO.write(entirePageScreenShot.getImage(),"PNG", new File(path));
+			ImageIO.write(entirePageScreenShot.getImage(),"PNG", new File(imagepath));
+			return imagepath;
 		}
 		/*Take specific element photo with getScreenShot function*/
 		public static void takeSpesificElementImage(WebElement Element, String path) throws IOException {

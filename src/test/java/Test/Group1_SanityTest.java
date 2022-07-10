@@ -17,7 +17,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
 public class Group1_SanityTest extends HeadClass{
-	  		
+	  
+	  ResultsFileBuilder ResultsBuilder = new ResultsFileBuilder(driver);
 	  /*Code before System Sanity Tests group*/
 	  @Parameters({"browser","path"})
 	  @BeforeClass
@@ -54,11 +55,11 @@ public class Group1_SanityTest extends HeadClass{
 	  /*Code after System Sanity Tests group*/
 	  @Parameters({"browser"})
 	  @AfterClass
-	  public void AfterGroup1_SSystemSanityTests(String browser) throws InterruptedException {
-		  System.out.println("System sanity tests ended for browser " + browser);
-		  FuncFile.waitForTimeThread(200);
+	  public void AfterGroup1_SystemSanityTests(String browser) throws InterruptedException {
+		  System.out.println("Group1_SystemSanityTests ended for browser " + browser);
+		  FuncFile.waitForTimeThread(2000);
 		  extent.flush();
-		  driver.quit();
+		  //driver.close();
 	  }
 	  
 	  /*Code for all test cases in System Sanity Tests group*/

@@ -47,10 +47,10 @@ public class Group11_InterfacesTest extends HeadClass{
   @Parameters({"browser"})
   @AfterClass
   public void AfterGroup11_InterfacesTest(String browser) throws InterruptedException {
-	  System.out.println("System sanity tests ended for browser " + browser);
-	  FuncFile.waitForTimeThread(200);
+	  System.out.println("Group11_InterfacesTest ended for browser " + browser);
+	  FuncFile.waitForTimeThread(2000);
 	  extent.flush();
-	  driver.quit();
+	  //driver.close();
   }
   
   @Parameters({"browser"})

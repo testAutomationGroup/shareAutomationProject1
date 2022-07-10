@@ -13,6 +13,6 @@ public class HeadClass {
 	//define extent reportFile
 	public static ExtentReports extent;
 	public static ExtentTest test;
-	ResultsFileBuilder ResultsBuilder = new ResultsFileBuilder(driver);
+	//ResultsFileBuilder ResultsBuilder = new ResultsFileBuilder(driver);
 		
 }

@@ -10,22 +10,22 @@
    	  <parameter name = "browser" value = "chrome"/>
       <classes>
          <class name = "Test.Group1_SanityTest"/>
-         <!--<class name = "Test.Group11_InterfacesTest"/>-->
+         <class name = "Test.Group11_InterfacesTest"/>
       </classes>
    </test>
    <test name="EdgeTest">
       <parameter name = "browser" value = "Edge"/>
    	  <classes>
    		  <class name = "Test.Group1_SanityTest"/>
-   		  <!--<class name = "Test.Group11_InterfacesTest"/>-->
+   		  <class name = "Test.Group11_InterfacesTest"/>
    	  </classes>
    </test>
    <!-- For version 101-->
-   <!--<test name="FirefoxTest">
+   <test name="FirefoxTest">
    	  <parameter name = "browser" value = "Firefox"/>
    	  <classes>
    		  <class name = "Test.Group1_SanityTest"/>
    		  <class name = "Test.Group11_InterfacesTest"/>
    	  </classes>
-   </test>-->
+   </test>
 </suite>
