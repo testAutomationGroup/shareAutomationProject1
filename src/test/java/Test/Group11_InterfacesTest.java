@@ -54,23 +54,45 @@ public class Group11_InterfacesTest extends HeadClass{
   }
   
   @Parameters({"browser"})
-  @Test(alwaysRun = true, groups = "Group11_InterfacesTest", priority = 1)
+  @Test(alwaysRun = true, priority = 1)
   public void TestCase1(String browser) throws IOException {
 	  String testName = "Group11_InterfacesTest_TestCase1";
-	  String Description = "description1";
+	  String Description = "11.1 Social networks interfaces";
 	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.ReportTestResult(test,driver, "PASS", testName, browser);
+	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
   
   @Parameters({"browser"})
-  @Test(alwaysRun = true, groups = "Group11_InterfacesTest", priority = 2)
+  @Test(alwaysRun = true, priority = 2)
   public void TestCase2(String browser) throws IOException {
 	  String testName = "Group11_InterfacesTest_TestCase2";
-	  String Description = "description2";
+	  String Description = "11.2 Connect hotels orders from partner sites";
 	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.ReportTestResult(test,driver, "PASS", testName, browser);
+	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  Assert.assertTrue(true);
+	
+  }
+  
+  @Parameters({"browser"})
+  @Test(alwaysRun = true, priority = 3)
+  public void TestCase3(String browser) throws IOException {
+	  String testName = "Group11_InterfacesTest_TestCase2";
+	  String Description = "11.3 Connect flights orders from partner sites";
+	  test = extent.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  Assert.assertTrue(true);
+	
+  }
+  
+  @Parameters({"browser"})
+  @Test(alwaysRun = true, priority = 4)
+  public void TestCase4(String browser) throws IOException {
+	  String testName = "Group11_InterfacesTest_TestCase2";
+	  String Description = "11.4 Connect cruise orders from partner sites";
+	  test = extent.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }

@@ -32,6 +32,7 @@ public class ResultsFileBuilder {
 		System.out.println("ResultsFileBuilder constructor");
 		this.driver = driver;
 	}
+	
 	public static ExtentReports extent;
 	public static ExtentSparkReporter htmlReporter;
 	//Create folder with todays date name
@@ -58,7 +59,7 @@ public class ResultsFileBuilder {
 		ResultsPath = ResultsFolder + "\\TestResults_" + ResultsFileName + ResultsFileDate + ".html";
 		htmlReporter = new ExtentSparkReporter(ResultsPath);
 		htmlReporter.config().setTimeStampFormat("dd/MM/yy HH:mm:ss");
-		htmlReporter.config().setDocumentTitle ("QA Automation Report"); 
+		htmlReporter.config().setDocumentTitle ("Tests Results"); 
 		htmlReporter.config().setReportName(ResultsFileName);
 		htmlReporter.config().setEncoding("windows-1255"); 
 		return htmlReporter ;
@@ -68,8 +69,8 @@ public class ResultsFileBuilder {
 		test.addScreenCaptureFromPath("path");
 	}
 	
-	/*Set testResult and save images into report folder*/
-	public void ReportTestResult(ExtentTest test, WebDriver driver, String result, String testName, String browser) {
+	/*Define testResult and save images into report folder*/
+	public void SendTestResult(ExtentTest test, WebDriver driver, String result, String testName, String browser) {
 		String imagepath="";
 		if (result == "PASS") {
 			System.out.println("test pass");

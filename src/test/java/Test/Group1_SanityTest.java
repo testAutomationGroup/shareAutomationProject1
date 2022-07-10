@@ -1,6 +1,8 @@
 package Test;
 import java.awt.AWTException;
 import java.io.IOException;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -15,8 +17,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
 public class Group1_SanityTest extends HeadClass{
-		 
-		
+	  		
 	  /*Code before System Sanity Tests group*/
 	  @Parameters({"browser","path"})
 	  @BeforeClass
@@ -62,23 +63,23 @@ public class Group1_SanityTest extends HeadClass{
 	  
 	  /*Code for all test cases in System Sanity Tests group*/
 	  @Parameters({"browser"})
-	  @Test(alwaysRun = true, groups = "SystemSanityTests", priority = 1)
+	  @Test(alwaysRun = true, priority = 1)
 	  public void TestCase1(String browser) throws IOException {
 		  String testName = "Group1_SanityTest_TestCase1";
-		  String Description = "description1";
-		  test = extent.createTest(testName + "_"+browser, Description);
-		  ResultsBuilder.ReportTestResult(test,driver, "PASS", testName, browser);
+		  String Description = "1.1.1 WebSite Logo";
+		  test = extent.createTest(testName + "_" +browser, Description);
+		  ResultsBuilder.SendTestResult(test, driver, "PASS", testName, browser);
 		  Assert.assertTrue(true);
 		
 	  }
 
 	  @Parameters({"browser"})
-	  @Test(enabled = true, groups = "SystemSanityTests", priority = 2, dependsOnMethods = "TestCase1")
+	  @Test(enabled = true, priority = 2, dependsOnMethods = "TestCase1")
 	  public void TestCase2(String browser) throws IOException {
 		  String testName = "Group1_SanityTest_TestCase2";
-		  String Description = "description1";
+		  String Description = "1.2.1 Connect to profile";
 		  test = extent.createTest(testName + "_"+browser, Description);
-		  ResultsBuilder.ReportTestResult(test,driver, "PASS", testName, browser);
+		  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
 		  Assert.assertTrue(true);
 		
 	  }
@@ -87,9 +88,20 @@ public class Group1_SanityTest extends HeadClass{
 	  @Test(groups = "SystemSanityTests", priority = 3)
 	  public void TestCase3(String browser) throws IOException {
 		  String testName = "Group1_SanityTest_TestCase3";
-		  String Description = "description1";
+		  String Description = "1.2.2 Notifications test";
 		  test = extent.createTest(testName + "_"+browser, Description);
-		  ResultsBuilder.ReportTestResult(test,driver, "PASS", testName, browser);
+		  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+		  Assert.assertTrue(true);
+		
+	  }
+	  
+	  @Parameters({"browser"})
+	  @Test(groups = "SystemSanityTests", priority = 4)
+	  public void TestCase4(String browser) throws IOException {
+		  String testName = "Group1_SanityTest_TestCase4";
+		  String Description = "1.2.3 Trips test";
+		  test = extent.createTest(testName + "_"+browser, Description);
+		  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
 		  Assert.assertTrue(true);
 		
 	  }

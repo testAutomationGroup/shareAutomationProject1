@@ -7,47 +7,19 @@
   <parameter name="logFilesPath" value="C:\my files\logFiles"/>
   <parameter name="inputImageSikuli" value="C:\my files\inputImagesSikuli"/>
   <parameter name="TestImagesPath" value="C:\my files\TestCaseImages"/>
-  <test thread-count="3" parallel="tests" name="chromeTest(failed)">
-    <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="Test.Group1_SanityTest">
-        <methods>
-          <include name="AfterGroup1_SSystemSanityTests"/>
-          <include name="TestCase3" invocation-numbers="0"/>
-          <include name="beforeGroup1_SystemSanityTests"/>
-        </methods>
-      </class> <!-- Test.Group1_SanityTest -->
-    </classes>
-  </test> <!-- chromeTest(failed) -->
   <test thread-count="3" parallel="tests" name="EdgeTest(failed)">
     <parameter name="browser" value="Edge"/>
     <classes>
-      <class name="Test.Group11_InterfacesTest">
-        <methods>
-          <include name="AfterGroup11_InterfacesTest"/>
-          <include name="TestCase2" invocation-numbers="0"/>
-          <include name="beforeGroup11_InterfacesTest"/>
-        </methods>
-      </class> <!-- Test.Group11_InterfacesTest -->
       <class name="Test.Group1_SanityTest">
         <methods>
           <include name="AfterGroup1_SSystemSanityTests"/>
           <include name="TestCase3" invocation-numbers="0"/>
+          <include name="TestCase1"/>
           <include name="beforeGroup1_SystemSanityTests"/>
+          <include name="TestCase4" invocation-numbers="0"/>
+          <include name="TestCase2" invocation-numbers="0"/>
         </methods>
       </class> <!-- Test.Group1_SanityTest -->
     </classes>
   </test> <!-- EdgeTest(failed) -->
-  <test thread-count="3" parallel="tests" name="FirefoxTest(failed)">
-    <parameter name="browser" value="Firefox"/>
-    <classes>
-      <class name="Test.Group1_SanityTest">
-        <methods>
-          <include name="AfterGroup1_SSystemSanityTests"/>
-          <include name="TestCase3" invocation-numbers="0"/>
-          <include name="beforeGroup1_SystemSanityTests"/>
-        </methods>
-      </class> <!-- Test.Group1_SanityTest -->
-    </classes>
-  </test> <!-- FirefoxTest(failed) -->
 </suite> <!-- Failed suite [TestAll] -->
