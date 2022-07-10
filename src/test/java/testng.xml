@@ -10,6 +10,9 @@
    	  <parameter name = "browser" value = "chrome"/>
       <classes>
          <class name = "Test.Group1_SanityTest"/>
+         <class name = "Test.Group2_GUITest"/>
+         <class name = "Test.Group3_UsefulnessTest"/>
+         <class name = "Test.Group4_ProcessesTest"/>
          <class name = "Test.Group5_ConnectivityTest"/>
          <class name = "Test.Group6_RecoveryTest"/>
          <class name = "Test.Group7_InternationalityTest"/>
@@ -23,6 +26,9 @@
       <parameter name = "browser" value = "Edge"/>
    	  <classes>
    		  <class name = "Test.Group1_SanityTest"/>
+         <class name = "Test.Group2_GUITest"/>
+         <class name = "Test.Group3_UsefulnessTest"/>
+         <class name = "Test.Group4_ProcessesTest"/>
          <class name = "Test.Group5_ConnectivityTest"/>
          <class name = "Test.Group6_RecoveryTest"/>
          <class name = "Test.Group7_InternationalityTest"/>
@@ -37,6 +43,9 @@
    	  <parameter name = "browser" value = "Firefox"/>
    	  <classes>
    		  <class name = "Test.Group1_SanityTest"/>
+         <class name = "Test.Group2_GUITest"/>
+         <class name = "Test.Group3_UsefulnessTest"/>
+         <class name = "Test.Group4_ProcessesTest"/>
          <class name = "Test.Group5_ConnectivityTest"/>
          <class name = "Test.Group6_RecoveryTest"/>
          <class name = "Test.Group7_InternationalityTest"/>

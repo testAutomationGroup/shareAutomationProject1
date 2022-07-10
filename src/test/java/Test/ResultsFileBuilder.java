@@ -88,7 +88,7 @@ public class ResultsFileBuilder extends HeadClass {
 			
 			try {
 				imagepath = FuncFile.takeScreenImage(driver, ResultsFolder, "FAIL", testName + " "+ browser);
-				System.out.println("Test failed. Saved into file:"+ imagepath);
+				System.out.println("Test failed. Saved into file:"+ imagepath + "test name: " + testName);
 			} catch (IOException e) {
 				System.out.println("Image not saved " + e.getMessage());
 				e.printStackTrace();
