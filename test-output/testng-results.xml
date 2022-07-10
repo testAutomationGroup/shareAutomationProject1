@@ -1,94 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="5" failed="3" skipped="0">
+<testng-results ignored="0" total="96" passed="96" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-10T11:12:39 IDT" name="TestAll" finished-at="2022-07-10T11:12:46 IDT" duration-ms="7478">
+  <suite started-at="2022-07-10T14:36:17 IDT" name="TestAll" finished-at="2022-07-10T14:38:58 IDT" duration-ms="161181">
     <groups>
       <group name="SystemSanityTests">
-        <method signature="Group1_SanityTest.TestCase3(java.lang.String)[pri:3, instance:Test.Group1_SanityTest@747ddf94]" name="TestCase3" class="Test.Group1_SanityTest"/>
-        <method signature="Group1_SanityTest.TestCase4(java.lang.String)[pri:4, instance:Test.Group1_SanityTest@747ddf94]" name="TestCase4" class="Test.Group1_SanityTest"/>
-        <method signature="Group1_SanityTest.TestCase3(java.lang.String)[pri:3, instance:Test.Group1_SanityTest@618b19ad]" name="TestCase3" class="Test.Group1_SanityTest"/>
-        <method signature="Group1_SanityTest.TestCase4(java.lang.String)[pri:4, instance:Test.Group1_SanityTest@618b19ad]" name="TestCase4" class="Test.Group1_SanityTest"/>
+        <method signature="Group1_SanityTest.TestCase3(java.lang.String)[pri:3, instance:Test.Group1_SanityTest@4562e04d]" name="TestCase3" class="Test.Group1_SanityTest"/>
+        <method signature="Group1_SanityTest.TestCase4(java.lang.String)[pri:4, instance:Test.Group1_SanityTest@4562e04d]" name="TestCase4" class="Test.Group1_SanityTest"/>
+        <method signature="Group1_SanityTest.TestCase3(java.lang.String)[pri:3, instance:Test.Group1_SanityTest@702657cc]" name="TestCase3" class="Test.Group1_SanityTest"/>
+        <method signature="Group1_SanityTest.TestCase4(java.lang.String)[pri:4, instance:Test.Group1_SanityTest@702657cc]" name="TestCase4" class="Test.Group1_SanityTest"/>
+        <method signature="Group1_SanityTest.TestCase3(java.lang.String)[pri:3, instance:Test.Group1_SanityTest@5542c4ed]" name="TestCase3" class="Test.Group1_SanityTest"/>
+        <method signature="Group1_SanityTest.TestCase4(java.lang.String)[pri:4, instance:Test.Group1_SanityTest@5542c4ed]" name="TestCase4" class="Test.Group1_SanityTest"/>
       </group> <!-- SystemSanityTests -->
     </groups>
-    <test started-at="2022-07-10T11:12:39 IDT" name="chromeTest" finished-at="2022-07-10T11:12:46 IDT" duration-ms="7286">
-      <class name="Test.Group1_SanityTest">
-        <test-method is-config="true" signature="beforeGroup1_SystemSanityTests(java.lang.String,java.lang.String)[pri:0, instance:Test.Group1_SanityTest@747ddf94]" started-at="2022-07-10T11:12:39 IDT" name="beforeGroup1_SystemSanityTests" finished-at="2022-07-10T11:12:43 IDT" duration-ms="4135" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[https://www.tripadvisor.co.il]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeGroup1_SystemSanityTests -->
-        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group1_SanityTest@747ddf94]" started-at="2022-07-10T11:12:43 IDT" name="TestCase1" finished-at="2022-07-10T11:12:44 IDT" duration-ms="570" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestCase1 -->
-        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group1_SanityTest@747ddf94]" started-at="2022-07-10T11:12:44 IDT" name="TestCase2" finished-at="2022-07-10T11:12:44 IDT" depends-on-methods="Test.Group1_SanityTest.TestCase1" duration-ms="434" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestCase2 -->
-        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group1_SanityTest@747ddf94]" started-at="2022-07-10T11:12:44 IDT" name="TestCase3" finished-at="2022-07-10T11:12:45 IDT" duration-ms="475" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestCase3 -->
-        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group1_SanityTest@747ddf94]" started-at="2022-07-10T11:12:45 IDT" name="TestCase4" finished-at="2022-07-10T11:12:45 IDT" duration-ms="425" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestCase4 -->
-        <test-method is-config="true" signature="AfterGroup1_SSystemSanityTests(java.lang.String)[pri:0, instance:Test.Group1_SanityTest@747ddf94]" started-at="2022-07-10T11:12:45 IDT" name="AfterGroup1_SSystemSanityTests" finished-at="2022-07-10T11:12:46 IDT" duration-ms="1205" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterGroup1_SSystemSanityTests -->
-      </class> <!-- Test.Group1_SanityTest -->
-    </test> <!-- chromeTest -->
-    <test started-at="2022-07-10T11:12:39 IDT" name="EdgeTest" finished-at="2022-07-10T11:12:46 IDT" duration-ms="7478">
-      <class name="Test.Group1_SanityTest">
-        <test-method is-config="true" signature="beforeGroup1_SystemSanityTests(java.lang.String,java.lang.String)[pri:0, instance:Test.Group1_SanityTest@618b19ad]" started-at="2022-07-10T11:12:39 IDT" name="beforeGroup1_SystemSanityTests" finished-at="2022-07-10T11:12:45 IDT" duration-ms="6347" status="PASS">
+    <test started-at="2022-07-10T14:36:17 IDT" name="EdgeTest" finished-at="2022-07-10T14:38:40 IDT" duration-ms="142499">
+      <class name="Test.Group7_InternationalityTest">
+        <test-method is-config="true" signature="beforeGroup7_InternationalityTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group7_InternationalityTest@6025e1b6]" started-at="2022-07-10T14:36:45 IDT" name="beforeGroup7_InternationalityTest" finished-at="2022-07-10T14:36:56 IDT" duration-ms="11154" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -103,8 +30,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeGroup1_SystemSanityTests -->
-        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group1_SanityTest@618b19ad]" started-at="2022-07-10T11:12:45 IDT" name="TestCase1" finished-at="2022-07-10T11:12:46 IDT" duration-ms="541" status="PASS">
+        </test-method> <!-- beforeGroup7_InternationalityTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group7_InternationalityTest@6025e1b6]" started-at="2022-07-10T14:36:56 IDT" name="TestCase1" finished-at="2022-07-10T14:37:00 IDT" duration-ms="4653" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -115,7 +42,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase1 -->
-        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group1_SanityTest@618b19ad]" started-at="2022-07-10T11:12:46 IDT" name="TestCase2" finished-at="2022-07-10T11:12:46 IDT" depends-on-methods="Test.Group1_SanityTest.TestCase1" duration-ms="303" status="FAIL">
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group7_InternationalityTest@6025e1b6]" started-at="2022-07-10T14:38:04 IDT" name="TestCase2" finished-at="2022-07-10T14:38:05 IDT" duration-ms="1240" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -123,72 +50,10 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[invalid session id
-Build info: version: '4.1.4', revision: '535d840ee2'
-System info: host: 'LAPTOP-NB3AD5GO', ip: '192.168.100.178', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3.1'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [c1dacb9da16dc152440573662a0bf7f6, screenshot {}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 103.0.1264.49, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:62554}, msedge: {msedgedriverVersion: 103.0.1264.49 (abaa9303c229..., userDataDir: C:\Users\arnon\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62554/devtoo..., se:cdpVersion: 103.0.1264.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c1dacb9da16dc152440573662a0bf7f6]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id
-Build info: version: '4.1.4', revision: '535d840ee2'
-System info: host: 'LAPTOP-NB3AD5GO', ip: '192.168.100.178', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3.1'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [c1dacb9da16dc152440573662a0bf7f6, screenshot {}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 103.0.1264.49, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:62554}, msedge: {msedgedriverVersion: 103.0.1264.49 (abaa9303c229..., userDataDir: C:\Users\arnon\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62554/devtoo..., se:cdpVersion: 103.0.1264.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c1dacb9da16dc152440573662a0bf7f6
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:626)
-at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:351)
-at Test.FuncFile.takeScreenImage(FuncFile.java:128)
-at Test.ResultsFileBuilder.SendTestResult(ResultsFileBuilder.java:79)
-at Test.Group1_SanityTest.TestCase2(Group1_SanityTest.java:82)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase2 -->
-        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group1_SanityTest@618b19ad]" started-at="2022-07-10T11:12:46 IDT" name="TestCase3" finished-at="2022-07-10T11:12:46 IDT" duration-ms="8" status="FAIL">
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group7_InternationalityTest@6025e1b6]" started-at="2022-07-10T14:38:16 IDT" name="TestCase3" finished-at="2022-07-10T14:38:16 IDT" duration-ms="895" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -196,111 +61,10 @@ at java.base/java.lang.Thread.run(Thread.java:833)
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
-            <message>
-              <![CDATA[Error communicating with the remote browser. It may have died.
-Build info: version: '4.1.4', revision: '535d840ee2'
-System info: host: 'LAPTOP-NB3AD5GO', ip: '192.168.100.178', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3.1'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [c1dacb9da16dc152440573662a0bf7f6, screenshot {}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 103.0.1264.49, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:62554}, msedge: {msedgedriverVersion: 103.0.1264.49 (abaa9303c229..., userDataDir: C:\Users\arnon\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62554/devtoo..., se:cdpVersion: 103.0.1264.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c1dacb9da16dc152440573662a0bf7f6]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '4.1.4', revision: '535d840ee2'
-System info: host: 'LAPTOP-NB3AD5GO', ip: '192.168.100.178', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3.1'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [c1dacb9da16dc152440573662a0bf7f6, screenshot {}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 103.0.1264.49, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:62554}, msedge: {msedgedriverVersion: 103.0.1264.49 (abaa9303c229..., userDataDir: C:\Users\arnon\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62554/devtoo..., se:cdpVersion: 103.0.1264.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c1dacb9da16dc152440573662a0bf7f6
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:591)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:626)
-at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:351)
-at Test.FuncFile.takeScreenImage(FuncFile.java:128)
-at Test.ResultsFileBuilder.SendTestResult(ResultsFileBuilder.java:79)
-at Test.Group1_SanityTest.TestCase3(Group1_SanityTest.java:93)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.io.UncheckedIOException: java.net.ConnectException: Connection refused: no further information: localhost/[0:0:0:0:0:0:0:1]:65367
-at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:73)
-at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
-at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:49)
-at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
-at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:97)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:181)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
-... 29 more
-Caused by: java.net.ConnectException: Connection refused: no further information: localhost/[0:0:0:0:0:0:0:1]:65367
-at org.asynchttpclient.netty.channel.NettyConnectListener.onFailure(NettyConnectListener.java:179)
-at org.asynchttpclient.netty.channel.NettyChannelConnector$1.onFailure(NettyChannelConnector.java:108)
-at org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:28)
-at org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:20)
-at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
-at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:571)
-at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:550)
-at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
-at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616)
-at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:609)
-at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
-at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
-at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
-at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
-at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
-at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
-at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
-at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
-at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-... 1 more
-Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/[0:0:0:0:0:0:0:1]:65367
-Caused by: java.net.ConnectException: Connection refused: no further information
-at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
-at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946)
-at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
-at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
-at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
-at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
-at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
-at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
-at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
-at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-at java.base/java.lang.Thread.run(Thread.java:833)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase3 -->
-        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group1_SanityTest@618b19ad]" started-at="2022-07-10T11:12:46 IDT" name="TestCase4" finished-at="2022-07-10T11:12:46 IDT" duration-ms="8" status="FAIL">
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group7_InternationalityTest@6025e1b6]" started-at="2022-07-10T14:38:27 IDT" name="TestCase4" finished-at="2022-07-10T14:38:27 IDT" duration-ms="315" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -308,111 +72,10 @@ at java.base/java.lang.Thread.run(Thread.java:833)
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
-            <message>
-              <![CDATA[Error communicating with the remote browser. It may have died.
-Build info: version: '4.1.4', revision: '535d840ee2'
-System info: host: 'LAPTOP-NB3AD5GO', ip: '192.168.100.178', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3.1'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [c1dacb9da16dc152440573662a0bf7f6, screenshot {}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 103.0.1264.49, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:62554}, msedge: {msedgedriverVersion: 103.0.1264.49 (abaa9303c229..., userDataDir: C:\Users\arnon\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62554/devtoo..., se:cdpVersion: 103.0.1264.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c1dacb9da16dc152440573662a0bf7f6]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '4.1.4', revision: '535d840ee2'
-System info: host: 'LAPTOP-NB3AD5GO', ip: '192.168.100.178', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3.1'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [c1dacb9da16dc152440573662a0bf7f6, screenshot {}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 103.0.1264.49, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:62554}, msedge: {msedgedriverVersion: 103.0.1264.49 (abaa9303c229..., userDataDir: C:\Users\arnon\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62554/devtoo..., se:cdpVersion: 103.0.1264.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c1dacb9da16dc152440573662a0bf7f6
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:591)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:626)
-at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:351)
-at Test.FuncFile.takeScreenImage(FuncFile.java:128)
-at Test.ResultsFileBuilder.SendTestResult(ResultsFileBuilder.java:79)
-at Test.Group1_SanityTest.TestCase4(Group1_SanityTest.java:104)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.io.UncheckedIOException: java.net.ConnectException: Connection refused: no further information: localhost/[0:0:0:0:0:0:0:1]:65367
-at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:73)
-at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
-at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:49)
-at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
-at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:97)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:181)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
-... 29 more
-Caused by: java.net.ConnectException: Connection refused: no further information: localhost/[0:0:0:0:0:0:0:1]:65367
-at org.asynchttpclient.netty.channel.NettyConnectListener.onFailure(NettyConnectListener.java:179)
-at org.asynchttpclient.netty.channel.NettyChannelConnector$1.onFailure(NettyChannelConnector.java:108)
-at org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:28)
-at org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:20)
-at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
-at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:571)
-at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:550)
-at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
-at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616)
-at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:609)
-at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
-at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
-at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
-at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
-at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
-at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
-at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
-at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
-at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-... 1 more
-Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/[0:0:0:0:0:0:0:1]:65367
-Caused by: java.net.ConnectException: Connection refused: no further information
-at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
-at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946)
-at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
-at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
-at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
-at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
-at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
-at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
-at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
-at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-at java.base/java.lang.Thread.run(Thread.java:833)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase4 -->
-        <test-method is-config="true" signature="AfterGroup1_SSystemSanityTests(java.lang.String)[pri:0, instance:Test.Group1_SanityTest@618b19ad]" started-at="2022-07-10T11:12:46 IDT" name="AfterGroup1_SSystemSanityTests" finished-at="2022-07-10T11:12:46 IDT" duration-ms="236" status="PASS">
+        <test-method is-config="true" signature="AfterGroup7_InternationalityTest(java.lang.String)[pri:0, instance:Test.Group7_InternationalityTest@6025e1b6]" started-at="2022-07-10T14:38:27 IDT" name="AfterGroup7_InternationalityTest" finished-at="2022-07-10T14:38:29 IDT" duration-ms="2021" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -422,8 +85,1691 @@ at java.base/java.lang.Thread.run(Thread.java:833)
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AfterGroup1_SSystemSanityTests -->
+        </test-method> <!-- AfterGroup7_InternationalityTest -->
+      </class> <!-- Test.Group7_InternationalityTest -->
+      <class name="Test.Group8_SecuringTest">
+        <test-method is-config="true" signature="beforeGroup8_SecuringTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group8_SecuringTest@22ff4249]" started-at="2022-07-10T14:37:00 IDT" name="beforeGroup8_SecuringTest" finished-at="2022-07-10T14:37:22 IDT" duration-ms="21603" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup8_SecuringTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group8_SecuringTest@22ff4249]" started-at="2022-07-10T14:37:22 IDT" name="TestCase1" finished-at="2022-07-10T14:37:23 IDT" duration-ms="1161" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group8_SecuringTest@22ff4249]" started-at="2022-07-10T14:38:05 IDT" name="TestCase2" finished-at="2022-07-10T14:38:12 IDT" duration-ms="6539" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group8_SecuringTest@22ff4249]" started-at="2022-07-10T14:38:16 IDT" name="TestCase3" finished-at="2022-07-10T14:38:17 IDT" duration-ms="541" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group8_SecuringTest@22ff4249]" started-at="2022-07-10T14:38:29 IDT" name="TestCase4" finished-at="2022-07-10T14:38:30 IDT" duration-ms="364" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup8_SecuringTest(java.lang.String)[pri:0, instance:Test.Group8_SecuringTest@22ff4249]" started-at="2022-07-10T14:38:30 IDT" name="AfterGroup8_SecuringTest" finished-at="2022-07-10T14:38:32 IDT" duration-ms="2026" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup8_SecuringTest -->
+      </class> <!-- Test.Group8_SecuringTest -->
+      <class name="Test.Group5_ConnectivityTest">
+        <test-method is-config="true" signature="beforeGroup5_ConnectivityTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group5_ConnectivityTest@6a6cb05c]" started-at="2022-07-10T14:36:24 IDT" name="beforeGroup5_ConnectivityTest" finished-at="2022-07-10T14:36:32 IDT" duration-ms="7750" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup5_ConnectivityTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group5_ConnectivityTest@6a6cb05c]" started-at="2022-07-10T14:36:32 IDT" name="TestCase1" finished-at="2022-07-10T14:36:33 IDT" duration-ms="1175" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group5_ConnectivityTest@6a6cb05c]" started-at="2022-07-10T14:38:03 IDT" name="TestCase2" finished-at="2022-07-10T14:38:03 IDT" duration-ms="596" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group5_ConnectivityTest@6a6cb05c]" started-at="2022-07-10T14:38:14 IDT" name="TestCase3" finished-at="2022-07-10T14:38:15 IDT" duration-ms="774" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group5_ConnectivityTest@6a6cb05c]" started-at="2022-07-10T14:38:22 IDT" name="TestCase4" finished-at="2022-07-10T14:38:23 IDT" duration-ms="365" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup5_ConnectivityTest(java.lang.String)[pri:0, instance:Test.Group5_ConnectivityTest@6a6cb05c]" started-at="2022-07-10T14:38:23 IDT" name="AfterGroup5_ConnectivityTest" finished-at="2022-07-10T14:38:25 IDT" duration-ms="2042" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup5_ConnectivityTest -->
+      </class> <!-- Test.Group5_ConnectivityTest -->
+      <class name="Test.Group9_CompatibilityTest">
+        <test-method is-config="true" signature="beforeGroup9_CompatibilityTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group9_CompatibilityTest@2d1ef81a]" started-at="2022-07-10T14:37:23 IDT" name="beforeGroup9_CompatibilityTest" finished-at="2022-07-10T14:37:33 IDT" duration-ms="10114" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup9_CompatibilityTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group9_CompatibilityTest@2d1ef81a]" started-at="2022-07-10T14:37:33 IDT" name="TestCase1" finished-at="2022-07-10T14:37:34 IDT" duration-ms="1057" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group9_CompatibilityTest@2d1ef81a]" started-at="2022-07-10T14:38:12 IDT" name="TestCase2" finished-at="2022-07-10T14:38:12 IDT" duration-ms="583" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group9_CompatibilityTest@2d1ef81a]" started-at="2022-07-10T14:38:17 IDT" name="TestCase3" finished-at="2022-07-10T14:38:18 IDT" duration-ms="486" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group9_CompatibilityTest@2d1ef81a]" started-at="2022-07-10T14:38:32 IDT" name="TestCase4" finished-at="2022-07-10T14:38:32 IDT" duration-ms="735" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup9_CompatibilityTest(java.lang.String)[pri:0, instance:Test.Group9_CompatibilityTest@2d1ef81a]" started-at="2022-07-10T14:38:32 IDT" name="AfterGroup9_CompatibilityTest" finished-at="2022-07-10T14:38:34 IDT" duration-ms="2054" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup9_CompatibilityTest -->
+      </class> <!-- Test.Group9_CompatibilityTest -->
+      <class name="Test.Group10_AccessibilityTest">
+        <test-method is-config="true" signature="beforeGroup10_AccessibilityTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group10_AccessibilityTest@4c402120]" started-at="2022-07-10T14:37:34 IDT" name="beforeGroup10_AccessibilityTest" finished-at="2022-07-10T14:37:50 IDT" duration-ms="16037" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup10_AccessibilityTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group10_AccessibilityTest@4c402120]" started-at="2022-07-10T14:37:50 IDT" name="TestCase1" finished-at="2022-07-10T14:37:55 IDT" duration-ms="5056" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group10_AccessibilityTest@4c402120]" started-at="2022-07-10T14:38:12 IDT" name="TestCase2" finished-at="2022-07-10T14:38:13 IDT" duration-ms="548" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group10_AccessibilityTest@4c402120]" started-at="2022-07-10T14:38:18 IDT" name="TestCase3" finished-at="2022-07-10T14:38:18 IDT" duration-ms="566" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group10_AccessibilityTest@4c402120]" started-at="2022-07-10T14:38:34 IDT" name="TestCase4" finished-at="2022-07-10T14:38:35 IDT" duration-ms="408" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup10_AccessibilityTest(java.lang.String)[pri:0, instance:Test.Group10_AccessibilityTest@4c402120]" started-at="2022-07-10T14:38:35 IDT" name="AfterGroup10_AccessibilityTest" finished-at="2022-07-10T14:38:37 IDT" duration-ms="2025" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup10_AccessibilityTest -->
+      </class> <!-- Test.Group10_AccessibilityTest -->
+      <class name="Test.Group6_RecoveryTest">
+        <test-method is-config="true" signature="beforeGroup6_RecoveryTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group6_RecoveryTest@40a4337a]" started-at="2022-07-10T14:36:33 IDT" name="beforeGroup6_RecoveryTest" finished-at="2022-07-10T14:36:43 IDT" duration-ms="10075" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup6_RecoveryTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group6_RecoveryTest@40a4337a]" started-at="2022-07-10T14:36:43 IDT" name="TestCase1" finished-at="2022-07-10T14:36:45 IDT" duration-ms="1556" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group6_RecoveryTest@40a4337a]" started-at="2022-07-10T14:38:03 IDT" name="TestCase2" finished-at="2022-07-10T14:38:04 IDT" duration-ms="569" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group6_RecoveryTest@40a4337a]" started-at="2022-07-10T14:38:15 IDT" name="TestCase3" finished-at="2022-07-10T14:38:16 IDT" duration-ms="677" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group6_RecoveryTest@40a4337a]" started-at="2022-07-10T14:38:25 IDT" name="TestCase4" finished-at="2022-07-10T14:38:25 IDT" duration-ms="228" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup6_RecoveryTest(java.lang.String)[pri:0, instance:Test.Group6_RecoveryTest@40a4337a]" started-at="2022-07-10T14:38:25 IDT" name="AfterGroup6_RecoveryTest" finished-at="2022-07-10T14:38:27 IDT" duration-ms="2035" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup6_RecoveryTest -->
+      </class> <!-- Test.Group6_RecoveryTest -->
+      <class name="Test.Group11_InterfacesTest">
+        <test-method is-config="true" signature="beforeGroup11_InterfacesTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group11_InterfacesTest@327514f]" started-at="2022-07-10T14:37:55 IDT" name="beforeGroup11_InterfacesTest" finished-at="2022-07-10T14:38:01 IDT" duration-ms="5888" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup11_InterfacesTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group11_InterfacesTest@327514f]" started-at="2022-07-10T14:38:01 IDT" name="TestCase1" finished-at="2022-07-10T14:38:02 IDT" duration-ms="872" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group11_InterfacesTest@327514f]" started-at="2022-07-10T14:38:13 IDT" name="TestCase2" finished-at="2022-07-10T14:38:14 IDT" duration-ms="696" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group11_InterfacesTest@327514f]" started-at="2022-07-10T14:38:18 IDT" name="TestCase3" finished-at="2022-07-10T14:38:19 IDT" duration-ms="705" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group11_InterfacesTest@327514f]" started-at="2022-07-10T14:38:37 IDT" name="TestCase4" finished-at="2022-07-10T14:38:37 IDT" duration-ms="651" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup11_InterfacesTest(java.lang.String)[pri:0, instance:Test.Group11_InterfacesTest@327514f]" started-at="2022-07-10T14:38:37 IDT" name="AfterGroup11_InterfacesTest" finished-at="2022-07-10T14:38:40 IDT" duration-ms="2027" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup11_InterfacesTest -->
+      </class> <!-- Test.Group11_InterfacesTest -->
+      <class name="Test.Group1_SanityTest">
+        <test-method is-config="true" signature="beforeGroup1_SystemSanityTests(java.lang.String,java.lang.String)[pri:0, instance:Test.Group1_SanityTest@702657cc]" started-at="2022-07-10T14:36:17 IDT" name="beforeGroup1_SystemSanityTests" finished-at="2022-07-10T14:36:23 IDT" duration-ms="6223" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup1_SystemSanityTests -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group1_SanityTest@702657cc]" started-at="2022-07-10T14:36:23 IDT" name="TestCase1" finished-at="2022-07-10T14:36:24 IDT" duration-ms="804" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group1_SanityTest@702657cc]" started-at="2022-07-10T14:38:02 IDT" name="TestCase2" finished-at="2022-07-10T14:38:03 IDT" depends-on-methods="Test.Group1_SanityTest.TestCase1" duration-ms="524" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group1_SanityTest@702657cc]" started-at="2022-07-10T14:38:14 IDT" name="TestCase3" finished-at="2022-07-10T14:38:14 IDT" duration-ms="585" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group1_SanityTest@702657cc]" started-at="2022-07-10T14:38:19 IDT" name="TestCase4" finished-at="2022-07-10T14:38:19 IDT" duration-ms="659" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup1_SystemSanityTests(java.lang.String)[pri:0, instance:Test.Group1_SanityTest@702657cc]" started-at="2022-07-10T14:38:19 IDT" name="AfterGroup1_SystemSanityTests" finished-at="2022-07-10T14:38:22 IDT" duration-ms="2760" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup1_SystemSanityTests -->
       </class> <!-- Test.Group1_SanityTest -->
     </test> <!-- EdgeTest -->
+    <test started-at="2022-07-10T14:36:17 IDT" name="chromeTest" finished-at="2022-07-10T14:38:40 IDT" duration-ms="143398">
+      <class name="Test.Group8_SecuringTest">
+        <test-method is-config="true" signature="beforeGroup8_SecuringTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group8_SecuringTest@368f2016]" started-at="2022-07-10T14:36:40 IDT" name="beforeGroup8_SecuringTest" finished-at="2022-07-10T14:36:50 IDT" duration-ms="10035" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup8_SecuringTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group8_SecuringTest@368f2016]" started-at="2022-07-10T14:36:50 IDT" name="TestCase1" finished-at="2022-07-10T14:36:51 IDT" duration-ms="884" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group8_SecuringTest@368f2016]" started-at="2022-07-10T14:38:12 IDT" name="TestCase2" finished-at="2022-07-10T14:38:13 IDT" duration-ms="621" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group8_SecuringTest@368f2016]" started-at="2022-07-10T14:38:17 IDT" name="TestCase3" finished-at="2022-07-10T14:38:18 IDT" duration-ms="478" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group8_SecuringTest@368f2016]" started-at="2022-07-10T14:38:30 IDT" name="TestCase4" finished-at="2022-07-10T14:38:30 IDT" duration-ms="352" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup8_SecuringTest(java.lang.String)[pri:0, instance:Test.Group8_SecuringTest@368f2016]" started-at="2022-07-10T14:38:30 IDT" name="AfterGroup8_SecuringTest" finished-at="2022-07-10T14:38:32 IDT" duration-ms="2028" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup8_SecuringTest -->
+      </class> <!-- Test.Group8_SecuringTest -->
+      <class name="Test.Group7_InternationalityTest">
+        <test-method is-config="true" signature="beforeGroup7_InternationalityTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group7_InternationalityTest@4d5d943d]" started-at="2022-07-10T14:36:33 IDT" name="beforeGroup7_InternationalityTest" finished-at="2022-07-10T14:36:39 IDT" duration-ms="6280" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup7_InternationalityTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group7_InternationalityTest@4d5d943d]" started-at="2022-07-10T14:36:39 IDT" name="TestCase1" finished-at="2022-07-10T14:36:40 IDT" duration-ms="1002" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group7_InternationalityTest@4d5d943d]" started-at="2022-07-10T14:38:11 IDT" name="TestCase2" finished-at="2022-07-10T14:38:12 IDT" duration-ms="616" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group7_InternationalityTest@4d5d943d]" started-at="2022-07-10T14:38:17 IDT" name="TestCase3" finished-at="2022-07-10T14:38:17 IDT" duration-ms="485" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group7_InternationalityTest@4d5d943d]" started-at="2022-07-10T14:38:28 IDT" name="TestCase4" finished-at="2022-07-10T14:38:28 IDT" duration-ms="441" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup7_InternationalityTest(java.lang.String)[pri:0, instance:Test.Group7_InternationalityTest@4d5d943d]" started-at="2022-07-10T14:38:28 IDT" name="AfterGroup7_InternationalityTest" finished-at="2022-07-10T14:38:30 IDT" duration-ms="2033" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup7_InternationalityTest -->
+      </class> <!-- Test.Group7_InternationalityTest -->
+      <class name="Test.Group5_ConnectivityTest">
+        <test-method is-config="true" signature="beforeGroup5_ConnectivityTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group5_ConnectivityTest@7cc0cdad]" started-at="2022-07-10T14:36:22 IDT" name="beforeGroup5_ConnectivityTest" finished-at="2022-07-10T14:36:25 IDT" duration-ms="3329" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup5_ConnectivityTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group5_ConnectivityTest@7cc0cdad]" started-at="2022-07-10T14:36:25 IDT" name="TestCase1" finished-at="2022-07-10T14:36:26 IDT" duration-ms="574" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group5_ConnectivityTest@7cc0cdad]" started-at="2022-07-10T14:37:28 IDT" name="TestCase2" finished-at="2022-07-10T14:37:29 IDT" duration-ms="1109" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group5_ConnectivityTest@7cc0cdad]" started-at="2022-07-10T14:38:15 IDT" name="TestCase3" finished-at="2022-07-10T14:38:16 IDT" duration-ms="655" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group5_ConnectivityTest@7cc0cdad]" started-at="2022-07-10T14:38:22 IDT" name="TestCase4" finished-at="2022-07-10T14:38:23 IDT" duration-ms="897" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup5_ConnectivityTest(java.lang.String)[pri:0, instance:Test.Group5_ConnectivityTest@7cc0cdad]" started-at="2022-07-10T14:38:23 IDT" name="AfterGroup5_ConnectivityTest" finished-at="2022-07-10T14:38:25 IDT" duration-ms="2040" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup5_ConnectivityTest -->
+      </class> <!-- Test.Group5_ConnectivityTest -->
+      <class name="Test.Group9_CompatibilityTest">
+        <test-method is-config="true" signature="beforeGroup9_CompatibilityTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group9_CompatibilityTest@4c583ecf]" started-at="2022-07-10T14:36:51 IDT" name="beforeGroup9_CompatibilityTest" finished-at="2022-07-10T14:37:02 IDT" duration-ms="11000" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup9_CompatibilityTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group9_CompatibilityTest@4c583ecf]" started-at="2022-07-10T14:37:02 IDT" name="TestCase1" finished-at="2022-07-10T14:37:03 IDT" duration-ms="972" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group9_CompatibilityTest@4c583ecf]" started-at="2022-07-10T14:38:13 IDT" name="TestCase2" finished-at="2022-07-10T14:38:13 IDT" duration-ms="584" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group9_CompatibilityTest@4c583ecf]" started-at="2022-07-10T14:38:18 IDT" name="TestCase3" finished-at="2022-07-10T14:38:19 IDT" duration-ms="735" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group9_CompatibilityTest@4c583ecf]" started-at="2022-07-10T14:38:32 IDT" name="TestCase4" finished-at="2022-07-10T14:38:33 IDT" duration-ms="457" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup9_CompatibilityTest(java.lang.String)[pri:0, instance:Test.Group9_CompatibilityTest@4c583ecf]" started-at="2022-07-10T14:38:33 IDT" name="AfterGroup9_CompatibilityTest" finished-at="2022-07-10T14:38:35 IDT" duration-ms="2017" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup9_CompatibilityTest -->
+      </class> <!-- Test.Group9_CompatibilityTest -->
+      <class name="Test.Group11_InterfacesTest">
+        <test-method is-config="true" signature="beforeGroup11_InterfacesTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group11_InterfacesTest@48f2bd5b]" started-at="2022-07-10T14:37:23 IDT" name="beforeGroup11_InterfacesTest" finished-at="2022-07-10T14:37:27 IDT" duration-ms="4155" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup11_InterfacesTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group11_InterfacesTest@48f2bd5b]" started-at="2022-07-10T14:37:27 IDT" name="TestCase1" finished-at="2022-07-10T14:37:28 IDT" duration-ms="665" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group11_InterfacesTest@48f2bd5b]" started-at="2022-07-10T14:38:14 IDT" name="TestCase2" finished-at="2022-07-10T14:38:14 IDT" duration-ms="625" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group11_InterfacesTest@48f2bd5b]" started-at="2022-07-10T14:38:19 IDT" name="TestCase3" finished-at="2022-07-10T14:38:20 IDT" duration-ms="616" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group11_InterfacesTest@48f2bd5b]" started-at="2022-07-10T14:38:38 IDT" name="TestCase4" finished-at="2022-07-10T14:38:38 IDT" duration-ms="813" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup11_InterfacesTest(java.lang.String)[pri:0, instance:Test.Group11_InterfacesTest@48f2bd5b]" started-at="2022-07-10T14:38:38 IDT" name="AfterGroup11_InterfacesTest" finished-at="2022-07-10T14:38:40 IDT" duration-ms="2031" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup11_InterfacesTest -->
+      </class> <!-- Test.Group11_InterfacesTest -->
+      <class name="Test.Group6_RecoveryTest">
+        <test-method is-config="true" signature="beforeGroup6_RecoveryTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group6_RecoveryTest@7c7b252e]" started-at="2022-07-10T14:36:26 IDT" name="beforeGroup6_RecoveryTest" finished-at="2022-07-10T14:36:32 IDT" duration-ms="5896" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup6_RecoveryTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group6_RecoveryTest@7c7b252e]" started-at="2022-07-10T14:36:32 IDT" name="TestCase1" finished-at="2022-07-10T14:36:33 IDT" duration-ms="768" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group6_RecoveryTest@7c7b252e]" started-at="2022-07-10T14:37:29 IDT" name="TestCase2" finished-at="2022-07-10T14:38:11 IDT" duration-ms="42251" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group6_RecoveryTest@7c7b252e]" started-at="2022-07-10T14:38:16 IDT" name="TestCase3" finished-at="2022-07-10T14:38:17 IDT" duration-ms="844" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group6_RecoveryTest@7c7b252e]" started-at="2022-07-10T14:38:25 IDT" name="TestCase4" finished-at="2022-07-10T14:38:25 IDT" duration-ms="240" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup6_RecoveryTest(java.lang.String)[pri:0, instance:Test.Group6_RecoveryTest@7c7b252e]" started-at="2022-07-10T14:38:25 IDT" name="AfterGroup6_RecoveryTest" finished-at="2022-07-10T14:38:28 IDT" duration-ms="2109" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup6_RecoveryTest -->
+      </class> <!-- Test.Group6_RecoveryTest -->
+      <class name="Test.Group10_AccessibilityTest">
+        <test-method is-config="true" signature="beforeGroup10_AccessibilityTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group10_AccessibilityTest@692f203f]" started-at="2022-07-10T14:37:03 IDT" name="beforeGroup10_AccessibilityTest" finished-at="2022-07-10T14:37:22 IDT" duration-ms="19016" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup10_AccessibilityTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group10_AccessibilityTest@692f203f]" started-at="2022-07-10T14:37:22 IDT" name="TestCase1" finished-at="2022-07-10T14:37:23 IDT" duration-ms="813" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group10_AccessibilityTest@692f203f]" started-at="2022-07-10T14:38:13 IDT" name="TestCase2" finished-at="2022-07-10T14:38:14 IDT" duration-ms="667" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group10_AccessibilityTest@692f203f]" started-at="2022-07-10T14:38:19 IDT" name="TestCase3" finished-at="2022-07-10T14:38:19 IDT" duration-ms="632" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group10_AccessibilityTest@692f203f]" started-at="2022-07-10T14:38:35 IDT" name="TestCase4" finished-at="2022-07-10T14:38:36 IDT" duration-ms="624" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup10_AccessibilityTest(java.lang.String)[pri:0, instance:Test.Group10_AccessibilityTest@692f203f]" started-at="2022-07-10T14:38:36 IDT" name="AfterGroup10_AccessibilityTest" finished-at="2022-07-10T14:38:38 IDT" duration-ms="2017" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup10_AccessibilityTest -->
+      </class> <!-- Test.Group10_AccessibilityTest -->
+      <class name="Test.Group1_SanityTest">
+        <test-method is-config="true" signature="beforeGroup1_SystemSanityTests(java.lang.String,java.lang.String)[pri:0, instance:Test.Group1_SanityTest@4562e04d]" started-at="2022-07-10T14:36:17 IDT" name="beforeGroup1_SystemSanityTests" finished-at="2022-07-10T14:36:21 IDT" duration-ms="4363" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup1_SystemSanityTests -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group1_SanityTest@4562e04d]" started-at="2022-07-10T14:36:21 IDT" name="TestCase1" finished-at="2022-07-10T14:36:22 IDT" duration-ms="699" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group1_SanityTest@4562e04d]" started-at="2022-07-10T14:37:28 IDT" name="TestCase2" finished-at="2022-07-10T14:37:28 IDT" depends-on-methods="Test.Group1_SanityTest.TestCase1" duration-ms="456" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group1_SanityTest@4562e04d]" started-at="2022-07-10T14:38:14 IDT" name="TestCase3" finished-at="2022-07-10T14:38:15 IDT" duration-ms="824" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group1_SanityTest@4562e04d]" started-at="2022-07-10T14:38:20 IDT" name="TestCase4" finished-at="2022-07-10T14:38:20 IDT" duration-ms="390" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup1_SystemSanityTests(java.lang.String)[pri:0, instance:Test.Group1_SanityTest@4562e04d]" started-at="2022-07-10T14:38:20 IDT" name="AfterGroup1_SystemSanityTests" finished-at="2022-07-10T14:38:22 IDT" duration-ms="2072" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup1_SystemSanityTests -->
+      </class> <!-- Test.Group1_SanityTest -->
+    </test> <!-- chromeTest -->
+    <test started-at="2022-07-10T14:36:17 IDT" name="FirefoxTest" finished-at="2022-07-10T14:38:58 IDT" duration-ms="161181">
+      <class name="Test.Group7_InternationalityTest">
+        <test-method is-config="true" signature="beforeGroup7_InternationalityTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group7_InternationalityTest@44c03695]" started-at="2022-07-10T14:37:15 IDT" name="beforeGroup7_InternationalityTest" finished-at="2022-07-10T14:37:34 IDT" duration-ms="19782" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup7_InternationalityTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group7_InternationalityTest@44c03695]" started-at="2022-07-10T14:37:34 IDT" name="TestCase1" finished-at="2022-07-10T14:37:35 IDT" duration-ms="507" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group7_InternationalityTest@44c03695]" started-at="2022-07-10T14:38:31 IDT" name="TestCase2" finished-at="2022-07-10T14:38:32 IDT" duration-ms="293" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group7_InternationalityTest@44c03695]" started-at="2022-07-10T14:38:35 IDT" name="TestCase3" finished-at="2022-07-10T14:38:36 IDT" duration-ms="675" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group7_InternationalityTest@44c03695]" started-at="2022-07-10T14:38:46 IDT" name="TestCase4" finished-at="2022-07-10T14:38:46 IDT" duration-ms="504" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup7_InternationalityTest(java.lang.String)[pri:0, instance:Test.Group7_InternationalityTest@44c03695]" started-at="2022-07-10T14:38:46 IDT" name="AfterGroup7_InternationalityTest" finished-at="2022-07-10T14:38:48 IDT" duration-ms="2022" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup7_InternationalityTest -->
+      </class> <!-- Test.Group7_InternationalityTest -->
+      <class name="Test.Group8_SecuringTest">
+        <test-method is-config="true" signature="beforeGroup8_SecuringTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group8_SecuringTest@7e6f74c]" started-at="2022-07-10T14:37:35 IDT" name="beforeGroup8_SecuringTest" finished-at="2022-07-10T14:37:51 IDT" duration-ms="15739" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup8_SecuringTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group8_SecuringTest@7e6f74c]" started-at="2022-07-10T14:37:51 IDT" name="TestCase1" finished-at="2022-07-10T14:37:51 IDT" duration-ms="537" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group8_SecuringTest@7e6f74c]" started-at="2022-07-10T14:38:32 IDT" name="TestCase2" finished-at="2022-07-10T14:38:32 IDT" duration-ms="370" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group8_SecuringTest@7e6f74c]" started-at="2022-07-10T14:38:36 IDT" name="TestCase3" finished-at="2022-07-10T14:38:36 IDT" duration-ms="388" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group8_SecuringTest@7e6f74c]" started-at="2022-07-10T14:38:48 IDT" name="TestCase4" finished-at="2022-07-10T14:38:49 IDT" duration-ms="436" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup8_SecuringTest(java.lang.String)[pri:0, instance:Test.Group8_SecuringTest@7e6f74c]" started-at="2022-07-10T14:38:49 IDT" name="AfterGroup8_SecuringTest" finished-at="2022-07-10T14:38:51 IDT" duration-ms="2053" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup8_SecuringTest -->
+      </class> <!-- Test.Group8_SecuringTest -->
+      <class name="Test.Group5_ConnectivityTest">
+        <test-method is-config="true" signature="beforeGroup5_ConnectivityTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group5_ConnectivityTest@1573f9fc]" started-at="2022-07-10T14:36:24 IDT" name="beforeGroup5_ConnectivityTest" finished-at="2022-07-10T14:37:04 IDT" duration-ms="40006" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup5_ConnectivityTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group5_ConnectivityTest@1573f9fc]" started-at="2022-07-10T14:37:04 IDT" name="TestCase1" finished-at="2022-07-10T14:37:07 IDT" duration-ms="2892" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group5_ConnectivityTest@1573f9fc]" started-at="2022-07-10T14:38:31 IDT" name="TestCase2" finished-at="2022-07-10T14:38:31 IDT" duration-ms="294" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group5_ConnectivityTest@1573f9fc]" started-at="2022-07-10T14:38:34 IDT" name="TestCase3" finished-at="2022-07-10T14:38:34 IDT" duration-ms="428" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group5_ConnectivityTest@1573f9fc]" started-at="2022-07-10T14:38:41 IDT" name="TestCase4" finished-at="2022-07-10T14:38:41 IDT" duration-ms="519" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup5_ConnectivityTest(java.lang.String)[pri:0, instance:Test.Group5_ConnectivityTest@1573f9fc]" started-at="2022-07-10T14:38:41 IDT" name="AfterGroup5_ConnectivityTest" finished-at="2022-07-10T14:38:43 IDT" duration-ms="2015" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup5_ConnectivityTest -->
+      </class> <!-- Test.Group5_ConnectivityTest -->
+      <class name="Test.Group9_CompatibilityTest">
+        <test-method is-config="true" signature="beforeGroup9_CompatibilityTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group9_CompatibilityTest@dd05255]" started-at="2022-07-10T14:37:51 IDT" name="beforeGroup9_CompatibilityTest" finished-at="2022-07-10T14:38:09 IDT" duration-ms="17927" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup9_CompatibilityTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group9_CompatibilityTest@dd05255]" started-at="2022-07-10T14:38:09 IDT" name="TestCase1" finished-at="2022-07-10T14:38:10 IDT" duration-ms="774" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group9_CompatibilityTest@dd05255]" started-at="2022-07-10T14:38:32 IDT" name="TestCase2" finished-at="2022-07-10T14:38:33 IDT" duration-ms="702" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group9_CompatibilityTest@dd05255]" started-at="2022-07-10T14:38:36 IDT" name="TestCase3" finished-at="2022-07-10T14:38:37 IDT" duration-ms="374" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group9_CompatibilityTest@dd05255]" started-at="2022-07-10T14:38:51 IDT" name="TestCase4" finished-at="2022-07-10T14:38:51 IDT" duration-ms="504" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup9_CompatibilityTest(java.lang.String)[pri:0, instance:Test.Group9_CompatibilityTest@dd05255]" started-at="2022-07-10T14:38:51 IDT" name="AfterGroup9_CompatibilityTest" finished-at="2022-07-10T14:38:53 IDT" duration-ms="2020" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup9_CompatibilityTest -->
+      </class> <!-- Test.Group9_CompatibilityTest -->
+      <class name="Test.Group11_InterfacesTest">
+        <test-method is-config="true" signature="beforeGroup11_InterfacesTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group11_InterfacesTest@2f4948e4]" started-at="2022-07-10T14:38:24 IDT" name="beforeGroup11_InterfacesTest" finished-at="2022-07-10T14:38:30 IDT" duration-ms="5540" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup11_InterfacesTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group11_InterfacesTest@2f4948e4]" started-at="2022-07-10T14:38:30 IDT" name="TestCase1" finished-at="2022-07-10T14:38:30 IDT" duration-ms="352" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group11_InterfacesTest@2f4948e4]" started-at="2022-07-10T14:38:33 IDT" name="TestCase2" finished-at="2022-07-10T14:38:34 IDT" duration-ms="386" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group11_InterfacesTest@2f4948e4]" started-at="2022-07-10T14:38:37 IDT" name="TestCase3" finished-at="2022-07-10T14:38:38 IDT" duration-ms="820" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group11_InterfacesTest@2f4948e4]" started-at="2022-07-10T14:38:56 IDT" name="TestCase4" finished-at="2022-07-10T14:38:56 IDT" duration-ms="440" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup11_InterfacesTest(java.lang.String)[pri:0, instance:Test.Group11_InterfacesTest@2f4948e4]" started-at="2022-07-10T14:38:56 IDT" name="AfterGroup11_InterfacesTest" finished-at="2022-07-10T14:38:58 IDT" duration-ms="2035" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup11_InterfacesTest -->
+      </class> <!-- Test.Group11_InterfacesTest -->
+      <class name="Test.Group10_AccessibilityTest">
+        <test-method is-config="true" signature="beforeGroup10_AccessibilityTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group10_AccessibilityTest@6a78afa0]" started-at="2022-07-10T14:38:10 IDT" name="beforeGroup10_AccessibilityTest" finished-at="2022-07-10T14:38:24 IDT" duration-ms="14186" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup10_AccessibilityTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group10_AccessibilityTest@6a78afa0]" started-at="2022-07-10T14:38:24 IDT" name="TestCase1" finished-at="2022-07-10T14:38:24 IDT" duration-ms="221" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group10_AccessibilityTest@6a78afa0]" started-at="2022-07-10T14:38:33 IDT" name="TestCase2" finished-at="2022-07-10T14:38:33 IDT" duration-ms="555" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group10_AccessibilityTest@6a78afa0]" started-at="2022-07-10T14:38:37 IDT" name="TestCase3" finished-at="2022-07-10T14:38:37 IDT" duration-ms="468" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group10_AccessibilityTest@6a78afa0]" started-at="2022-07-10T14:38:53 IDT" name="TestCase4" finished-at="2022-07-10T14:38:54 IDT" duration-ms="356" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup10_AccessibilityTest(java.lang.String)[pri:0, instance:Test.Group10_AccessibilityTest@6a78afa0]" started-at="2022-07-10T14:38:54 IDT" name="AfterGroup10_AccessibilityTest" finished-at="2022-07-10T14:38:56 IDT" duration-ms="2017" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup10_AccessibilityTest -->
+      </class> <!-- Test.Group10_AccessibilityTest -->
+      <class name="Test.Group6_RecoveryTest">
+        <test-method is-config="true" signature="beforeGroup6_RecoveryTest(java.lang.String,java.lang.String)[pri:0, instance:Test.Group6_RecoveryTest@6150c3ec]" started-at="2022-07-10T14:37:07 IDT" name="beforeGroup6_RecoveryTest" finished-at="2022-07-10T14:37:14 IDT" duration-ms="6834" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup6_RecoveryTest -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group6_RecoveryTest@6150c3ec]" started-at="2022-07-10T14:37:14 IDT" name="TestCase1" finished-at="2022-07-10T14:37:15 IDT" duration-ms="584" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group6_RecoveryTest@6150c3ec]" started-at="2022-07-10T14:38:31 IDT" name="TestCase2" finished-at="2022-07-10T14:38:31 IDT" duration-ms="304" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group6_RecoveryTest@6150c3ec]" started-at="2022-07-10T14:38:34 IDT" name="TestCase3" finished-at="2022-07-10T14:38:35 IDT" duration-ms="770" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group6_RecoveryTest@6150c3ec]" started-at="2022-07-10T14:38:43 IDT" name="TestCase4" finished-at="2022-07-10T14:38:44 IDT" duration-ms="440" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup6_RecoveryTest(java.lang.String)[pri:0, instance:Test.Group6_RecoveryTest@6150c3ec]" started-at="2022-07-10T14:38:44 IDT" name="AfterGroup6_RecoveryTest" finished-at="2022-07-10T14:38:46 IDT" duration-ms="2039" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup6_RecoveryTest -->
+      </class> <!-- Test.Group6_RecoveryTest -->
+      <class name="Test.Group1_SanityTest">
+        <test-method is-config="true" signature="beforeGroup1_SystemSanityTests(java.lang.String,java.lang.String)[pri:0, instance:Test.Group1_SanityTest@5542c4ed]" started-at="2022-07-10T14:36:17 IDT" name="beforeGroup1_SystemSanityTests" finished-at="2022-07-10T14:36:24 IDT" duration-ms="6808" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.tripadvisor.co.il]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup1_SystemSanityTests -->
+        <test-method signature="TestCase1(java.lang.String)[pri:1, instance:Test.Group1_SanityTest@5542c4ed]" started-at="2022-07-10T14:36:24 IDT" name="TestCase1" finished-at="2022-07-10T14:36:24 IDT" duration-ms="443" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method signature="TestCase2(java.lang.String)[pri:2, instance:Test.Group1_SanityTest@5542c4ed]" started-at="2022-07-10T14:38:30 IDT" name="TestCase2" finished-at="2022-07-10T14:38:31 IDT" depends-on-methods="Test.Group1_SanityTest.TestCase1" duration-ms="483" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase2 -->
+        <test-method signature="TestCase3(java.lang.String)[pri:3, instance:Test.Group1_SanityTest@5542c4ed]" started-at="2022-07-10T14:38:34 IDT" name="TestCase3" finished-at="2022-07-10T14:38:34 IDT" duration-ms="386" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase3 -->
+        <test-method signature="TestCase4(java.lang.String)[pri:4, instance:Test.Group1_SanityTest@5542c4ed]" started-at="2022-07-10T14:38:38 IDT" name="TestCase4" finished-at="2022-07-10T14:38:39 IDT" duration-ms="853" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase4 -->
+        <test-method is-config="true" signature="AfterGroup1_SystemSanityTests(java.lang.String)[pri:0, instance:Test.Group1_SanityTest@5542c4ed]" started-at="2022-07-10T14:38:39 IDT" name="AfterGroup1_SystemSanityTests" finished-at="2022-07-10T14:38:41 IDT" duration-ms="2022" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterGroup1_SystemSanityTests -->
+      </class> <!-- Test.Group1_SanityTest -->
+    </test> <!-- FirefoxTest -->
   </suite> <!-- TestAll -->
 </testng-results>

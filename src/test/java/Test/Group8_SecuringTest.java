@@ -9,15 +9,15 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
-public class Group11_InterfacesTest extends HeadClass{
+public class Group8_SecuringTest extends HeadClass{
   
   ResultsFileBuilder ResultsBuilder = new ResultsFileBuilder(driver);	
   @Parameters({"browser","path"})
   @BeforeClass
-  public void beforeGroup11_InterfacesTest(String browser, String path) {
+  public void beforeGroup8_SecuringTest(String browser, String path) {
 	  System.out.println("Here we start");
 	  //Create test report file for report system sanity tests
-	  extent = ResultsBuilder.GetExtent("Group11_InterfacesTest tests");
+	  extent = ResultsBuilder.GetExtent("Group8_SecuringTest tests");
 	  System.out.println("Here we start again");
 	  
 	  try {
@@ -46,8 +46,8 @@ public class Group11_InterfacesTest extends HeadClass{
   
   @Parameters({"browser"})
   @AfterClass
-  public void AfterGroup11_InterfacesTest(String browser) throws InterruptedException {
-	  System.out.println("Group11_InterfacesTest ended for browser " + browser);
+  public void AfterGroup8_SecuringTest(String browser) throws InterruptedException {
+	  System.out.println("Group8_SecuringTest ended for browser " + browser);
 	  FuncFile.waitForTimeThread(2000);
 	  extent.flush();
 	  //driver.close();
@@ -56,8 +56,8 @@ public class Group11_InterfacesTest extends HeadClass{
   @Parameters({"browser"})
   @Test(alwaysRun = true, priority = 1)
   public void TestCase1(String browser) throws IOException {
-	  String testName = "Group11_InterfacesTest_TestCase1";
-	  String Description = "11.1 Social networks interfaces";
+	  String testName = "Group8_SecuringTest_TestCase1";
+	  String Description = "8.1 Connect secured connection in various browsers";
 	  test = extent.createTest(testName + "_"+browser, Description);
 	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
@@ -67,8 +67,8 @@ public class Group11_InterfacesTest extends HeadClass{
   @Parameters({"browser"})
   @Test(alwaysRun = true, priority = 2)
   public void TestCase2(String browser) throws IOException {
-	  String testName = "Group11_InterfacesTest_TestCase2";
-	  String Description = "11.2 Connect hotels orders from partner sites";
+	  String testName = "Group8_SecuringTest_TestCase2";
+	  String Description = "8.2 Location share settings";
 	  test = extent.createTest(testName + "_"+browser, Description);
 	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
@@ -78,8 +78,8 @@ public class Group11_InterfacesTest extends HeadClass{
   @Parameters({"browser"})
   @Test(alwaysRun = true, priority = 3)
   public void TestCase3(String browser) throws IOException {
-	  String testName = "Group11_InterfacesTest_TestCase3";
-	  String Description = "11.3 Connect flights orders from partner sites";
+	  String testName = "Group8_SecuringTest_TestCase3";
+	  String Description = "8.3 Import a non actual place";
 	  test = extent.createTest(testName + "_"+browser, Description);
 	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
@@ -89,8 +89,8 @@ public class Group11_InterfacesTest extends HeadClass{
   @Parameters({"browser"})
   @Test(alwaysRun = true, priority = 4)
   public void TestCase4(String browser) throws IOException {
-	  String testName = "Group11_InterfacesTest_TestCase4";
-	  String Description = "11.4 Connect cruise orders from partner sites";
+	  String testName = "Group8_SecuringTest_TestCase4";
+	  String Description = "8.4 Locating machines created reviews";
 	  test = extent.createTest(testName + "_"+browser, Description);
 	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);

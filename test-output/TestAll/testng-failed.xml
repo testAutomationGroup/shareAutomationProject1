@@ -7,19 +7,16 @@
   <parameter name="logFilesPath" value="C:\my files\logFiles"/>
   <parameter name="inputImageSikuli" value="C:\my files\inputImagesSikuli"/>
   <parameter name="TestImagesPath" value="C:\my files\TestCaseImages"/>
-  <test thread-count="3" parallel="tests" name="EdgeTest(failed)">
-    <parameter name="browser" value="Edge"/>
+  <test thread-count="3" parallel="tests" name="chromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="Test.Group1_SanityTest">
         <methods>
-          <include name="AfterGroup1_SSystemSanityTests"/>
-          <include name="TestCase3" invocation-numbers="0"/>
-          <include name="TestCase1"/>
           <include name="beforeGroup1_SystemSanityTests"/>
           <include name="TestCase4" invocation-numbers="0"/>
-          <include name="TestCase2" invocation-numbers="0"/>
+          <include name="AfterGroup1_SystemSanityTests"/>
         </methods>
       </class> <!-- Test.Group1_SanityTest -->
     </classes>
-  </test> <!-- EdgeTest(failed) -->
+  </test> <!-- chromeTest(failed) -->
 </suite> <!-- Failed suite [TestAll] -->
