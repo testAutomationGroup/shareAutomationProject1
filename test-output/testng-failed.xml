@@ -8,15 +8,15 @@
   <parameter name="inputImageSikuli" value="C:\my files\inputImagesSikuli"/>
   <parameter name="TestImagesPath" value="C:\my files\TestCaseImages"/>
   <test thread-count="3" parallel="tests" name="chromeTest(failed)">
-    <parameter name="browser" value="chrome"/>
+    <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="Test.Group1_SanityTest">
+      <class name="Test.Group2_GUITest">
         <methods>
-          <include name="beforeGroup1_SystemSanityTests"/>
-          <include name="TestCase4" invocation-numbers="0"/>
-          <include name="AfterGroup1_SystemSanityTests"/>
+          <include name="TestCase2_1_2_1_1" invocation-numbers="0"/>
+          <include name="beforeGroup2_GUITest"/>
+          <include name="AfterGroup2_GUITest"/>
         </methods>
-      </class> <!-- Test.Group1_SanityTest -->
+      </class> <!-- Test.Group2_GUITest -->
     </classes>
   </test> <!-- chromeTest(failed) -->
 </suite> <!-- Failed suite [TestAll] -->

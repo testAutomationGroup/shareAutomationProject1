@@ -28,16 +28,7 @@ public class Group8_SecuringTest extends HeadClass{
 		  //open browser for each browser parameter value
 		  System.out.println("System sanity tests started for browser " + browser);
 		  System.out.println("Path is " + path);
-		  if (browser.equals("chrome")) {
-			  System.out.println("Open browser " + browser);
-			  driver = FuncFile.openBrowserChrome(driver, path);
-		  }else if (browser.equals("Firefox")) {
-			  System.out.println("Open browser " + browser);
-			  driver = FuncFile.openBrowserFirefox(driver, path);
-		  }else if (browser.equals("Edge")) {
-			  System.out.println("Open browser " + browser);
-			  driver = FuncFile.openBrowserEdge(driver, path);
-		  }
+		  driver = FuncFile.openBrowser(driver, browser, path); 
 		
 	} catch (Exception e) {
 		System.out.println(e.getMessage());
@@ -55,8 +46,8 @@ public class Group8_SecuringTest extends HeadClass{
   
   @Parameters({"browser"})
   @Test(alwaysRun = true, priority = 1)
-  public void TestCase1(String browser) throws IOException {
-	  String testName = "Group8_SecuringTest_TestCase1";
+  public void TestCase8_1(String browser) throws IOException {
+	  String testName = "Group8_SecuringTest_TestCase8.1";
 	  String Description = "8.1 Connect secured connection in various browsers";
 	  test = extent.createTest(testName + "_"+browser, Description);
 	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
@@ -66,8 +57,8 @@ public class Group8_SecuringTest extends HeadClass{
   
   @Parameters({"browser"})
   @Test(alwaysRun = true, priority = 2)
-  public void TestCase2(String browser) throws IOException {
-	  String testName = "Group8_SecuringTest_TestCase2";
+  public void TestCase8_2(String browser) throws IOException {
+	  String testName = "Group8_SecuringTest_TestCase8.2";
 	  String Description = "8.2 Location share settings";
 	  test = extent.createTest(testName + "_"+browser, Description);
 	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
@@ -77,8 +68,8 @@ public class Group8_SecuringTest extends HeadClass{
   
   @Parameters({"browser"})
   @Test(alwaysRun = true, priority = 3)
-  public void TestCase3(String browser) throws IOException {
-	  String testName = "Group8_SecuringTest_TestCase3";
+  public void TestCase8_3(String browser) throws IOException {
+	  String testName = "Group8_SecuringTest_TestCase8.3";
 	  String Description = "8.3 Import a non actual place";
 	  test = extent.createTest(testName + "_"+browser, Description);
 	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
@@ -88,8 +79,8 @@ public class Group8_SecuringTest extends HeadClass{
   
   @Parameters({"browser"})
   @Test(alwaysRun = true, priority = 4)
-  public void TestCase4(String browser) throws IOException {
-	  String testName = "Group8_SecuringTest_TestCase4";
+  public void TestCase8_4(String browser) throws IOException {
+	  String testName = "Group8_SecuringTest_TestCase8.4";
 	  String Description = "8.4 Locating machines created reviews";
 	  test = extent.createTest(testName + "_"+browser, Description);
 	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);

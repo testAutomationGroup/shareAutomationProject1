@@ -7,7 +7,7 @@
    <parameter name = "testExcelFilesPath" value = "C:\\my files\\testExcelFiles\\testFile1.xlsx"/>
    <parameter name = "logFilesPath" value = "C:\my files\logFiles"/>
    <test name = "chromeTest">
-   	  <parameter name = "browser" value = "chrome"/>
+   	  <parameter name = "browser" value = "Chrome"/>
       <classes>
          <class name = "Test.Group1_SanityTest"/>
          <class name = "Test.Group2_GUITest"/>
@@ -25,7 +25,7 @@
    <test name="EdgeTest">
       <parameter name = "browser" value = "Edge"/>
    	  <classes>
-   		  <class name = "Test.Group1_SanityTest"/>
+   		 <class name = "Test.Group1_SanityTest"/>
          <class name = "Test.Group2_GUITest"/>
          <class name = "Test.Group3_UsefulnessTest"/>
          <class name = "Test.Group4_ProcessesTest"/>
@@ -42,7 +42,7 @@
    <test name="FirefoxTest">
    	  <parameter name = "browser" value = "Firefox"/>
    	  <classes>
-   		  <class name = "Test.Group1_SanityTest"/>
+   		 <class name = "Test.Group1_SanityTest"/>
          <class name = "Test.Group2_GUITest"/>
          <class name = "Test.Group3_UsefulnessTest"/>
          <class name = "Test.Group4_ProcessesTest"/>

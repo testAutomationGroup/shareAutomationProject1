@@ -62,39 +62,22 @@ public class FuncFile extends HeadClass{
 			return doc.getElementsByTagName(propertyName).item(0).getTextContent();
 		}
 		
-		public static WebDriver openBrowserChrome(WebDriver driver, String path) {
-			
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-			driver.manage().window().maximize();
-			//waitForImplicitTime(driver, pageLoadingTime);
-			driver.get(path);
-			WebElement result = new WebDriverWait(driver, Duration.ofMillis(pageLoadingTime)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[alt='Tripadvisor']")));
-			//System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
-			return driver;
-		}
-		
-		/*Open Firefox browser*/
-		public static WebDriver openBrowserFirefox(WebDriver driver, String path) {
-			
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+		public static WebDriver openBrowser(WebDriver driver, String browserName, String path) {
+			if (browserName.equals("Chrome")){
+				WebDriverManager.chromedriver().setup();
+				driver = new ChromeDriver();
+			}else if (browserName.equals("Firefox")){
+				WebDriverManager.firefoxdriver().setup();
+				driver = new FirefoxDriver();				
+			}else if (browserName.equals("Edge")){
+				WebDriverManager.edgedriver().setup();
+				driver = new EdgeDriver();
+			}
 			driver.manage().window().maximize();
 			driver.get(path);
 			WebElement result = new WebDriverWait(driver, Duration.ofMillis(pageLoadingTime)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[alt='Tripadvisor']")));
 			//System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
-			return driver;
-		}
-		
-		/*Open Microsoft edge browser*/
-		public static WebDriver openBrowserEdge(WebDriver driver, String path) {
-			
-			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
-			driver.manage().window().maximize();
-			driver.get(path);
-			WebElement result = new WebDriverWait(driver, Duration.ofMillis(pageLoadingTime)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[alt='Tripadvisor']")));
-			//System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
+			System.out.println("Open browser " + browserName);
 			return driver;
 		}
 		

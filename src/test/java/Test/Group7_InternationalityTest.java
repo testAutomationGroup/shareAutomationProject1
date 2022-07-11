@@ -28,16 +28,7 @@ public class Group7_InternationalityTest extends HeadClass{
 		  //open browser for each browser parameter value
 		  System.out.println("System sanity tests started for browser " + browser);
 		  System.out.println("Path is " + path);
-		  if (browser.equals("chrome")) {
-			  System.out.println("Open browser " + browser);
-			  driver = FuncFile.openBrowserChrome(driver, path);
-		  }else if (browser.equals("Firefox")) {
-			  System.out.println("Open browser " + browser);
-			  driver = FuncFile.openBrowserFirefox(driver, path);
-		  }else if (browser.equals("Edge")) {
-			  System.out.println("Open browser " + browser);
-			  driver = FuncFile.openBrowserEdge(driver, path);
-		  }
+		  driver = FuncFile.openBrowser(driver, browser, path); 
 		
 	} catch (Exception e) {
 		System.out.println(e.getMessage());
@@ -55,8 +46,8 @@ public class Group7_InternationalityTest extends HeadClass{
   
   @Parameters({"browser"})
   @Test(alwaysRun = true, priority = 1)
-  public void TestCase1(String browser) throws IOException {
-	  String testName = "Group7_InternationalityTest_TestCase1";
+  public void TestCase7_1(String browser) throws IOException {
+	  String testName = "Group7_InternationalityTest_TestCase7.1";
 	  String Description = "7.1 Open google translate addon in differnet browsers";
 	  test = extent.createTest(testName + "_"+browser, Description);
 	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
@@ -66,8 +57,8 @@ public class Group7_InternationalityTest extends HeadClass{
   
   @Parameters({"browser"})
   @Test(alwaysRun = true, priority = 2)
-  public void TestCase2(String browser) throws IOException {
-	  String testName = "Group7_InternationalityTest_TestCase2";
+  public void TestCase7_2(String browser) throws IOException {
+	  String testName = "Group7_InternationalityTest_TestCase7.2";
 	  String Description = "7.2 Test right currency conversions";
 	  test = extent.createTest(testName + "_"+browser, Description);
 	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
@@ -77,8 +68,8 @@ public class Group7_InternationalityTest extends HeadClass{
   
   @Parameters({"browser"})
   @Test(alwaysRun = true, priority = 3)
-  public void TestCase3(String browser) throws IOException {
-	  String testName = "Group7_InternationalityTest_TestCase3";
+  public void TestCase7_3(String browser) throws IOException {
+	  String testName = "Group7_InternationalityTest_TestCase7.3";
 	  String Description = "7.3 Translate all contect to proposed languages";
 	  test = extent.createTest(testName + "_"+browser, Description);
 	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
@@ -88,8 +79,8 @@ public class Group7_InternationalityTest extends HeadClass{
   
   @Parameters({"browser"})
   @Test(alwaysRun = true, priority = 4)
-  public void TestCase4(String browser) throws IOException {
-	  String testName = "Group7_InternationalityTest_TestCase4";
+  public void TestCase7_4(String browser) throws IOException {
+	  String testName = "Group7_InternationalityTest_TestCase7.4";
 	  String Description = "7.4 English pages to integrate with hebrew";
 	  test = extent.createTest(testName + "_"+browser, Description);
 	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
