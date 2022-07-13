@@ -17,7 +17,7 @@ public class Group4_ProcessesTest extends HeadClass{
   public void beforeGroup4_ProcessesTest(String browser, String path) {
 	  System.out.println("Here we start");
 	  //Create test report file for report system sanity tests
-	  extent = ResultsBuilder.GetExtent("Group4_ProcessesTest tests");
+	  report = ResultsBuilder.GetExtent("Group4_ProcessesTest tests");
 	  System.out.println("Here we start again");
 	  
 	  try {
@@ -40,7 +40,7 @@ public class Group4_ProcessesTest extends HeadClass{
   public void AfterGroup4_ProcessesTest(String browser) throws InterruptedException {
 	  System.out.println("Group4_ProcessesTest ended for browser " + browser);
 	  FuncFile.waitForTimeThread(2000);
-	  extent.flush();
+	  report.flush();
 	  //driver.close();
   }
   
@@ -49,8 +49,8 @@ public class Group4_ProcessesTest extends HeadClass{
   public void TestCase4_1_1(String browser) throws IOException {
 	  String testName = "Group4_ProcessesTest_TestCase4.1.1";
 	  String Description = "4.1.1 Connected profile process";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -60,8 +60,8 @@ public class Group4_ProcessesTest extends HeadClass{
   public void TestCase4_1_2(String browser) throws IOException {
 	  String testName = "Group4_ProcessesTest_TestCase4.1.2";
 	  String Description = "4.1.2 Create trip process";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -71,8 +71,8 @@ public class Group4_ProcessesTest extends HeadClass{
   public void TestCase4_1_3(String browser) throws IOException {
 	  String testName = "Group4_ProcessesTest_TestCase4.1.3";
 	  String Description = "4.1.3 Create reference process";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -82,8 +82,8 @@ public class Group4_ProcessesTest extends HeadClass{
   public void TestCase4_1_4(String browser) throws IOException {
 	  String testName = "Group4_ProcessesTest_TestCase4.1.4";
 	  String Description = "4.1.4 Find places menu";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }

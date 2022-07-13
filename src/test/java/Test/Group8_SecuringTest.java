@@ -17,7 +17,7 @@ public class Group8_SecuringTest extends HeadClass{
   public void beforeGroup8_SecuringTest(String browser, String path) {
 	  System.out.println("Here we start");
 	  //Create test report file for report system sanity tests
-	  extent = ResultsBuilder.GetExtent("Group8_SecuringTest tests");
+	  report = ResultsBuilder.GetExtent("Group8_SecuringTest tests");
 	  System.out.println("Here we start again");
 	  
 	  try {
@@ -40,7 +40,7 @@ public class Group8_SecuringTest extends HeadClass{
   public void AfterGroup8_SecuringTest(String browser) throws InterruptedException {
 	  System.out.println("Group8_SecuringTest ended for browser " + browser);
 	  FuncFile.waitForTimeThread(2000);
-	  extent.flush();
+	  report.flush();
 	  //driver.close();
   }
   
@@ -49,8 +49,8 @@ public class Group8_SecuringTest extends HeadClass{
   public void TestCase8_1(String browser) throws IOException {
 	  String testName = "Group8_SecuringTest_TestCase8.1";
 	  String Description = "8.1 Connect secured connection in various browsers";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -60,8 +60,8 @@ public class Group8_SecuringTest extends HeadClass{
   public void TestCase8_2(String browser) throws IOException {
 	  String testName = "Group8_SecuringTest_TestCase8.2";
 	  String Description = "8.2 Location share settings";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -71,8 +71,8 @@ public class Group8_SecuringTest extends HeadClass{
   public void TestCase8_3(String browser) throws IOException {
 	  String testName = "Group8_SecuringTest_TestCase8.3";
 	  String Description = "8.3 Import a non actual place";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -82,8 +82,8 @@ public class Group8_SecuringTest extends HeadClass{
   public void TestCase8_4(String browser) throws IOException {
 	  String testName = "Group8_SecuringTest_TestCase8.4";
 	  String Description = "8.4 Locating machines created reviews";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }

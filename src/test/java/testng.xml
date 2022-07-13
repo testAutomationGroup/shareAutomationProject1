@@ -10,7 +10,7 @@
    	  <parameter name = "browser" value = "Chrome"/>
       <classes>
          <class name = "Test.Group1_SanityTest"/>
-         <class name = "Test.Group2_GUITest"/>
+         <!--<class name = "Test.Group2_GUITest"/>
          <class name = "Test.Group3_UsefulnessTest"/>
          <class name = "Test.Group4_ProcessesTest"/>
          <class name = "Test.Group5_ConnectivityTest"/>
@@ -19,10 +19,10 @@
          <class name = "Test.Group8_SecuringTest"/>
          <class name = "Test.Group9_CompatibilityTest"/>
          <class name = "Test.Group10_AccessibilityTest"/>
-         <class name = "Test.Group11_InterfacesTest"/>
+         <class name = "Test.Group11_InterfacesTest"/>-->
       </classes>
    </test>
-   <test name="EdgeTest">
+   <!--<test name="EdgeTest">
       <parameter name = "browser" value = "Edge"/>
    	  <classes>
    		 <class name = "Test.Group1_SanityTest"/>
@@ -33,13 +33,13 @@
          <class name = "Test.Group6_RecoveryTest"/>
          <class name = "Test.Group7_InternationalityTest"/>
          <class name = "Test.Group8_SecuringTest"/>
-   		  <class name = "Test.Group9_CompatibilityTest"/>
-   		  <class name = "Test.Group10_AccessibilityTest"/>
-   		  <class name = "Test.Group11_InterfacesTest"/>
+   		 <class name = "Test.Group9_CompatibilityTest"/>
+   		 <class name = "Test.Group10_AccessibilityTest"/>
+   		 <class name = "Test.Group11_InterfacesTest"/>
    	  </classes>
-   </test>
+   </test>-->
    <!-- For version 101-->
-   <test name="FirefoxTest">
+   <!--<test name="FirefoxTest">
    	  <parameter name = "browser" value = "Firefox"/>
    	  <classes>
    		 <class name = "Test.Group1_SanityTest"/>
@@ -50,9 +50,9 @@
          <class name = "Test.Group6_RecoveryTest"/>
          <class name = "Test.Group7_InternationalityTest"/>
          <class name = "Test.Group8_SecuringTest"/>
-   		  <class name = "Test.Group9_CompatibilityTest"/>
-   		  <class name = "Test.Group10_AccessibilityTest"/>
-   		  <class name = "Test.Group11_InterfacesTest"/>
+   		 <class name = "Test.Group9_CompatibilityTest"/>
+   		 <class name = "Test.Group10_AccessibilityTest"/>
+   		 <class name = "Test.Group11_InterfacesTest"/>
    	  </classes>
-   </test>
+   </test>-->
 </suite>

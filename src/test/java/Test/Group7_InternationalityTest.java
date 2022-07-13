@@ -17,7 +17,7 @@ public class Group7_InternationalityTest extends HeadClass{
   public void beforeGroup7_InternationalityTest(String browser, String path) {
 	  System.out.println("Here we start");
 	  //Create test report file for report system sanity tests
-	  extent = ResultsBuilder.GetExtent("Group7_InternationalityTest tests");
+	  report = ResultsBuilder.GetExtent("Group7_InternationalityTest tests");
 	  System.out.println("Here we start again");
 	  
 	  try {
@@ -40,7 +40,7 @@ public class Group7_InternationalityTest extends HeadClass{
   public void AfterGroup7_InternationalityTest(String browser) throws InterruptedException {
 	  System.out.println("Group7_InternationalityTest ended for browser " + browser);
 	  FuncFile.waitForTimeThread(2000);
-	  extent.flush();
+	  report.flush();
 	  //driver.close();
   }
   
@@ -49,8 +49,8 @@ public class Group7_InternationalityTest extends HeadClass{
   public void TestCase7_1(String browser) throws IOException {
 	  String testName = "Group7_InternationalityTest_TestCase7.1";
 	  String Description = "7.1 Open google translate addon in differnet browsers";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -60,8 +60,8 @@ public class Group7_InternationalityTest extends HeadClass{
   public void TestCase7_2(String browser) throws IOException {
 	  String testName = "Group7_InternationalityTest_TestCase7.2";
 	  String Description = "7.2 Test right currency conversions";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -71,8 +71,8 @@ public class Group7_InternationalityTest extends HeadClass{
   public void TestCase7_3(String browser) throws IOException {
 	  String testName = "Group7_InternationalityTest_TestCase7.3";
 	  String Description = "7.3 Translate all contect to proposed languages";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -82,8 +82,8 @@ public class Group7_InternationalityTest extends HeadClass{
   public void TestCase7_4(String browser) throws IOException {
 	  String testName = "Group7_InternationalityTest_TestCase7.4";
 	  String Description = "7.4 English pages to integrate with hebrew";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }

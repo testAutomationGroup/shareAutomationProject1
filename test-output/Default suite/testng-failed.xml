@@ -2,16 +2,16 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <parameter name="path" value="https://www.tripadvisor.co.il"/>
-  <parameter name="browser" value="chrome"/>
+  <parameter name="browser" value="Chrome"/>
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test.TestScenariosMainFile">
+      <class name="Test.Group1_SanityTest">
         <methods>
-          <include name="TestCase1" invocation-numbers="0"/>
-          <include name="TestCase3" invocation-numbers="0"/>
-          <include name="TestCase2"/>
+          <include name="beforeGroup1_SystemSanityTests"/>
+          <include name="AfterGroup1_SystemSanityTests"/>
+          <include name="TestCase1_2_1" invocation-numbers="0"/>
         </methods>
-      </class> <!-- Test.TestScenariosMainFile -->
+      </class> <!-- Test.Group1_SanityTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

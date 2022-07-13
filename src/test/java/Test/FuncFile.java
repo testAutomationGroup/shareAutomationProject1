@@ -13,8 +13,11 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.imageio.ImageIO;
 import javax.xml.parsers.DocumentBuilder;
@@ -32,8 +35,10 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.locators.RelativeLocator;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.FindFailed;
@@ -65,7 +70,19 @@ public class FuncFile extends HeadClass{
 		public static WebDriver openBrowser(WebDriver driver, String browserName, String path) {
 			if (browserName.equals("Chrome")){
 				WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver();
+				ChromeOptions options = new ChromeOptions(); 
+				/* Continue when the is password message in browser */
+				options.addArguments("--start-maximized");
+				options.addArguments("--disable-web-security");
+				options.addArguments("--no-proxy-server");
+
+				Map<String, Object> prefs = new HashMap<String, Object>();
+				prefs.put("credentials_enable_service", false);
+				prefs.put("profile.password_manager_enabled", false);
+				options.setExperimentalOption("prefs", prefs);
+				/* Continue when there is not secured message in browser*/
+				options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+				driver = new ChromeDriver(options); 
 			}else if (browserName.equals("Firefox")){
 				WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver();				
@@ -75,11 +92,19 @@ public class FuncFile extends HeadClass{
 			}
 			driver.manage().window().maximize();
 			driver.get(path);
-			WebElement result = new WebDriverWait(driver, Duration.ofMillis(pageLoadingTime)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[alt='Tripadvisor']")));
-			//System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
+			/* Wait for Logo element presence */
+			WebElement result = new WebDriverWait(driver, Duration.ofMillis(pageLoadingTime))
+					.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[alt='Tripadvisor']")));
+			
 			System.out.println("Open browser " + browserName);
 			return driver;
 		}
+		/* List<String> excludeSwitches = new ArrayList<>();
+		excludeSwitches.add("enable-automation");
+		options.setExperimentalOption("excludeSwitches", excludeSwitches);
+		options.setExperimentalOption("useAutomationExtention", false);
+		options.addArguments("--disable-infobars");*/
+		//System.out.println("Tab URL and title are " + driver.getCurrentUrl() + "   " + driver.getTitle());
 		
 		/*Wait for constant time using Thread.sleep*/
 		public static void waitForTimeThread(int millis) throws InterruptedException {
@@ -100,6 +125,26 @@ public class FuncFile extends HeadClass{
 			WebElement result = new WebDriverWait(driver, Duration.ofMillis(millis)).until(ExpectedConditions.presenceOfElementLocated(by));
 		}
 		
+		/*Wait for element to be refreshed and clickable until 4 seconds */
+		public static WebElement waitForElementToBeRefreshedAndClickable(WebDriver driver, WebElement element) {
+			return new WebDriverWait(driver, Duration.ofMillis(4000))
+					.until(ExpectedConditions.elementToBeClickable(element));
+		}
+		
+		/*Find whether element is clickable*/
+		public static boolean isElementClickable(WebDriver driver, By relativeLink, WebElement element) {
+			
+			try {
+				driver.findElement(RelativeLocator.with(relativeLink).above(element));
+				System.out.println("Element is clickable");
+				return true;
+			} catch (Exception e) {
+				System.out.println("Element is not clickable ");
+				return false;
+			}
+			
+		}
+						
 		/*Take a screen shot for the page in test without URL with takeScreenshot*/
 		public static String takeScreenImage(WebDriver driver, String path, String text, String testName) throws IOException {
 			//save date and time for image name

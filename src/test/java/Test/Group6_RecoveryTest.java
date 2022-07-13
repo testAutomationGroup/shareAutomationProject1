@@ -17,7 +17,7 @@ public class Group6_RecoveryTest extends HeadClass{
   public void beforeGroup6_RecoveryTest(String browser, String path) {
 	  System.out.println("Here we start");
 	  //Create test report file for report system sanity tests
-	  extent = ResultsBuilder.GetExtent("Group6_RecoveryTest tests");
+	  report = ResultsBuilder.GetExtent("Group6_RecoveryTest tests");
 	  System.out.println("Here we start again");
 	  
 	  try {
@@ -40,7 +40,7 @@ public class Group6_RecoveryTest extends HeadClass{
   public void AfterGroup6_RecoveryTest(String browser) throws InterruptedException {
 	  System.out.println("Group6_RecoveryTest ended for browser " + browser);
 	  FuncFile.waitForTimeThread(2000);
-	  extent.flush();
+	  report.flush();
 	  //driver.close();
   }
   
@@ -49,8 +49,8 @@ public class Group6_RecoveryTest extends HeadClass{
   public void TestCase6_1(String browser) throws IOException {
 	  String testName = "Group6_RecoveryTest_TestCase6.1";
 	  String Description = "6.1 Recovery from disconnections during trips creation";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -60,8 +60,8 @@ public class Group6_RecoveryTest extends HeadClass{
   public void TestCase6_2(String browser) throws IOException {
 	  String testName = "Group6_RecoveryTest_TestCase6.2";
 	  String Description = "6.2 Recovery from disconnections during reviews creation";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -71,8 +71,8 @@ public class Group6_RecoveryTest extends HeadClass{
   public void TestCase6_3(String browser) throws IOException {
 	  String testName = "Group6_RecoveryTest_TestCase6.3";
 	  String Description = "6.3 Recovery from disconnections while adding a place to visit";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -82,8 +82,8 @@ public class Group6_RecoveryTest extends HeadClass{
   public void TestCase6_4(String browser) throws IOException {
 	  String testName = "Group6_RecoveryTest_TestCase6.4";
 	  String Description = "6.4 Recovery from disconnections while adding image";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }

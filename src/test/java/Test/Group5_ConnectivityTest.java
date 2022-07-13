@@ -17,7 +17,7 @@ public class Group5_ConnectivityTest extends HeadClass{
   public void beforeGroup5_ConnectivityTest(String browser, String path) {
 	  System.out.println("Here we start");
 	  //Create test report file for report system sanity tests
-	  extent = ResultsBuilder.GetExtent("Group5_ConnectivityTest tests");
+	  report = ResultsBuilder.GetExtent("Group5_ConnectivityTest tests");
 	  System.out.println("Here we start again");
 	  
 	  try {
@@ -40,7 +40,7 @@ public class Group5_ConnectivityTest extends HeadClass{
   public void AfterGroup5_ConnectivityTest(String browser) throws InterruptedException {
 	  System.out.println("Group5_ConnectivityTest ended for browser " + browser);
 	  FuncFile.waitForTimeThread(2000);
-	  extent.flush();
+	  report.flush();
 	  //driver.close();
   }
   
@@ -49,8 +49,8 @@ public class Group5_ConnectivityTest extends HeadClass{
   public void TestCase5_1_1(String browser) throws IOException {
 	  String testName = "Group5_ConnectivityTest_TestCase5.1.1";
 	  String Description = "5.1.1 Site Logo connectivity";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -60,8 +60,8 @@ public class Group5_ConnectivityTest extends HeadClass{
   public void TestCase5_1_2(String browser) throws IOException {
 	  String testName = "Group5_ConnectivityTest_TestCase5.1.2";
 	  String Description = "5.1.2 Connect to profile connectivity";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -71,8 +71,8 @@ public class Group5_ConnectivityTest extends HeadClass{
   public void TestCase5_3(String browser) throws IOException {
 	  String testName = "Group5_ConnectivityTest_TestCase5.3";
 	  String Description = "5.3 Notifications connectivity";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -82,8 +82,8 @@ public class Group5_ConnectivityTest extends HeadClass{
   public void TestCase5_4(String browser) throws IOException {
 	  String testName = "Group5_ConnectivityTest_TestCase5.4";
 	  String Description = "5.4 Trips connectivity";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }

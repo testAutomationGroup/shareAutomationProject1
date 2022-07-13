@@ -69,20 +69,20 @@ public class ResultsFileBuilder extends HeadClass {
 	}
 	
 	/*Define testResult and save images into report folder*/
-	public void SendTestResult(ExtentTest test, WebDriver driver, String result, String testName, String browser) {
+	public void SendTestImage(ExtentTest test, WebDriver driver, String result, String testName, String browser) {
 		String imagepath="";
 		if (result == "PASS") {
 			
 			try {
 				imagepath = FuncFile.takeScreenImage(driver, ResultsFolder, "PASS", testName + " " + browser);
-				System.out.println("Test passed. Saved into file: " + imagepath);
+				System.out.println("Test passed " + testName + "  in browser " + browser + " Saved into file:"+ imagepath);
 			} catch (IOException e) {
-				System.out.println("Image not saved " + e.getMessage());
+				System.out.println("Image not saved for test " + testName + e.getMessage());
 				e.printStackTrace();
 			} catch (Exception e) {
-				System.out.println("Test failed. Saved into file:"+ imagepath);
+				System.out.println("Test failed " + testName + "  in browser " + browser + " Saved into file:"+ imagepath);
 			}
-			test.pass("PASS",MediaEntityBuilder.createScreenCaptureFromPath(imagepath).build());
+			test.info(MediaEntityBuilder.createScreenCaptureFromPath(imagepath).build());
 			
 		}else if(result == "FAIL") {
 			
@@ -93,7 +93,7 @@ public class ResultsFileBuilder extends HeadClass {
 				System.out.println("Image not saved " + e.getMessage());
 				e.printStackTrace();
 			}
-			test.fail("FAIL",MediaEntityBuilder.createScreenCaptureFromPath(imagepath).build());
+			test.info(MediaEntityBuilder.createScreenCaptureFromPath(imagepath).build());
 			
 		}
 	}

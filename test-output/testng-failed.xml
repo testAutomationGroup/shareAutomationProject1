@@ -10,13 +10,13 @@
   <test thread-count="3" parallel="tests" name="chromeTest(failed)">
     <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="Test.Group2_GUITest">
+      <class name="Test.Group1_SanityTest">
         <methods>
-          <include name="TestCase2_1_2_1_1" invocation-numbers="0"/>
-          <include name="beforeGroup2_GUITest"/>
-          <include name="AfterGroup2_GUITest"/>
+          <include name="beforeGroup1_SystemSanityTests"/>
+          <include name="AfterGroup1_SystemSanityTests"/>
+          <include name="TestCase1_2_1" invocation-numbers="0"/>
         </methods>
-      </class> <!-- Test.Group2_GUITest -->
+      </class> <!-- Test.Group1_SanityTest -->
     </classes>
   </test> <!-- chromeTest(failed) -->
 </suite> <!-- Failed suite [TestAll] -->

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>chromeTest</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>43/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jul 11 16:35:25 IDT 2022</td>
+<td>Started on:</td><td>Wed Jul 13 22:14:49 IDT 2022</td>
 </tr>
-<tr><td>Total time:</td><td>251 seconds (251873 ms)</td>
+<tr><td>Total time:</td><td>16 seconds (16320 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,23 +75,72 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Test.Group2_GUITest.TestCase2_1_2_1_1()'><b>TestCase2_1_2_1_1</b><br>Test class: Test.Group2_GUITest<br>Parameters: Chrome</td>
-<td><div><pre>java.lang.IllegalArgumentException: ScreenCapture path cannot be null or empty
-	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
-	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
-	at Test.ResultsFileBuilder.SendTestResult(ResultsFileBuilder.java:85)
-	at Test.Group2_GUITest.TestCase2_1_2_1_1(Group2_GUITest.java:64)
+<td title='Test.Group1_SanityTest.TestCase1_2_1()'><b>TestCase1_2_1</b><br>Test class: Test.Group1_SanityTest<br>Parameters: Chrome, https://www.tripadvisor.co.il</td>
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=103.0.5060.114)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: &apos;4.1.4&apos;, revision: &apos;535d840ee2&apos;
+System info: host: &apos;LAPTOP-NB3AD5GO&apos;, ip: &apos;192.168.1.161&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [44c9baf10b76b8033b89cc8f4f29cf0c, isElementDisplayed {id=6ba629f9-a494-4f4d-8e2c-95b3105089fe}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\arnon\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52312}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52312/devtoo..., se:cdpVersion: 103.0.5060.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (44c9baf10b76b8033b89cc8f4f29cf0c)] -&gt; css selector: ul[role=&apos;menu&apos;] li]
+Session ID: 44c9baf10b76b8033b89cc8f4f29cf0c
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:307)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:307)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:40)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:293)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:660)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at Test.Group1_SanityTest.TestCase1_2_1(Group1_SanityTest.java:194)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace711280466", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace711280466'><pre>java.lang.IllegalArgumentException: ScreenCapture path cannot be null or empty
-	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
-	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
-	at Test.ResultsFileBuilder.SendTestResult(ResultsFileBuilder.java:85)
-	at Test.Group2_GUITest.TestCase2_1_2_1_1(Group2_GUITest.java:64)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1646935587", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1646935587'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=103.0.5060.114)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: &apos;4.1.4&apos;, revision: &apos;535d840ee2&apos;
+System info: host: &apos;LAPTOP-NB3AD5GO&apos;, ip: &apos;192.168.1.161&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [44c9baf10b76b8033b89cc8f4f29cf0c, isElementDisplayed {id=6ba629f9-a494-4f4d-8e2c-95b3105089fe}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\arnon\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52312}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52312/devtoo..., se:cdpVersion: 103.0.5060.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (44c9baf10b76b8033b89cc8f4f29cf0c)] -&gt; css selector: ul[role=&apos;menu&apos;] li]
+Session ID: 44c9baf10b76b8033b89cc8f4f29cf0c
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:307)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:307)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:40)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:293)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:660)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at Test.Group1_SanityTest.TestCase1_2_1(Group1_SanityTest.java:194)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -116,231 +165,8 @@ function toggleAllBoxes() {
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 </pre></div></td>
-<td>14</td>
-<td>Test.Group2_GUITest@4afcd809</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='Test.Group7_InternationalityTest.TestCase7_3()'><b>TestCase7_3</b><br>Test class: Test.Group7_InternationalityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group7_InternationalityTest@1d296da</td></tr>
-<tr>
-<td title='Test.Group9_CompatibilityTest.TestCase9_1()'><b>TestCase9_1</b><br>Test class: Test.Group9_CompatibilityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>2</td>
-<td>Test.Group9_CompatibilityTest@75d4a5c2</td></tr>
-<tr>
-<td title='Test.Group3_UsefulnessTest.TestCase3_1_3()'><b>TestCase3_1_3</b><br>Test class: Test.Group3_UsefulnessTest<br>Parameters: Chrome</td>
-<td></td>
-<td>0</td>
-<td>Test.Group3_UsefulnessTest@175c2241</td></tr>
-<tr>
-<td title='Test.Group2_GUITest.TestCase2_1_1()'><b>TestCase2_1_1</b><br>Test class: Test.Group2_GUITest<br>Parameters: Chrome</td>
-<td></td>
-<td>5</td>
-<td>Test.Group2_GUITest@4afcd809</td></tr>
-<tr>
-<td title='Test.Group10_AccessibilityTest.TestCase10_3()'><b>TestCase10_3</b><br>Test class: Test.Group10_AccessibilityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>0</td>
-<td>Test.Group10_AccessibilityTest@557caf28</td></tr>
-<tr>
-<td title='Test.Group10_AccessibilityTest.TestCase10_4()'><b>TestCase10_4</b><br>Test class: Test.Group10_AccessibilityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>2</td>
-<td>Test.Group10_AccessibilityTest@557caf28</td></tr>
-<tr>
-<td title='Test.Group7_InternationalityTest.TestCase7_1()'><b>TestCase7_1</b><br>Test class: Test.Group7_InternationalityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>0</td>
-<td>Test.Group7_InternationalityTest@1d296da</td></tr>
-<tr>
-<td title='Test.Group4_ProcessesTest.TestCase4_1_2()'><b>TestCase4_1_2</b><br>Test class: Test.Group4_ProcessesTest<br>Parameters: Chrome</td>
-<td></td>
-<td>0</td>
-<td>Test.Group4_ProcessesTest@5bf0d49</td></tr>
-<tr>
-<td title='Test.Group2_GUITest.TestCase2_1_2_1_3()'><b>TestCase2_1_2_1_3</b><br>Test class: Test.Group2_GUITest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group2_GUITest@4afcd809</td></tr>
-<tr>
-<td title='Test.Group5_ConnectivityTest.TestCase5_1_2()'><b>TestCase5_1_2</b><br>Test class: Test.Group5_ConnectivityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>0</td>
-<td>Test.Group5_ConnectivityTest@5b7a5baa</td></tr>
-<tr>
-<td title='Test.Group6_RecoveryTest.TestCase6_3()'><b>TestCase6_3</b><br>Test class: Test.Group6_RecoveryTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group6_RecoveryTest@776aec5c</td></tr>
-<tr>
-<td title='Test.Group2_GUITest.TestCase2_1_2_1_2()'><b>TestCase2_1_2_1_2</b><br>Test class: Test.Group2_GUITest<br>Parameters: Chrome</td>
-<td></td>
-<td>10</td>
-<td>Test.Group2_GUITest@4afcd809</td></tr>
-<tr>
-<td title='Test.Group5_ConnectivityTest.TestCase5_1_1()'><b>TestCase5_1_1</b><br>Test class: Test.Group5_ConnectivityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>2</td>
-<td>Test.Group5_ConnectivityTest@5b7a5baa</td></tr>
-<tr>
-<td title='Test.Group9_CompatibilityTest.TestCase9_4()'><b>TestCase9_4</b><br>Test class: Test.Group9_CompatibilityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group9_CompatibilityTest@75d4a5c2</td></tr>
-<tr>
-<td title='Test.Group3_UsefulnessTest.TestCase3_1_2()'><b>TestCase3_1_2</b><br>Test class: Test.Group3_UsefulnessTest<br>Parameters: Chrome</td>
-<td></td>
-<td>0</td>
-<td>Test.Group3_UsefulnessTest@175c2241</td></tr>
-<tr>
-<td title='Test.Group10_AccessibilityTest.TestCase10_1()'><b>TestCase10_1</b><br>Test class: Test.Group10_AccessibilityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>0</td>
-<td>Test.Group10_AccessibilityTest@557caf28</td></tr>
-<tr>
-<td title='Test.Group6_RecoveryTest.TestCase6_2()'><b>TestCase6_2</b><br>Test class: Test.Group6_RecoveryTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group6_RecoveryTest@776aec5c</td></tr>
-<tr>
-<td title='Test.Group8_SecuringTest.TestCase8_4()'><b>TestCase8_4</b><br>Test class: Test.Group8_SecuringTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group8_SecuringTest@7c7a06ec</td></tr>
-<tr>
-<td title='Test.Group11_InterfacesTest.TestCase11_2()'><b>TestCase11_2</b><br>Test class: Test.Group11_InterfacesTest<br>Parameters: Chrome</td>
-<td></td>
-<td>6</td>
-<td>Test.Group11_InterfacesTest@408d971b</td></tr>
-<tr>
-<td title='Test.Group7_InternationalityTest.TestCase7_2()'><b>TestCase7_2</b><br>Test class: Test.Group7_InternationalityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group7_InternationalityTest@1d296da</td></tr>
-<tr>
-<td title='Test.Group5_ConnectivityTest.TestCase5_3()'><b>TestCase5_3</b><br>Test class: Test.Group5_ConnectivityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>6</td>
-<td>Test.Group5_ConnectivityTest@5b7a5baa</td></tr>
-<tr>
-<td title='Test.Group8_SecuringTest.TestCase8_3()'><b>TestCase8_3</b><br>Test class: Test.Group8_SecuringTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group8_SecuringTest@7c7a06ec</td></tr>
-<tr>
-<td title='Test.Group4_ProcessesTest.TestCase4_1_1()'><b>TestCase4_1_1</b><br>Test class: Test.Group4_ProcessesTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group4_ProcessesTest@5bf0d49</td></tr>
-<tr>
-<td title='Test.Group4_ProcessesTest.TestCase4_1_3()'><b>TestCase4_1_3</b><br>Test class: Test.Group4_ProcessesTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group4_ProcessesTest@5bf0d49</td></tr>
-<tr>
-<td title='Test.Group3_UsefulnessTest.TestCase3_1_1()'><b>TestCase3_1_1</b><br>Test class: Test.Group3_UsefulnessTest<br>Parameters: Chrome</td>
-<td></td>
-<td>0</td>
-<td>Test.Group3_UsefulnessTest@175c2241</td></tr>
-<tr>
-<td title='Test.Group8_SecuringTest.TestCase8_1()'><b>TestCase8_1</b><br>Test class: Test.Group8_SecuringTest<br>Parameters: Chrome</td>
-<td></td>
-<td>0</td>
-<td>Test.Group8_SecuringTest@7c7a06ec</td></tr>
-<tr>
-<td title='Test.Group3_UsefulnessTest.TestCase3_1_4()'><b>TestCase3_1_4</b><br>Test class: Test.Group3_UsefulnessTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group3_UsefulnessTest@175c2241</td></tr>
-<tr>
-<td title='Test.Group1_SanityTest.TestCase1_2_3()'><b>TestCase1_2_3</b><br>Test class: Test.Group1_SanityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group1_SanityTest@5e0e82ae</td></tr>
-<tr>
-<td title='Test.Group1_SanityTest.TestCase1_2_1()'><b>TestCase1_2_1</b><br>Test class: Test.Group1_SanityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>2</td>
-<td>Test.Group1_SanityTest@5e0e82ae</td></tr>
-<tr>
-<td title='Test.Group9_CompatibilityTest.TestCase9_3()'><b>TestCase9_3</b><br>Test class: Test.Group9_CompatibilityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>2</td>
-<td>Test.Group9_CompatibilityTest@75d4a5c2</td></tr>
-<tr>
-<td title='Test.Group11_InterfacesTest.TestCase11_1()'><b>TestCase11_1</b><br>Test class: Test.Group11_InterfacesTest<br>Parameters: Chrome</td>
-<td></td>
-<td>0</td>
-<td>Test.Group11_InterfacesTest@408d971b</td></tr>
-<tr>
-<td title='Test.Group9_CompatibilityTest.TestCase9_2()'><b>TestCase9_2</b><br>Test class: Test.Group9_CompatibilityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>0</td>
-<td>Test.Group9_CompatibilityTest@75d4a5c2</td></tr>
-<tr>
-<td title='Test.Group6_RecoveryTest.TestCase6_1()'><b>TestCase6_1</b><br>Test class: Test.Group6_RecoveryTest<br>Parameters: Chrome</td>
-<td></td>
-<td>5</td>
-<td>Test.Group6_RecoveryTest@776aec5c</td></tr>
-<tr>
-<td title='Test.Group11_InterfacesTest.TestCase11_4()'><b>TestCase11_4</b><br>Test class: Test.Group11_InterfacesTest<br>Parameters: Chrome</td>
-<td></td>
-<td>2</td>
-<td>Test.Group11_InterfacesTest@408d971b</td></tr>
-<tr>
-<td title='Test.Group6_RecoveryTest.TestCase6_4()'><b>TestCase6_4</b><br>Test class: Test.Group6_RecoveryTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group6_RecoveryTest@776aec5c</td></tr>
-<tr>
-<td title='Test.Group1_SanityTest.TestCase1_1_1()'><b>TestCase1_1_1</b><br>Test class: Test.Group1_SanityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group1_SanityTest@5e0e82ae</td></tr>
-<tr>
-<td title='Test.Group1_SanityTest.TestCase1_2_2()'><b>TestCase1_2_2</b><br>Test class: Test.Group1_SanityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group1_SanityTest@5e0e82ae</td></tr>
-<tr>
-<td title='Test.Group10_AccessibilityTest.TestCase10_2()'><b>TestCase10_2</b><br>Test class: Test.Group10_AccessibilityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group10_AccessibilityTest@557caf28</td></tr>
-<tr>
-<td title='Test.Group5_ConnectivityTest.TestCase5_4()'><b>TestCase5_4</b><br>Test class: Test.Group5_ConnectivityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>0</td>
-<td>Test.Group5_ConnectivityTest@5b7a5baa</td></tr>
-<tr>
-<td title='Test.Group7_InternationalityTest.TestCase7_4()'><b>TestCase7_4</b><br>Test class: Test.Group7_InternationalityTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group7_InternationalityTest@1d296da</td></tr>
-<tr>
-<td title='Test.Group4_ProcessesTest.TestCase4_1_4()'><b>TestCase4_1_4</b><br>Test class: Test.Group4_ProcessesTest<br>Parameters: Chrome</td>
-<td></td>
-<td>1</td>
-<td>Test.Group4_ProcessesTest@5bf0d49</td></tr>
-<tr>
-<td title='Test.Group8_SecuringTest.TestCase8_2()'><b>TestCase8_2</b><br>Test class: Test.Group8_SecuringTest<br>Parameters: Chrome</td>
-<td></td>
-<td>0</td>
-<td>Test.Group8_SecuringTest@7c7a06ec</td></tr>
-<tr>
-<td title='Test.Group11_InterfacesTest.TestCase11_3()'><b>TestCase11_3</b><br>Test class: Test.Group11_InterfacesTest<br>Parameters: Chrome</td>
-<td></td>
-<td>0</td>
-<td>Test.Group11_InterfacesTest@408d971b</td></tr>
+<td>9</td>
+<td>Test.Group1_SanityTest@4f83df68</td></tr>
 </table><p>
 </body>
 </html>

@@ -17,7 +17,7 @@ public class Group11_InterfacesTest extends HeadClass{
   public void beforeGroup11_InterfacesTest(String browser, String path) {
 	  System.out.println("Here we start");
 	  //Create test report file for report system sanity tests
-	  extent = ResultsBuilder.GetExtent("Group11_InterfacesTest tests");
+	  report = ResultsBuilder.GetExtent("Group11_InterfacesTest tests");
 	  System.out.println("Here we start again");
 	  
 	  try {
@@ -40,7 +40,7 @@ public class Group11_InterfacesTest extends HeadClass{
   public void AfterGroup11_InterfacesTest(String browser) throws InterruptedException {
 	  System.out.println("Group11_InterfacesTest ended for browser " + browser);
 	  FuncFile.waitForTimeThread(2000);
-	  extent.flush();
+	  report.flush();
 	  //driver.close();
   }
   
@@ -49,8 +49,8 @@ public class Group11_InterfacesTest extends HeadClass{
   public void TestCase11_1(String browser) throws IOException {
 	  String testName = "Group11_InterfacesTest_TestCase11.1";
 	  String Description = "11.1 Social networks interfaces";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -60,8 +60,8 @@ public class Group11_InterfacesTest extends HeadClass{
   public void TestCase11_2(String browser) throws IOException {
 	  String testName = "Group11_InterfacesTest_TestCase11.2";
 	  String Description = "11.2 Connect hotels orders from partner sites";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -71,8 +71,8 @@ public class Group11_InterfacesTest extends HeadClass{
   public void TestCase11_3(String browser) throws IOException {
 	  String testName = "Group11_InterfacesTest_TestCase11.3";
 	  String Description = "11.3 Connect flights orders from partner sites";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -82,8 +82,8 @@ public class Group11_InterfacesTest extends HeadClass{
   public void TestCase11_4(String browser) throws IOException {
 	  String testName = "Group11_InterfacesTest_TestCase11.4";
 	  String Description = "11.4 Connect cruise orders from partner sites";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }

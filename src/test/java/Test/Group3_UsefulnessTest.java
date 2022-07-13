@@ -17,7 +17,7 @@ public class Group3_UsefulnessTest extends HeadClass{
   public void beforeGroup3_UsefulnessTest(String browser, String path) {
 	  System.out.println("Here we start");
 	  //Create test report file for report system sanity tests
-	  extent = ResultsBuilder.GetExtent("Group3_UsefulnessTest tests");
+	  report = ResultsBuilder.GetExtent("Group3_UsefulnessTest tests");
 	  System.out.println("Here we start again");
 	  
 	  try {
@@ -40,7 +40,7 @@ public class Group3_UsefulnessTest extends HeadClass{
   public void AfterGroup3_UsefulnessTest(String browser) throws InterruptedException {
 	  System.out.println("Group3_UsefulnessTest ended for browser " + browser);
 	  FuncFile.waitForTimeThread(2000);
-	  extent.flush();
+	  report.flush();
 	  //driver.close();
   }
   
@@ -49,8 +49,8 @@ public class Group3_UsefulnessTest extends HeadClass{
   public void TestCase3_1_1(String browser) throws IOException {
 	  String testName = "Group3_UsefulnessTest_TestCase3.1.1";
 	  String Description = "3.1.1 Connect to profile";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -60,8 +60,8 @@ public class Group3_UsefulnessTest extends HeadClass{
   public void TestCase3_1_2(String browser) throws IOException {
 	  String testName = "Group3_UsefulnessTest_TestCase3.1.2";
 	  String Description = "3.1.2 Notifications and profile settings";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -71,8 +71,8 @@ public class Group3_UsefulnessTest extends HeadClass{
   public void TestCase3_1_3(String browser) throws IOException {
 	  String testName = "Group3_UsefulnessTest_TestCase3.1.3";
 	  String Description = "3.1.3 Trips";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
@@ -82,8 +82,8 @@ public class Group3_UsefulnessTest extends HeadClass{
   public void TestCase3_1_4(String browser) throws IOException {
 	  String testName = "Group3_UsefulnessTest_TestCase3.1.4";
 	  String Description = "3.1.4 References";
-	  test = extent.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestResult(test,driver, "PASS", testName, browser);
+	  test = report.createTest(testName + "_"+browser, Description);
+	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  Assert.assertTrue(true);
 	
   }
