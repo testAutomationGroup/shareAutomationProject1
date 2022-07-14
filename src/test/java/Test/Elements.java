@@ -43,15 +43,56 @@ public class Elements extends HeadClass{
 	@FindBy(css =".focusClear[type='email']")
 	WebElement emailTripadvisor;
 	
+	By emailByTripadvisor = By.cssSelector(".focusClear[type='email']");
+	
 	@FindBy(css = "[autocomplete='current-password'][placeholder='סיסמה']")
 	WebElement passwordTripadvisor;
 	
 	@FindBy(css = "#regSignIn .coreRegPrimaryButton")
 	WebElement signInButton;
 	
-	@FindBy(css = "img[height='100']")
+	@FindBy(css = "[href='/Profile/EladAr1']")
 	WebElement profileButton;
 
+	By profileByButton = By.cssSelector("[href='/Profile/EladAr1']");
+	
+	By profileMenu = By.cssSelector("[role='menu']");
+	
+	By profileMenuItem = By.cssSelector("ul[role='menu'] li");
+	
+	@FindBy(css = "#firstname")
+	WebElement AccountFirstName;
+	
+	@FindBy(css = "#lastname")
+	WebElement AccountFamilyName;
+	
+	@FindBy(css = ".email")
+	WebElement AccountEmail;
+	
+	@FindBy(css = "#submit")
+	WebElement AccountPageSaveButton;
+	
+	@FindBy(css = ".sessionSignout")
+	WebElement SignOutSeesions;
+	
+	@FindBy(css = ".inner .continueSignout")
+	WebElement continueSignOut;
+	
+	@FindBy(css = ".inner .signoutSuccess h3")
+	WebElement signOutAccountNotification;
+	
+	@FindBy(css = ".inner .closeSignout")
+	WebElement signOutCloseButton;
+	
+	@FindBy(css = "[href='/Inbox']")
+	WebElement notifications;
+	
+	@FindBy(css = "[role='searchbox']")
+	WebElement notificationsPageSearchRow;
+	
+	@FindBy(css = ".active")
+	WebElement resultsPageActiveTab;
+	
 	Elements(WebDriver driver){
 		System.out.println("Elements constructor");
 		this.driver = driver;

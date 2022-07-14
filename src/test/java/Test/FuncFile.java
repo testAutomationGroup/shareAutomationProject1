@@ -69,7 +69,10 @@ public class FuncFile extends HeadClass{
 		
 		public static WebDriver openBrowser(WebDriver driver, String browserName, String path) {
 			if (browserName.equals("Chrome")){
-				WebDriverManager.chromedriver().setup();
+				/*WebDriverManager.chromedriver().setup();*/
+				/* Define chrome driver path manually for chrome improved beta version 104 */ 
+				System.setProperty("webdriver.chrome.driver", "C:\\my files\\Selenium\\chromeDriver104\\chromedriver.exe");
+				
 				ChromeOptions options = new ChromeOptions(); 
 				/* Continue when the is password message in browser */
 				options.addArguments("--start-maximized");
@@ -82,7 +85,10 @@ public class FuncFile extends HeadClass{
 				options.setExperimentalOption("prefs", prefs);
 				/* Continue when there is not secured message in browser*/
 				options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+				/* Add chrome 104 beta improved version menually */
+				options.setBinary("C:\\Program Files\\Google\\Chrome Beta\\Application\\chrome.exe");
 				driver = new ChromeDriver(options); 
+				
 			}else if (browserName.equals("Firefox")){
 				WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver();				
@@ -143,6 +149,62 @@ public class FuncFile extends HeadClass{
 				return false;
 			}
 			
+		}
+		
+		/* Search element in the page */
+		public static boolean searchByElement(WebDriver driver, By byLocator) {
+			
+			try {
+				elements.initElements(driver);
+				driver.findElement(byLocator);
+				System.out.println("Element was found in page");
+				return true;
+			} catch (Exception e) {
+				System.out.println("Element not found with error " + e);
+				return false;
+			}
+		}
+		
+		/* Search element in the page */
+		public static boolean searchClickableElement(WebDriver driver, WebElement element) {
+			
+			try {
+				elements.initElements(driver);
+				WebElement found = new WebDriverWait(driver, Duration.ofMillis(4000)).until(ExpectedConditions.elementToBeClickable(element));
+				System.out.println("Element was found in page");
+				return true;
+			} catch (Exception e) {
+				System.out.println("Element not found with error " + e);
+				return false;
+			}
+		}
+		
+		/* Connect to existing profile */
+		public static void connectProfile(WebDriver driver, String email, String password) throws InterruptedException {
+			  elements.connectButton.click();
+			  elements.initElements(driver);
+			  FuncFile.waitForTimeThread(1000);
+			  driver.switchTo().frame(elements.googleIframe);
+	          driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+			  elements.tripadvisorButton.click();
+	          System.out.println("here3 " + email + " " + password);
+	          elements.initElements(driver);
+	          driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	          WebElement foundEmailRow = new WebDriverWait(driver, Duration.ofMillis(4000)).until(ExpectedConditions.presenceOfElementLocated(elements.emailByTripadvisor));
+	          elements.emailTripadvisor.sendKeys(email);
+	          elements.passwordTripadvisor.sendKeys(password);
+	          /* Validating that email and password exist and print their values */
+	          FuncFile.isSendKeys(elements.emailTripadvisor, "Email");
+	          FuncFile.isSendKeys(elements.passwordTripadvisor, "Password");
+	          driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	          elements.signInButton.click();
+	          
+	          /* Wait for signIn process and click profile button */
+	          System.out.println("Wait for signIn process");
+	          driver.switchTo().defaultContent();
+	          System.out.println(driver.getCurrentUrl());
+	          elements.initElements(driver);   
+	          FuncFile.searchByElement(driver, elements.profileByButton);
 		}
 						
 		/*Take a screen shot for the page in test without URL with takeScreenshot*/
@@ -242,6 +304,16 @@ public class FuncFile extends HeadClass{
 			return result;
 		}
 		
+		/* Finds if input row has text from sendkeys function */
+		public static boolean isSendKeys(WebElement inputElement, String inputName) {
+			if (inputElement.getAttribute("value")!="") {
+	        	  System.out.println(inputName + " value is " + inputElement.getAttribute("value"));
+	        	  return true;
+	          }else {
+	        	  System.out.println(inputName + " is missing");
+	        	  return false;
+	          }
+		}
 		/*Create excel file*/
 	/*	public static String createFile(String folder) throws IOException {
 			SimpleDateFormat formatter = new SimpleDateFormat("ddMMyy_HHmmss"); 

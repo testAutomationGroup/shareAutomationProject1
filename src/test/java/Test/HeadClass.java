@@ -15,6 +15,7 @@ public class HeadClass {
 	public static ExtentReports report;
 	public static ExtentTest test;
 	public static Status stepStatus;
+	public static Elements elements = new Elements(driver);
 	//ResultsFileBuilder ResultsBuilder = new ResultsFileBuilder(driver);
 		
 }
