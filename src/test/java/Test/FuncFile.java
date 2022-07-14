@@ -138,7 +138,7 @@ public class FuncFile extends HeadClass{
 		}
 		
 		/*Find whether element is clickable*/
-		public static boolean isElementClickable(WebDriver driver, By relativeLink, WebElement element) {
+		public static boolean isRelativeElementClickable(WebDriver driver, By relativeLink, WebElement element) {
 			
 			try {
 				driver.findElement(RelativeLocator.with(relativeLink).above(element));
@@ -196,6 +196,7 @@ public class FuncFile extends HeadClass{
 	          /* Validating that email and password exist and print their values */
 	          FuncFile.isSendKeys(elements.emailTripadvisor, "Email");
 	          FuncFile.isSendKeys(elements.passwordTripadvisor, "Password");
+	          FuncFile.waitForTimeThread(1000);
 	          driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	          elements.signInButton.click();
 	          
@@ -205,6 +206,50 @@ public class FuncFile extends HeadClass{
 	          System.out.println(driver.getCurrentUrl());
 	          elements.initElements(driver);   
 	          FuncFile.searchByElement(driver, elements.profileByButton);
+		}
+		
+		/* Select specific trip */
+		public static WebElement selectTrip(WebDriver driver, int tripNumber) throws InterruptedException {
+			driver.get("https://www.tripadvisor.co.il/Trips");
+			FuncFile.waitForTimeThread(3000);
+			driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+			elements.initElements(driver);
+			List<WebElement> trips = driver.findElements(elements.tripsCatalog);
+			return trips.get(tripNumber-1);
+		}
+		
+		/* Clean trip and trips copy from catalog */
+		public static void cleanTrip(WebDriver driver, int tripNumber) throws InterruptedException {
+			driver.get("https://www.tripadvisor.co.il/Trips");
+			WebElement trip = FuncFile.selectTrip(driver, tripNumber);
+			trip.click();
+			driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+			elements.initElements(driver);
+			elements.tripMenu.click();
+			List<WebElement> tripMenu = elements.tripMenuItems;
+			tripMenu.get(6).click();
+			elements.removeButton.click();
+		}
+		
+		/* Find page path for the created trip */
+		static public String findTripsPagePath(WebDriver driver) {
+			driver.get("https://www.tripadvisor.co.il");
+			elements.trips.click();
+			driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+			elements.initElements(driver);
+			elements.tripsInCatalog.get(0).click();
+			driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+			return driver.getCurrentUrl();
+		}
+		
+		/* Wait until sendkeys inserted */
+		static public Boolean waitForSendKeys(WebDriver driver, WebElement element, String value) {
+	       return new WebDriverWait(driver, Duration.ofMillis(4000)).until(ExpectedConditions.attributeToBe(element, "value", value));  
+		}
+		
+		/* Wait until text presented in element */
+		static public Boolean waitForTextPresence(WebDriver driver, WebElement element, String value) {
+	       return new WebDriverWait(driver, Duration.ofMillis(4000)).until(ExpectedConditions.textToBePresentInElement(element, value));
 		}
 						
 		/*Take a screen shot for the page in test without URL with takeScreenshot*/

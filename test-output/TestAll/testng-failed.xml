@@ -13,8 +13,9 @@
       <class name="Test.Group1_SanityTest">
         <methods>
           <include name="beforeGroup1_SystemSanityTests"/>
+          <include name="TestCase1_2_2" invocation-numbers="0"/>
+          <include name="TestCase1_1_1" invocation-numbers="0"/>
           <include name="AfterGroup1_SystemSanityTests"/>
-          <include name="TestCase1_2_1" invocation-numbers="0"/>
         </methods>
       </class> <!-- Test.Group1_SanityTest -->
     </classes>

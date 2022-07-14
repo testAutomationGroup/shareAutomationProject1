@@ -1,5 +1,7 @@
 package Test;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -92,6 +94,152 @@ public class Elements extends HeadClass{
 	
 	@FindBy(css = ".active")
 	WebElement resultsPageActiveTab;
+	
+	@FindBy(css = "[href='/Inbox?archived=true']")
+	WebElement archiveButton;
+	
+	@FindBy(css = "[href='/Settings-cs']")
+	WebElement settingsButton;
+	
+	@FindBy(css = "[href='https://www.tripadvisorsupport.com/hc/he/articles/200613517']")
+	WebElement commonQuestions;
+	
+	@FindBy(css = ".PHAlC")
+	WebElement createTrip;
+	
+	@FindBy(css = "[name='tripName']")
+	WebElement tripNameInput;
+	
+	@FindBy(css = "button.AeLHi")
+	WebElement innerCreateButton;
+	
+	By tripsCatalog = By.cssSelector(".saAkf");
+	
+	@FindBy(css = ".saAkf")
+	List<WebElement> tripsInCatalog;
+	
+	@FindBy(css = ".RhvFy")
+	WebElement tripPageName;
+	
+	@FindBy(css = "[for='trips_radio_4']")
+	WebElement tripsPrivacyButton;
+	
+	@FindBy(css = ".MVUuZ")
+	WebElement tripMenu;
+	
+	@FindBy(css = "ul.MYndQ li")
+	List<WebElement> tripMenuItems;
+	
+	@FindBy(css = ".primary")
+	WebElement removeButton;
+	
+	@FindBy(css = ".ui_input_text")
+	WebElement placeSearchInput;
+	
+	@FindBy(css = ".inocc")
+	List<WebElement> placeSearchItems;
+	
+	@FindBy(css = "[href='/Hotel_Review-g293980-d308227-Reviews-Americana_Hotel-Eilat_Southern_District.html']")
+	WebElement hotelName;
+	
+	@FindBy(css = ".socialCTA")
+	WebElement shareTripButton;
+	
+	@FindBy(css = "li.ui_link")
+	List<WebElement> shareMenuItems;
+	
+	@FindBy(css = "[role='searchbox']")
+	WebElement tripSearchInput;
+	
+	@FindBy(css = ".JnwVR")
+	WebElement addsTripDates;
+	
+	@FindBy(css = ".QHIaI")
+	WebElement datesSelect;
+	
+	@FindBy(css = ".QHIaI")
+	List<WebElement> selectDatesInMenu;
+	
+	@FindBy(css = ".calendar")
+	List<WebElement> calendar;
+	
+	@FindBy(css = "[role='gridcell'][tabindex='0']")
+	WebElement clenderDay1ThisMonth;
+	
+	@FindBy(css = ".primary")
+	WebElement saveDatesButton;
+	
+	@FindBy(css = ".primary")
+	WebElement tripDates;
+	
+	@FindBy(css = ".Erzxb .primary")
+	WebElement tripUpdateSaveButton;
+	
+	@FindBy(css = "[name='description']")
+	WebElement tripDescriptionInput;
+	
+	@FindBy(css = ".fIrGe ._a")
+	WebElement tripDescription;
+	
+	@FindBy(css = "#trip_title")
+	WebElement updateTripNameInput;
+	
+	@FindBy(css = "#trip_url")
+	WebElement addTripLinkInput;
+	
+	@FindBy(css = ".rmyCe")
+	WebElement addLinkButton;
+	
+	@FindBy(css = ".rmyCe")
+	WebElement addLinkButton2;
+	
+	@FindBy(css = "[href='https://www.tripadvisor.co.il/Trips/115851948'] .b")
+	WebElement tripLinkDescription;
+	
+	@FindBy(css = ".UcrlT")
+	List<WebElement> privacyButtons;
+	
+	@FindBy(css = ".primary")
+	WebElement saveTripPrivacySettings;
+	
+	@FindBy(css = ".primary")
+	List<WebElement> continueWithDates;
+	
+	@FindBy(css = ".bohqm")
+	List<WebElement> tripLikes;
+	
+	@FindBy(css = "#note_title")
+	WebElement noteHeadline;
+	
+	@FindBy(css = "[name='body']")
+	WebElement noteText;
+	
+	@FindBy(css = ".wEfhf [type='submit']")
+	WebElement saveNote;
+	
+	@FindBy(css = ".cRnyv")
+	WebElement noteDescription;
+	
+	@FindBy(css = ".primary")
+	WebElement saveTripCopy;
+	
+	@FindBy(css = "#map_container_column")
+	WebElement mapArea;
+	
+	@FindBy(css = "[role='button'][tabindex='-1']")
+	WebElement zoomIn;
+	
+	@FindBy(css = "[role='button'][tabindex='-2']")
+	WebElement zoomOut;
+	
+	@FindBy(css = ".wyvSS")
+	WebElement allTripsTab;
+	
+	@FindBy(css = ".BlFsg")
+	List<WebElement> tripsTab;
+	
+	@FindBy(css = ".KSVvt")
+	List<WebElement> savedPlaces;
 	
 	Elements(WebDriver driver){
 		System.out.println("Elements constructor");
