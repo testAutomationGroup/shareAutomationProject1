@@ -241,6 +241,37 @@ public class Elements extends HeadClass{
 	@FindBy(css = ".KSVvt")
 	List<WebElement> savedPlaces;
 	
+	@FindBy(css = ".EnLFm")
+	WebElement setProfileButton;
+	
+	@FindBy(css = ".photo.sBHmh")
+	WebElement setProfileImage;
+	
+	@FindBy(css = "input.R2")
+	List<WebElement> setProfileInputs;
+	
+	@FindBy(css = ".Fwwhu")
+	WebElement loadImage;
+	
+	@FindBy(css = ".Fwwhu")
+	WebElement loadFrontImage;
+	
+	
+	@FindBy(css = ".primary")
+	WebElement saveProfileSettings;
+	
+	@FindBy(css = ".brsfY")
+	WebElement profileName;
+	
+	@FindBy(css = ".NIgFo")
+	WebElement setProfileMenu;
+	
+	@FindBy(css = "li .ui_link")
+	List<WebElement> setProfileMenuItems;
+	
+	@FindBy(css = "[href='/AccountMerge']")
+	WebElement AccountGroup;
+	
 	Elements(WebDriver driver){
 		System.out.println("Elements constructor");
 		this.driver = driver;
