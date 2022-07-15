@@ -27,6 +27,9 @@ public class Elements extends HeadClass{
 	@FindBy(css="[href='/Hotels']")
 	WebElement hotels;
 	
+	@FindBy(css = ".EtzER")
+	List<WebElement> searchHotelItems;
+	
 	@FindBy(css="[href='/Trips']")
 	WebElement trips;
 	
@@ -274,6 +277,54 @@ public class Elements extends HeadClass{
 	
 	@FindBy(css = ".rNZKv")
 	List<WebElement> sharesFollowersButtons;
+	
+	@FindBy(css = "[href='/UserReview']")
+	WebElement referencesPageButton;
+	
+	@FindBy(css = ".aThUm[type='search']")
+	WebElement referenceSearchInput;
+		
+	@FindBy(css = ".EtzER")
+	List<WebElement> referenceSearchMenuItems;
+	
+	@FindBy(css = ".reviewHeader .propertyname")
+	WebElement referenceHeader;
+
+	@FindBy(css = "#SUBMIT")
+	WebElement sendReference;
+	
+	@FindBy(css = "fieldset .error")
+	List<WebElement> referenceFilledError;
+	
+	@FindBy(css = ".uploadButtons .buttonTextDefault")
+	WebElement ReferenceAddImageButton;
+	
+	@FindBy(css = ".inner .addPhotoBtn")
+	WebElement ReferenceInnerAddImageButton;
+	
+	@FindBy(css = ".uploadBtn")
+	WebElement ReferenceLoadImageButton;
+	
+	@FindBy(css = ".file .radioOption")
+	List<WebElement> imageCategory; 
+	
+	@FindBy(css = "#i-agree")
+	WebElement ReferenceLoadImageAgreement;
+	
+	@FindBy(css =".photo")
+	List<WebElement> referenceImages; 
+	
+	@FindBy(css = "[href='/Attractions']")
+	WebElement thingsToDo;
+
+	@FindBy(css =".EtzER")
+	List<WebElement> thingsToDoMenuItems;
+	
+	@FindBy(css = ".mdkdE")
+	List<WebElement> thingsToDoEilat;
+	
+	@FindBy(css = "[data-tab-name='מפת נסיעות']")
+	WebElement travelingMap;
 	
 	Elements(WebDriver driver){
 		System.out.println("Elements constructor");
