@@ -56,7 +56,7 @@ public class Group2_GUITest extends HeadClass{
   }
   
   @Parameters({"browser"})
-  @Test(enabled = false, priority = 1)
+  @Test(enabled = true, priority = 1)
   public void TestCase2_1_1(String browser) throws IOException, InterruptedException {
 	  String testName = "Group2_GUITest_TestCase2.1.1";
 	  String Description = "2.1.1 Website Logo";
@@ -106,7 +106,7 @@ public class Group2_GUITest extends HeadClass{
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = false, priority = 2)
+  @Test(enabled = true, priority = 2)
   public void TestCase2_1_2_1_1(String browser, String path) throws IOException, ParserConfigurationException, SAXException, InterruptedException {
 	  String testName = "Group2_GUITest_TestCase2.1.2.1.1";
 	  String Description = "2.1.2.1.1 Profile image update";
@@ -133,8 +133,7 @@ public class Group2_GUITest extends HeadClass{
 		ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
 		Assert.fail("Connectivity windows not opened");
 		
-	  }
-	  
+	  } 
 	  
 	  /* Step 2*/
 	  System.out.println("TestCase2.1.2.1.1 Step 2");
@@ -173,6 +172,7 @@ public class Group2_GUITest extends HeadClass{
 		}
 	  
 	  /* Step 3 */
+	  System.out.println("TestCase2.1.2.1.1 Step 3");
 	  elements.setProfileButton.click();
 	  FuncFile.searchClickableElement(driver, elements.setProfileImage);
 	  elements.initElements(driver);
@@ -185,35 +185,40 @@ public class Group2_GUITest extends HeadClass{
 	  if (profileName.equals("Elad test")){
 		  test.log(stepStatus.PASS, "Profile name updated");
 		  elements.initElements(driver);
+		  elements.setProfileButton.click();
+		  elements.initElements(driver);
 		  elements.setProfileInputs.get(0).clear();
 		  FuncFile.waitForTimeThread(1000);
 		  elements.setProfileInputs.get(0).sendKeys("Elad");
 		  elements.saveProfileSettings.click();
-		  
+		  FuncFile.logOutFromProfile(driver);
+		  System.out.println("Here");
 	  }else {
 		  test.log(stepStatus.FAIL, "Profile name is not updated");
 		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
 		  Assert.fail("Profile name is not updated");
 	  }
+	  
 	
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = false, priority = 3)
+  @Test(enabled = true, priority = 3)
   public void TestCase2_1_2_1_2(String browser, String path) throws IOException, ParserConfigurationException, SAXException, InterruptedException {
 	  String testName = "Group2_GUITest_TestCase2.1.2.1.2";
 	  String Description = "2.1.2.1.2 Profile details update";
 	  test = report.createTest(testName + "_"+browser, Description);
 	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
-	  Assert.assertTrue(true);
+	  
 	  /* Step 1*/
 	  System.out.println("TestCase2.1.2.1.2 Step 1");
 	  System.out.println(path);
 	  driver.get(path);
+	  System.out.println("here1");
+	  FuncFile.waitForTimeThread(1000);
 	  elements.initElements(driver);
 	  elements.connectButton.click();
 	  try {
-
 		System.out.println("step1");
 		elements.initElements(driver);
 		driver.switchTo().frame(elements.googleIframe);
@@ -228,7 +233,6 @@ public class Group2_GUITest extends HeadClass{
 		
 	  }
 	  
-	  
 	  /* Step 2*/
 	  System.out.println("TestCase2.1.2.1.2 Step 2");
 	  driver.get(path);
@@ -239,7 +243,7 @@ public class Group2_GUITest extends HeadClass{
       elements.profileButton.click();
       System.out.println("Button was clicked");
 	  
-      /* Wait for profile menu presence and click page name */
+      /* Wait for profile menu presence and click profile page name */
       driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
       WebElement menu = new WebDriverWait(driver, Duration.ofMillis(4000)).until(ExpectedConditions.presenceOfElementLocated(elements.profileMenu));
 	  List<WebElement> menuItems = driver.findElements(elements.profileMenuItem);
@@ -417,15 +421,82 @@ public class Group2_GUITest extends HeadClass{
 	
   }
   
-  @Parameters({"browser"})
+  @Parameters({"browser", "path"})
   @Test(enabled = true, priority = 4)
-  public void TestCase2_1_2_1_3(String browser) throws IOException {
+  public void TestCase2_1_2_1_3(String browser, String path) throws IOException, ParserConfigurationException, SAXException, InterruptedException {
 	  String testName = "Group2_GUITest_TestCase2.1.2.1.3";
 	  String Description = "2.1.2.1.3 Profile statistics and shares";
 	  test = report.createTest(testName + "_"+browser, Description);
 	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
-	  Assert.assertTrue(true);
-	
+	  
+	  /* Step 1*/
+	  System.out.println("TestCase2.1.2.1.3 Step 1");
+	  System.out.println(path);
+	  driver.get(path);
+	  elements.initElements(driver);
+	  elements.connectButton.click();
+	  try {
+
+		System.out.println("step 1");
+		elements.initElements(driver);
+		driver.switchTo().frame(elements.googleIframe);
+		FuncFile.waitForTimeThread(1000);
+		WebElement ConnectivityWindow = driver.findElement(By.cssSelector("#regBody"));
+		test.log(stepStatus.PASS, "Connectivity windows opened");
+	  } catch (Exception e) {
+		System.out.println(e);
+		test.log(stepStatus.FAIL, "Connectivity windows not opened");
+		ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
+		Assert.fail("Connectivity windows not opened");
+		
+	  }
+	  
+	  /* Step 2 */
+	  driver.get(path);
+	  System.out.println("TestCase2.1.2.1.3 Step 2");
+      String email = FuncFile.importConfigurationsData("email");
+      String password = FuncFile.importConfigurationsData("password");
+	  FuncFile.connectProfile(driver, email, password);
+      
+      elements.profileButton.click();
+      System.out.println("Button was clicked");
+      /* Wait for profile menu presence and click profile page name */
+      driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+      WebElement menu = new WebDriverWait(driver, Duration.ofMillis(4000)).until(ExpectedConditions.presenceOfElementLocated(elements.profileMenu));
+	  List<WebElement> menuItems = driver.findElements(elements.profileMenuItem);
+	  WebElement viewProfile = menuItems.get(0);
+	  System.out.println("menu line is " + viewProfile.getText());
+	  viewProfile.click();
+	  
+	  /* Wait for page to load and print site address */
+	  try {
+		  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+		  String siteAddress = driver.getCurrentUrl();
+		  System.out.println("siteAddress is " + siteAddress);
+		  
+		  /* Updating step pass/fail in results file */
+		  if (siteAddress.equals("https://www.tripadvisor.co.il/Profile/EladAr1")) {
+			  test.log(stepStatus.PASS, "Profile page was opened");
+		  }else {
+			  test.log(stepStatus.FAIL, "Profile page was not opened");
+			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
+			  Assert.fail("Profile page was not opened");
+		  }
+		} catch (Exception e) {
+			System.out.println("Page not loaded " + e);
+		}
+	  
+	  /* Step 3 */
+	  System.out.println("TestCase2.1.2.1.3 Step 3");
+	  elements.initElements(driver);
+	  boolean found = FuncFile.searchElement(driver, elements.sharesFollowersButtons.get(0));
+	  if (found) {
+		  test.log(stepStatus.PASS, "Shares and follwers presented");
+	  }else {
+	  	  test.log(stepStatus.FAIL, "Shares and follwers not presented");
+	  	  ResultsBuilder.SendTestImage(test, driver, "PASS", testName, browser);
+	  	  Assert.fail("Shares and follwers not presented");
+	  	  }
   }
   
 }

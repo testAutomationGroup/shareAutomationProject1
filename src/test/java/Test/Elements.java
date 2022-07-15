@@ -272,6 +272,9 @@ public class Elements extends HeadClass{
 	@FindBy(css = "[href='/AccountMerge']")
 	WebElement AccountGroup;
 	
+	@FindBy(css = ".rNZKv")
+	List<WebElement> sharesFollowersButtons;
+	
 	Elements(WebDriver driver){
 		System.out.println("Elements constructor");
 		this.driver = driver;

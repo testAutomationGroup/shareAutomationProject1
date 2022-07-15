@@ -151,7 +151,7 @@ public class FuncFile extends HeadClass{
 			
 		}
 		
-		/* Search element in the page */
+		/* Search element in the page with by locator*/
 		public static boolean searchByElement(WebDriver driver, By byLocator) {
 			
 			try {
@@ -166,6 +166,20 @@ public class FuncFile extends HeadClass{
 		}
 		
 		/* Search element in the page */
+		public static boolean searchElement(WebDriver driver, WebElement element) {
+			
+			try {
+				elements.initElements(driver);
+				element.getTagName();
+				System.out.println("Element was found in page");
+				return true;
+			} catch (Exception e) {
+				System.out.println("Element not found with error " + e);
+				return false;
+			}
+		}
+		
+		/* Search clickable element in the page */
 		public static boolean searchClickableElement(WebDriver driver, WebElement element) {
 			
 			try {
@@ -179,6 +193,11 @@ public class FuncFile extends HeadClass{
 			}
 		}
 		
+		/* Search if page contains text*/
+		public static boolean isTextInPage(WebDriver driver, String text) {
+			return driver.getPageSource().contains(text);
+		}
+					
 		/* Connect to existing profile */
 		public static void connectProfile(WebDriver driver, String email, String password) throws InterruptedException {
 			  elements.connectButton.click();
@@ -206,6 +225,21 @@ public class FuncFile extends HeadClass{
 	          System.out.println(driver.getCurrentUrl());
 	          elements.initElements(driver);   
 	          FuncFile.searchByElement(driver, elements.profileByButton);
+		}
+		
+		/* Log out from profile */
+		public static void logOutFromProfile(WebDriver driver) throws InterruptedException {
+			  driver.get("https://www.tripadvisor.co.il/");
+		      elements.profileButton.click();
+		      System.out.println("Button was clicked for log out");
+		      /* Wait for profile menu presence and click profile page name */
+		      driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+		      WebElement menu = new WebDriverWait(driver, Duration.ofMillis(4000)).until(ExpectedConditions.presenceOfElementLocated(elements.profileMenu));
+			  List<WebElement> menuItems = driver.findElements(elements.profileMenuItem);
+			  WebElement logOutProfile = menuItems.get(2);
+			  System.out.println("menu line is " + logOutProfile.getText());
+			  logOutProfile.click();
+			  FuncFile.waitForTimeThread(1000);
 		}
 		
 		/* Select specific trip */
@@ -316,15 +350,10 @@ public class FuncFile extends HeadClass{
 			return stopper;
 		}
 		
-		/*Stop stopper*/
+		/* Stop stopper*/
 		public static double stopStopper(StopWatch stopper) {
 			stopper.stop();
 			return stopper.getTime()/1000.0;
-		}
-		
-		/*Check if page contains text*/
-		public static boolean isTextInPage(WebDriver driver, String text) {
-			return driver.getPageSource().contains(text);
 		}
 		
 		/*Move to tab number #*/
