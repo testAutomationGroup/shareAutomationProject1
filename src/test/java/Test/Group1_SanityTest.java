@@ -432,7 +432,7 @@ public class Group1_SanityTest extends HeadClass{
 		  /* Step 3 and 4*/
 		  System.out.println("1.2.3 Trips test Step 3 and 4");
 		  elements.tripNameInput.sendKeys("Trip to Eilat");
-		  elements.innerCreateButton.click();
+		  elements.innerCreateTripButton.click();
 		  WebElement eilatTrip = FuncFile.selectTrip(driver, 1);
 		  eilatTrip.click();
 		  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));

@@ -364,7 +364,7 @@ public class Group3_UsefulnessTest extends HeadClass{
 	  /* Step 3 and 4*/
 	  System.out.println("3.1.3 Trips test Step 3 and 4");
 	  elements.tripNameInput.sendKeys("Trip to Eilat");
-	  elements.innerCreateButton.click();
+	  elements.innerCreateTripButton.click();
 	  WebElement eilatTrip = FuncFile.selectTrip(driver, 1);
 	  eilatTrip.click();
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));

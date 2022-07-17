@@ -27,6 +27,36 @@ public class Elements extends HeadClass{
 	@FindBy(css="[href='/Hotels']")
 	WebElement hotels;
 	
+	@FindBy(css="button.Wh")
+	WebElement moreButton;
+	
+	@FindBy(css="#menu-item-0 .biGQs")
+	WebElement createPlaceButton;
+	
+	@FindBy(css=".RCAPL")
+	List<WebElement> creatPlaceMenuItems;
+	
+	@FindBy(css=".gWELN button")
+	WebElement creatPlaceContinueButton;
+	
+	@FindBy(css = "input[name='propertyName']")
+	WebElement placeNameInput;
+	
+	@FindBy(css = ".CIFNo input")
+	List<WebElement> placeAddressInput;
+	
+	@FindBy(css = "input[name='addressOne']")
+	WebElement placeAddressBuilding;
+	
+	@FindBy(css = ".AeLHi .ttuOS")
+	WebElement placeFormInnerContinueButton;
+	
+	@FindBy(css = ".RCAPL")
+	List<WebElement> placeCategory;
+	
+	@FindBy(css = ".UZwOE")
+	List<WebElement> placeAdressInpuItems;
+	
 	@FindBy(css = ".kaEuY [role='search'] input[role='searchbox']")
 	WebElement hotelsSearchInput;
 	
@@ -38,6 +68,9 @@ public class Elements extends HeadClass{
 	
 	@FindBy(css="[href='/Trips']")
 	WebElement trips;
+	
+	@FindBy(css=".oULUR")
+	WebElement tripsConnectNow;
 	
 	@FindBy(css= "[title='regcontroller']")
 	WebElement googleIframe;
@@ -151,7 +184,7 @@ public class Elements extends HeadClass{
 	WebElement tripNameInput;
 	
 	@FindBy(css = "button.AeLHi")
-	WebElement innerCreateButton;
+	WebElement innerCreateTripButton;
 	
 	By tripsCatalog = By.cssSelector(".saAkf");
 	
@@ -326,7 +359,28 @@ public class Elements extends HeadClass{
 	
 	@FindBy(css = ".reviewHeader .propertyname")
 	WebElement referenceHeader;
+		
+	@FindBy(css = ".bubble_40")
+	WebElement referenceRankink;
+	
+	@FindBy(css = "#ReviewText")
+	WebElement referenceTextArea;
+	
+	@FindBy(css = "#trip_date_month_year")
+	WebElement referenceWhenVisited;
 
+	@FindBy(css = "[name='trip_date_month_year']")
+	List<WebElement> referenceDatesVisitid;
+	
+	@FindBy(css = "#qid505")
+	WebElement referenceVisitedWith;
+	
+	@FindBy(css = ".confirmedBooker.required")
+	List<WebElement> referenceVisitedWithItems;
+	
+	@FindBy(css = ".checkbox")
+	WebElement referenceAgreement;
+	
 	@FindBy(css = "#SUBMIT")
 	WebElement sendReference;
 	
@@ -404,6 +458,9 @@ public class Elements extends HeadClass{
 	
 	@FindBy(css = ".heading")
 	WebElement subscribersSettingHeadline;
+	
+	@FindBy(css = ".hakMy img")
+	WebElement sharedLoadImage;
 	
 	Elements(WebDriver driver){
 		System.out.println("Elements constructor");

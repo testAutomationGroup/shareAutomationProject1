@@ -10,6 +10,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -265,6 +268,19 @@ public class FuncFile extends HeadClass{
 			elements.removeButton.click();
 		}
 		
+		/* Clean trip and trips copy from catalog */
+		public static void cleanTripWithoutLink(WebDriver driver, int tripNumber) throws InterruptedException {
+			driver.get("https://www.tripadvisor.co.il/Trips");
+			WebElement trip = FuncFile.selectTrip(driver, tripNumber);
+			trip.click();
+			driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+			elements.initElements(driver);
+			elements.tripMenu.click();
+			List<WebElement> tripMenu = elements.tripMenuItems;
+			tripMenu.get(5).click();
+			elements.removeButton.click();
+		}
+		
 		/* Find page path for the created trip */
 		static public String findTripsPagePath(WebDriver driver) {
 			driver.get("https://www.tripadvisor.co.il");
@@ -291,6 +307,24 @@ public class FuncFile extends HeadClass{
 		static public Boolean waitForTextPresence(WebDriver driver, WebElement element, String value) {
 	       return new WebDriverWait(driver, Duration.ofMillis(4000)).until(ExpectedConditions.textToBePresentInElement(element, value));
 		}
+		
+		/* Test that Internet is connected */
+		static public boolean isConnectedInternet() {
+			try {
+		         URL url = new URL("http://www.google.com");
+		         URLConnection connection = url.openConnection();
+		         connection.connect();
+		         System.out.println("Internet is connected");
+		    	  return true;
+		      } catch (MalformedURLException e) {
+		         System.out.println("Internet is not connected");
+		    	  return false;
+		      } catch (IOException e) {
+		          System.out.println("Internet is not connected");
+		    	  return false;
+		      }
+		}
+		
 						
 		/*Take a screen shot for the page in test without URL with takeScreenshot*/
 		public static String takeScreenImage(WebDriver driver, String path, String text, String testName) throws IOException {
