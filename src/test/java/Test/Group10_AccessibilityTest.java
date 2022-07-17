@@ -3,7 +3,9 @@ package Test;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.time.Duration;
 
+import org.sikuli.hotkey.Keys;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -44,49 +46,64 @@ public class Group10_AccessibilityTest extends HeadClass{
 	  //driver.close();
   }
   
-  @Parameters({"browser"})
-  @Test(alwaysRun = true, priority = 1)
-  public void TestCase10_1(String browser) throws IOException {
+  @Parameters({"browser", "path"})
+  @Test(enabled = true, priority = 1)
+  public void TestCase10_1(String browser, String path) throws IOException, InterruptedException {
 	  String testName = "Group10_AccessibilityTest_TestCase10.1";
 	  String Description = "10.1 Accessibility tab";
 	  test = report.createTest(testName + "_"+browser, Description);
 	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
-	  Assert.assertTrue(true);
-	
+	  
+	  /* Step 1 */
+	  System.out.println("TestCase10.1 Step 1");
+	  driver.get(path);
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  elements.initElements(driver);
+	  elements.mainSearchInput.sendKeys("Accessibility");
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  elements.initElements(driver);
+	  elements.mainSearchInput.sendKeys(org.openqa.selenium.Keys.RETURN);
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  elements.initElements(driver);
+	  try {
+		  boolean found1 = FuncFile.searchClickableElement(driver, elements.searchResultsTitles.get(2));
+		  test.log(stepStatus.PASS, "Accessibility Hebrew results found");
+	  } catch (Exception e) {
+		  test.log(stepStatus.FAIL, "Accessibility Hebrew results not found");
+		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
+		  /* Active row when we want to stop the test at this point. 
+		   Assert.fail("Accessibility english results not found"); */
+		  System.out.println("Error " + e);
+	  }
+	  
+	  /* Step 2 */
+	  System.out.println("TestCase10.1 Step2");
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  elements.initElements(driver);
+	  driver.get(path);
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  elements.initElements(driver);
+	  elements.currencyLanguageButtons.get(1).click();
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  elements.initElements(driver);
+	  elements.englishUnitedStates.click();
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  elements.initElements(driver);
+	  elements.mainSearchInput.sendKeys("Accessibility");
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  elements.initElements(driver);
+	  elements.mainSearchInput.sendKeys(org.openqa.selenium.Keys.RETURN);
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  elements.initElements(driver);
+	  boolean found = FuncFile.searchClickableElement(driver, elements.searchResultsTitles.get(2));
+	  if (found) {
+		  test.log(stepStatus.PASS, "Accessibility English results found");
+	  }else {
+		  test.log(stepStatus.FAIL, "Accessibility English results not found");
+		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
+		  Assert.fail("Accessibility Esnglish results not found"); 
+	  }
+	  
   }
-  
-  @Parameters({"browser"})
-  @Test(alwaysRun = true, priority = 2)
-  public void TestCase10_2(String browser) throws IOException {
-	  String testName = "Group10_AccessibilityTest_TestCase10.1";
-	  String Description = "10.1 Accessibility text";
-	  test = report.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
-	  Assert.assertTrue(true);
-	
-  }
-  
-  @Parameters({"browser"})
-  @Test(alwaysRun = true, priority = 3)
-  public void TestCase10_3(String browser) throws IOException {
-	  String testName = "Group10_AccessibilityTest_TestCase10.1";
-	  String Description = "10.1 Accessibility text";
-	  test = report.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
-	  Assert.assertTrue(true);
-	
-  }
-  
-  @Parameters({"browser"})
-  @Test(alwaysRun = true, priority = 4)
-  public void TestCase10_4(String browser) throws IOException {
-	  String testName = "Group10_AccessibilityTest_TestCase10.1";
-	  String Description = "10.1 Accessibility keys";
-	  test = report.createTest(testName + "_"+browser, Description);
-	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
-	  Assert.assertTrue(true);
-	
-  }
-  
-
 }
+  

@@ -57,7 +57,7 @@ public class Group6_RecoveryTest extends HeadClass{
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = false, priority = 1)
+  @Test(enabled = true, priority = 1)
   public void TestCase6_1(String browser, String path) throws IOException, ParserConfigurationException, SAXException, InterruptedException {
 	  String testName = "Group6_RecoveryTest_TestCase6.1";
 	  String Description = "6.1 Recovery from disconnections during trips creation";
@@ -171,7 +171,7 @@ public class Group6_RecoveryTest extends HeadClass{
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = false, priority = 2)
+  @Test(enabled = true, priority = 2)
   public void TestCase6_2(String browser, String path) throws IOException, ParserConfigurationException, SAXException, InterruptedException {
 	  String testName = "Group6_RecoveryTest_TestCase6.2";
 	  String Description = "6.2 Recovery from disconnections during reviews creation";
@@ -268,7 +268,7 @@ public class Group6_RecoveryTest extends HeadClass{
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = false, priority = 3)
+  @Test(enabled = true, priority = 3)
   public void TestCase6_3(String browser, String path) throws IOException, InterruptedException {
 	  String testName = "Group6_RecoveryTest_TestCase6.3";
 	  String Description = "6.3 Recovery from disconnections while adding a place to visit";

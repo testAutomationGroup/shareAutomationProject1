@@ -57,6 +57,12 @@ public class Elements extends HeadClass{
 	@FindBy(css = ".UZwOE")
 	List<WebElement> placeAdressInpuItems;
 	
+	@FindBy(css = "main [role='search'] [role='searchbox']")
+	WebElement mainSearchInput;
+	
+	@FindBy(css = ".search-results-title")
+	List<WebElement> searchResultsTitles;
+	
 	@FindBy(css = ".kaEuY [role='search'] input[role='searchbox']")
 	WebElement hotelsSearchInput;
 	
@@ -214,6 +220,24 @@ public class Elements extends HeadClass{
 	
 	@FindBy(css = "[href='/Hotel_Review-g293980-d308227-Reviews-Americana_Hotel-Eilat_Southern_District.html']")
 	WebElement hotelName;
+	
+	@FindBy(css = ".page_h1_line1")
+	WebElement eilatHotelsPageHeadline;
+	
+	@FindBy(css = ".gUFiK[tabindex='0'] .TXuKH")
+	WebElement eilatHotelsCalendarDay;
+	
+	@FindBy(css = ".oFcdM")
+	WebElement hotelsCalendar1Today;
+	
+	@FindBy(css = "[aria-disabled='false'][tabindex='0']")
+	WebElement hotelsCalendar2FirstDay;
+	
+	@FindBy(css = ".UpyrZ")
+	WebElement searchHotelsUpdateButton;
+	
+	@FindBy(css = ".view_deal")
+	List<WebElement> hotelsViewDeal;
 	
 	@FindBy(css = ".socialCTA")
 	WebElement shareTripButton;
@@ -461,6 +485,48 @@ public class Elements extends HeadClass{
 	
 	@FindBy(css = ".hakMy img")
 	WebElement sharedLoadImage;
+	
+	@FindBy(css = "button .fOtGX")
+	List<WebElement> currencyLanguageButtons;
+	
+	@FindBy(css = "#menu-item-0")
+	WebElement englishUnitedStates;
+	
+	@FindBy(css = "[title='‪Instagram‬']")
+	WebElement instagram;
+	
+	@FindBy(css = "[title='‪Twitter‬']")
+	WebElement twitter;
+	
+	@FindBy(css = "[title='‪Facebook‬']")
+	WebElement facebook;
+
+	@FindBy(css = "#menu-item-4")
+	WebElement flights;
+	
+	@FindBy(css = ".qLWrA button")
+	WebElement searchFlightsButton;
+	
+	@FindBy(css = "button.primary")
+	WebElement innerSearchFlightsButton;
+	
+	@FindBy(css = ".Kpztm [name='אל']")
+	WebElement flightWhereInput;
+	
+	@FindBy(css = ".KgxGZ button")
+	WebElement viewFlightDeal;
+	
+	@FindBy(css = ".cVdTY")
+	WebElement viewFlightHeadline;
+	
+	@FindBy(css = ".pcyWY")
+	List<WebElement> viewInnerFlightDeal;
+	
+	@FindBy(css = "#menu-item-1")
+	WebElement cruise;
+	
+	@FindBy(css = ".fb_logo")
+	WebElement facebookLogo;
 	
 	Elements(WebDriver driver){
 		System.out.println("Elements constructor");
