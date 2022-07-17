@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-TestAll" class="navigator-link">
-              <span class="suite-name border-failed">TestAll</span>
+              <span class="suite-name border-passed">TestAll</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,26 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 2 failed,   2 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-TestAll" class="hide-methods failed suite-TestAll"> (hide)</a> <!-- hide-methods failed suite-TestAll -->
-                      <a href="#" panel-name="suite-TestAll" class="show-methods failed suite-TestAll"> (show)</a> <!-- show-methods failed suite-TestAll -->
-                    </span>
-                    <div class="method-list-content failed suite-TestAll">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-TestAll" title="Test.Group1_SanityTest" class="method navigator-link" hash-for-method="TestCase1_1_1(Chrome)">TestCase1_1_1(Chrome)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-TestAll" title="Test.Group1_SanityTest" class="method navigator-link" hash-for-method="TestCase1_2_2(Chrome, https://www.tripadvisor.co.il)">TestCase1_2_2(Chrome, https://www.tripadvisor.co.il)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-TestAll -->
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -123,12 +104,7 @@
                     <div class="method-list-content passed suite-TestAll">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-TestAll" title="Test.Group1_SanityTest" class="method navigator-link" hash-for-method="TestCase1_2_1(Chrome, https://www.tripadvisor.co.il)">TestCase1_2_1(Chrome, https://www.tripadvisor.co.il)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-TestAll" title="Test.Group1_SanityTest" class="method navigator-link" hash-for-method="TestCase1_2_3(Chrome, https://www.tripadvisor.co.il)">TestCase1_2_3(Chrome, https://www.tripadvisor.co.il)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-TestAll" title="Test.Group4_ProcessesTest" class="method navigator-link" hash-for-method="TestCase4_1_1(Chrome, https://www.tripadvisor.co.il)">TestCase4_1_1(Chrome, https://www.tripadvisor.co.il)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-TestAll -->
@@ -143,86 +119,17 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-TestAll" class="panel TestAll">
-          <div class="suite-TestAll-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">Test.Group1_SanityTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="TestCase1_1_1(Chrome)">
-                  </a> <!-- TestCase1_1_1(Chrome) -->
-                  <span class="method-name">TestCase1_1_1</span>
-                  <span class="parameters">(Chrome)</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=104.0.5112.48)
-Build info: version: &apos;4.1.4&apos;, revision: &apos;535d840ee2&apos;
-System info: host: &apos;LAPTOP-NB3AD5GO&apos;, ip: &apos;192.168.1.161&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5db1b7de4ce0d402590d77fbb3387319, clickElement {id=2e32a49f-7d90-489a-b1db-306da473c6bf}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.48, chrome: {chromedriverVersion: 104.0.5112.20 (9ac43f954ebb..., userDataDir: C:\Users\arnon\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:58892}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58892/devtoo..., se:cdpVersion: 104.0.5112.48, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (5db1b7de4ce0d402590d77fbb3387319)] -&gt; css selector: [alt=&apos;Tripadvisor&apos;]]
-Session ID: 5db1b7de4ce0d402590d77fbb3387319
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at Test.Group1_SanityTest.TestCase1_1_1(Group1_SanityTest.java:116)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 27 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="TestCase1_2_2(Chrome, https://www.tripadvisor.co.il)">
-                  </a> <!-- TestCase1_2_2(Chrome, https://www.tripadvisor.co.il) -->
-                  <span class="method-name">TestCase1_2_2</span>
-                  <span class="parameters">(Chrome, https://www.tripadvisor.co.il)</span>
-                  <div class="stack-trace">java.lang.AssertionError: Questions page not opened
-	at Test.Group1_SanityTest.TestCase1_2_2(Group1_SanityTest.java:389)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 19 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-TestAll-class-failed -->
           <div class="suite-TestAll-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">Test.Group1_SanityTest</span>
+              <span class="class-name">Test.Group4_ProcessesTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="TestCase1_2_1(Chrome, https://www.tripadvisor.co.il)">
-                  </a> <!-- TestCase1_2_1(Chrome, https://www.tripadvisor.co.il) -->
-                  <span class="method-name">TestCase1_2_1</span>
-                  <span class="parameters">(Chrome, https://www.tripadvisor.co.il)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="TestCase1_2_3(Chrome, https://www.tripadvisor.co.il)">
-                  </a> <!-- TestCase1_2_3(Chrome, https://www.tripadvisor.co.il) -->
-                  <span class="method-name">TestCase1_2_3</span>
+                  <a name="TestCase4_1_1(Chrome, https://www.tripadvisor.co.il)">
+                  </a> <!-- TestCase4_1_1(Chrome, https://www.tripadvisor.co.il) -->
+                  <span class="method-name">TestCase4_1_1</span>
                   <span class="parameters">(Chrome, https://www.tripadvisor.co.il)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -247,7 +154,7 @@ Session ID: 5db1b7de4ce0d402590d77fbb3387319
   &lt;test thread-count=&quot;3&quot; parallel=&quot;tests&quot; name=&quot;chromeTest&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Test.Group1_SanityTest&quot;/&gt;
+      &lt;class name=&quot;Test.Group4_ProcessesTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- chromeTest --&gt;
 &lt;/suite&gt; &lt;!-- TestAll --&gt;
@@ -287,28 +194,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TestCase1_2_3')
-data.setCell(0, 2, 'Test.Group1_SanityTest')
-data.setCell(0, 3, 116227);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TestCase1_2_1')
-data.setCell(1, 2, 'Test.Group1_SanityTest')
-data.setCell(1, 3, 19937);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'TestCase1_2_2')
-data.setCell(2, 2, 'Test.Group1_SanityTest')
-data.setCell(2, 3, 8330);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'TestCase1_1_1')
-data.setCell(3, 2, 'Test.Group1_SanityTest')
-data.setCell(3, 3, 6117);
+data.setCell(0, 1, 'TestCase4_1_1')
+data.setCell(0, 2, 'Test.Group4_ProcessesTest')
+data.setCell(0, 3, 19814);
 window.suiteTableData['TestAll']= { tableData: data, tableDiv: 'times-div-TestAll'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 26 seconds</span>
               <div id="times-div-TestAll">
               </div> <!-- times-div-TestAll -->
             </div> <!-- times-div -->
@@ -323,9 +218,20 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-TestAll" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">3 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">Test.Group4_ProcessesTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">TestCase4_1_2</span>
+                <br/>
+                <span class="ignored-method-name">TestCase4_1_4</span>
+                <br/>
+                <span class="ignored-method-name">TestCase4_1_3</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-TestAll" class="panel">
@@ -334,34 +240,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Test.Group1_SanityTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Test.Group4_ProcessesTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">beforeGroup1_SystemSanityTests(Chrome, https://www.tripadvisor.co.il)</span>
+                <span class="method-name">beforeGroup4_ProcessesTest(Chrome, https://www.tripadvisor.co.il)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">TestCase1_1_1(Chrome)</span>
-                <span class="method-start">3601 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">TestCase1_2_1(Chrome, https://www.tripadvisor.co.il)</span>
-                <span class="method-start">9741 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">TestCase1_2_2(Chrome, https://www.tripadvisor.co.il)</span>
-                <span class="method-start">29678 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">TestCase1_2_3(Chrome, https://www.tripadvisor.co.il)</span>
-                <span class="method-start">38016 ms</span>
+                <span class="method-name">TestCase4_1_1(Chrome, https://www.tripadvisor.co.il)</span>
+                <span class="method-start">3781 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
-                <span class="method-name">AfterGroup1_SystemSanityTests(Chrome)</span>
-                <span class="method-start">154250 ms</span>
+                <span class="method-name">AfterGroup4_ProcessesTest(Chrome)</span>
+                <span class="method-start">23602 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

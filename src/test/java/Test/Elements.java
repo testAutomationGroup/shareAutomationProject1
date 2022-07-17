@@ -27,6 +27,12 @@ public class Elements extends HeadClass{
 	@FindBy(css="[href='/Hotels']")
 	WebElement hotels;
 	
+	@FindBy(css = ".kaEuY [role='search'] input[role='searchbox']")
+	WebElement hotelsSearchInput;
+	
+	@FindBy(css = ".kaEuY [role='search'] input[role='searchbox']")
+	WebElement thingsToDoSearchInput;
+	
 	@FindBy(css = ".EtzER")
 	List<WebElement> searchHotelItems;
 	
@@ -74,8 +80,39 @@ public class Elements extends HeadClass{
 	@FindBy(css = ".email")
 	WebElement AccountEmail;
 	
+	@FindBy(css = "#homeairport")
+	WebElement AccountHomeairportInput;
+	
+	@FindBy(css = "#street1")
+	WebElement AccountAddress1Input;
+	
+	@FindBy(css = "#street2")
+	WebElement AccountAddress2Input;
+	
+	@FindBy(css = "#cityname")
+	WebElement AccountCityInput;
+	
+	@FindBy(css = "#statename")
+	WebElement AccountStateInput;
+
+	@FindBy(css = "#postalcode")
+	WebElement AccountPostalCodeInput;
+	
+	@FindBy(css = "#countryid")
+	WebElement AccountCountryIDInput;
+	
+	
+	@FindBy(css = "#countrycode")
+	WebElement AccountCountryPhoneCodeInput;
+	
+	@FindBy(css = "#phonenumber")
+	WebElement AccountPhonenumberInput;
+	
 	@FindBy(css = "#submit")
 	WebElement AccountPageSaveButton;
+	
+	@FindBy(css = "#forgotPass")
+	WebElement ResetPassword;
 	
 	@FindBy(css = ".sessionSignout")
 	WebElement SignOutSeesions;
@@ -325,6 +362,48 @@ public class Elements extends HeadClass{
 	
 	@FindBy(css = "[data-tab-name='מפת נסיעות']")
 	WebElement travelingMap;
+	
+	@FindBy(css = ".IYPQU")
+	List<WebElement> profileIntroItems;
+	
+	@FindBy(css = ".internet input")
+	WebElement profileInternetSiteLinkInput;
+	
+	@FindBy(css = ".BcPve")
+	WebElement profileAttchedInternetLink;
+	
+	@FindBy(css = "textarea")
+	WebElement profileTextAreaInput;
+	
+	@FindBy(css = ".PwbCu")
+	WebElement profileTextAreaDiscription;
+	
+	@FindBy(css = ".zQpMQ")
+	List<WebElement> shareProfileImagesReferences;
+	
+	@FindBy(css = ".ViJpi")
+	WebElement shareLoadImagesButton;
+	
+	@FindBy(css = "#media-upload-description-0")
+	WebElement sharedImageAddDescription;
+	
+	@FindBy(css = ".biGQs input")
+	WebElement sharedImageAddLocation;
+	
+	@FindBy(css = ".AeLHi .biGQs")
+	WebElement sharedImageSubmit;
+	
+	@FindBy(css = "[title='בת ים']")
+	WebElement sharedImageHeadLine;
+	
+	@FindBy(css = "#Settings")
+	WebElement accountSettingMenuButton;
+
+	@FindBy(css = "[href='/Settings-cs']")
+	WebElement accountSettingMenuSubscribers;
+	
+	@FindBy(css = ".heading")
+	WebElement subscribersSettingHeadline;
 	
 	Elements(WebDriver driver){
 		System.out.println("Elements constructor");

@@ -278,7 +278,13 @@ public class FuncFile extends HeadClass{
 		
 		/* Wait until sendkeys inserted */
 		static public Boolean waitForSendKeys(WebDriver driver, WebElement element, String value) {
-	       return new WebDriverWait(driver, Duration.ofMillis(4000)).until(ExpectedConditions.attributeToBe(element, "value", value));  
+			try {
+				Boolean foundString = new WebDriverWait(driver, Duration.ofMillis(4000)).until(ExpectedConditions.attributeToBe(element, "value", value));
+				return foundString;
+			} catch (Exception e) {
+				System.out.println("Send keys string wa not found  " + e);
+				return false;
+			}
 		}
 		
 		/* Wait until text presented in element */

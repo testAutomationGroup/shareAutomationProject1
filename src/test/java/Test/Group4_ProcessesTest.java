@@ -3,6 +3,7 @@ package Test;
 import org.testng.annotations.Test;
 import org.xml.sax.SAXException;
 
+import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
@@ -63,7 +64,7 @@ public class Group4_ProcessesTest extends HeadClass{
   
   @Parameters({"browser", "path"})
   @Test(enabled = true, priority = 1)
-  public void TestCase4_1_1(String browser, String path) throws IOException, ParserConfigurationException, SAXException, InterruptedException {
+  public void TestCase4_1_1(String browser, String path) throws IOException, ParserConfigurationException, SAXException, InterruptedException, AWTException {
 	  String testName = "Group4_ProcessesTest_TestCase4.1.1";
 	  String Description = "4.1.1 Connected profile process";
 	  test = report.createTest(testName + "_"+browser, Description);
@@ -127,53 +128,53 @@ public class Group4_ProcessesTest extends HeadClass{
 		}
 	  
 	  /* Step 3 */
-//	  System.out.println("TestCase4.1.1 Step 3");
-//	  elements.setProfileButton.click();
-//	  FuncFile.searchClickableElement(driver, elements.setProfileImage);
-//	  elements.initElements(driver);
-//	  //elements.setProfileImage.click();
-//	  elements.setProfileInputs.get(0).sendKeys(" test");
-//	  elements.saveProfileSettings.click();
-//	  FuncFile.waitForTimeThread(3000);
-//	  String profileName = elements.profileName.getText();
-//	  System.out.println("profileName" + profileName);
-//	  if (profileName.equals("Elad test")){
-//		  test.log(stepStatus.PASS, "Profile name updated");
-//		  elements.initElements(driver);
-//		  elements.setProfileButton.click();
-//		  elements.initElements(driver);
-//		  elements.setProfileInputs.get(0).clear();
-//		  FuncFile.waitForTimeThread(1000);
-//		  elements.setProfileInputs.get(0).sendKeys("Elad");
-//		  elements.saveProfileSettings.click();
-//		  /*FuncFile.logOutFromProfile(driver);*/
-//		  System.out.println("Here");
-//	  }else {
-//		  test.log(stepStatus.FAIL, "Profile name is not updated");
-//		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-//		  Assert.fail("Profile name is not updated");
-//	  }
-//	  
-//	  /* Step 4 */
-//	  System.out.println("TestCase4.1.1 Step 4");
-//	  FuncFile.waitForTimeThread(3000);
-//	  elements.setProfileMenu.click();
-//	  FuncFile.searchClickableElement(driver, elements.setProfileMenuItems.get(5));
-//	  elements.initElements(driver);
-//	  elements.setProfileMenuItems.get(5).click();
-//	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
-//	  String siteAddress = driver.getCurrentUrl();
-//	  System.out.println("siteAddress is " + siteAddress);
-//	  
-//	  /* Updating step pass/fail in results file */
-//	  if (siteAddress.equals("https://www.tripadvisor.co.il/Settings-cs")) {
-//		  test.log(stepStatus.PASS, "Profile settings page was opened");
-//		  driver.navigate().back();
-//	  }else {
-//		  test.log(stepStatus.FAIL, "Profile settings page was not opened");
-//		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-//		  Assert.fail("Profile settings page was not opened");
-//	  }
+	  System.out.println("TestCase4.1.1 Step 3");
+	  elements.setProfileButton.click();
+	  FuncFile.searchClickableElement(driver, elements.setProfileImage);
+	  elements.initElements(driver);
+	  //elements.setProfileImage.click();
+	  elements.setProfileInputs.get(0).sendKeys(" test");
+	  elements.saveProfileSettings.click();
+	  FuncFile.waitForTimeThread(3000);
+	  String profileName = elements.profileName.getText();
+	  System.out.println("profileName" + profileName);
+	  if (profileName.equals("Elad test")){
+		  test.log(stepStatus.PASS, "Profile name updated");
+		  elements.initElements(driver);
+		  elements.setProfileButton.click();
+		  elements.initElements(driver);
+		  elements.setProfileInputs.get(0).clear();
+		  FuncFile.waitForTimeThread(1000);
+		  elements.setProfileInputs.get(0).sendKeys("Elad");
+		  elements.saveProfileSettings.click();
+		  /*FuncFile.logOutFromProfile(driver);*/
+		  System.out.println("Here");
+	  }else {
+		  test.log(stepStatus.FAIL, "Profile name is not updated");
+		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
+		  Assert.fail("Profile name is not updated");
+	  }
+	  
+	  /* Step 4 */
+	  System.out.println("TestCase4.1.1 Step 4");
+	  FuncFile.waitForTimeThread(3000);
+	  elements.setProfileMenu.click();
+	  FuncFile.searchClickableElement(driver, elements.setProfileMenuItems.get(5));
+	  elements.initElements(driver);
+	  elements.setProfileMenuItems.get(5).click();
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  String siteAddress = driver.getCurrentUrl();
+	  System.out.println("siteAddress is " + siteAddress);
+	  
+	  /* Updating step pass/fail in results file */
+	  if (siteAddress.equals("https://www.tripadvisor.co.il/Settings-cs")) {
+		  test.log(stepStatus.PASS, "Profile settings page was opened");
+		  driver.navigate().back();
+	  }else {
+		  test.log(stepStatus.FAIL, "Profile settings page was not opened");
+		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
+		  Assert.fail("Profile settings page was not opened");
+	  }
 	  
 	  /* Step 5 */
 	  System.out.println("TestCase4.1.1 Step 5");
@@ -197,11 +198,229 @@ public class Group4_ProcessesTest extends HeadClass{
 	  FuncFile.waitForTimeThread(1000);
 	  driver.close();
 	  driver.switchTo().window(tabs.get(0));
-	
+	  
+	  /* Step 6 */
+	  System.out.println("TestCase4.1.1 Step 6");
+	  FuncFile.searchClickableElement(driver, elements.profileIntroItems.get(0));
+	  elements.initElements(driver);
+	  elements.profileIntroItems.get(0).click();
+	  FuncFile.searchClickableElement(driver, elements.profileInternetSiteLinkInput);
+	  elements.profileInternetSiteLinkInput.sendKeys("https://www.tripadvisor.co.il/");
+	  FuncFile.waitForSendKeys(driver, elements.profileInternetSiteLinkInput, "https://www.tripadvisor.co.il/");
+	  elements.saveProfileSettings.click();
+	  boolean found = FuncFile.searchElement(driver, elements.profileAttchedInternetLink);
+	  if (found) {
+		  test.log(stepStatus.PASS, "Adding internet site link is not valid");
+	  }else {
+		  test.log(stepStatus.FAIL, "Adding internet site link not is valid");
+		  ResultsBuilder.SendTestImage(test, driver, "PASS", testName, browser);
+		  Assert.fail("Adding internet site link is valid");
+	  }
+	  
+	  /* Step 6.1 */
+	  System.out.println("TestCase4.1.1 Step 6.1");
+	  FuncFile.waitForTimeThread(4000);
+	  elements.initElements(driver);
+	  FuncFile.searchClickableElement(driver, elements.profileIntroItems.get(0));
+	  elements.profileIntroItems.get(0).click();
+	  elements.initElements(driver);
+	  FuncFile.searchClickableElement(driver, elements.profileTextAreaInput);
+	  elements.profileTextAreaInput.sendKeys("This is my stroy");
+	  elements.saveProfileSettings.click();
+	  FuncFile.waitForTimeThread(1000);
+	  elements.initElements(driver);
+	  FuncFile.searchClickableElement(driver, elements.profileTextAreaDiscription);
+	  boolean foundTextAreaDiscription = FuncFile.searchElement(driver, elements.profileTextAreaDiscription);
+	  if (foundTextAreaDiscription) {
+		  test.log(stepStatus.PASS, "Adding profile text area is valid");
+	  }else {
+		  test.log(stepStatus.FAIL, "Adding profile text area is not valid");
+		  ResultsBuilder.SendTestImage(test, driver, "PASS", testName, browser);
+		  Assert.fail("Adding profile text area is not valid");
+	  }
+	  
+	  /* Step 7 */
+	  try {
+		  System.out.println("TestCase4.1.1 Step 7");
+		  FuncFile.waitForTimeThread(2000);
+		  elements.initElements(driver);
+		  FuncFile.searchClickableElement(driver, elements.shareLoadImagesButton);
+		  elements.shareProfileImagesReferences.get(0).click();
+		  FuncFile.searchClickableElement(driver, elements.shareLoadImagesButton);
+		  elements.shareLoadImagesButton.click();
+		  FuncFile.waitForTimeThread(1000);
+		  
+		  StringSelection path1 = new StringSelection("C:\\my files\\Selenium\\bat yam.jpg");
+		  Toolkit.getDefaultToolkit().getSystemClipboard().setContents(path1, null);
+		  Robot robot = new Robot();
+		  robot.keyPress(KeyEvent.VK_CONTROL);
+		  robot.keyPress(KeyEvent.VK_V);
+		  robot.keyRelease(KeyEvent.VK_CONTROL);
+		  robot.keyRelease(KeyEvent.VK_V);
+		  robot.keyPress(KeyEvent.VK_ENTER);
+		  robot.keyRelease(KeyEvent.VK_ENTER);
+		  elements.sharedImageAddDescription.sendKeys("Image description");
+		  FuncFile.waitForSendKeys(driver, elements.profileTextAreaInput, "Image description");
+		  elements.sharedImageAddLocation.click();
+		  elements.sharedImageAddLocation.sendKeys("בת ים");
+		  FuncFile.waitForSendKeys(driver, elements.profileTextAreaInput, "בת ים");
+		  elements.sharedImageAddLocation.sendKeys(Keys.ENTER);
+		  elements.sharedImageSubmit.click();
+		  
+		  boolean foundSharedImageHeadLine = FuncFile.searchElement(driver, elements.sharedImageHeadLine);
+		  if (foundSharedImageHeadLine) {
+			  test.log(stepStatus.PASS, "Share image is valid");
+		  }else {
+			  test.log(stepStatus.FAIL, "Share image is not valid");
+			  ResultsBuilder.SendTestImage(test, driver, "PASS", testName, browser);
+			  Assert.fail("Share image is not valid");
+		  }
+		} catch (Exception e) {
+			System.out.println("Error " + e);
+		}
+	  
+	  
+	  /* Step 7.1 */
+	  try {
+		  System.out.println("TestCase4.1.1 Step 7.1");
+		  FuncFile.searchClickableElement(driver, elements.shareProfileImagesReferences.get(1));
+		  elements.shareProfileImagesReferences.get(1).click();
+		  elements.initElements(driver);
+		  FuncFile.waitForTimeThread(1000);
+		  String siteName1 = driver.getCurrentUrl();
+		  System.out.println(siteName1);
+		  if (siteName1.contains("https://www.tripadvisor.co.il/UserReview")){
+			  test.log(stepStatus.PASS, "Share reference page is opened");
+		  }else {
+			  test.log(stepStatus.FAIL, "Share reference page is not opened");
+			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
+			  Assert.fail("Share reference page is not opened");
+		  }
+		  
+		  /* Step 8*/
+		  System.out.println("TestCase3.1.1 Step 8");
+		  try {
+			  driver.get(path);
+			} catch (Exception e) {
+				System.out.println("Page not loaded " + e);
+			}
+		  
+		  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	      elements.initElements(driver);   
+	      FuncFile.searchByElement(driver, elements.profileByButton);
+	      elements.profileButton.click();
+	      System.out.println("Button was clicked");
+		  
+	      /* Wait for profile menu presence and click page name */
+	      try {
+	    	  elements.initElements(driver);
+	          driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	    	  WebElement menu1 = new WebDriverWait(driver, Duration.ofMillis(4000)).until(ExpectedConditions.presenceOfElementLocated(elements.profileMenu));
+			  List<WebElement> menuItems1 = driver.findElements(elements.profileMenuItem);
+			  WebElement viewAccount = menuItems1.get(1);
+			  System.out.println("menu line is " + viewAccount.getText());
+			  viewAccount.click();
+			} catch (Exception e) {
+				System.out.println("Element not found " + e);
+			}
+		} catch (Exception e) {
+			System.out.println("Error " + e);
+		}
+      
+	  
+	  /* Wait for page to load and print site address */
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  try {
+		  String siteAddress1 = driver.getCurrentUrl();
+		  System.out.println("siteAddress is " + siteAddress1);
+		  
+		  /* Updating step pass/fail in results file */
+		  if (siteAddress1.equals("https://www.tripadvisor.co.il/Settings-cp")) {
+			  test.log(stepStatus.PASS, "Account page was opened");
+		  }else {
+			  test.log(stepStatus.FAIL, "Account page was not opened");
+			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
+			  Assert.fail("Account page was not opened");
+		  }
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	  
+	  /* Step 9 */
+	  System.out.println("TestCase4.1.1 Step 9");
+	  elements.AccountFirstName.clear();
+	  elements.AccountFirstName.sendKeys("Elad");
+	  elements.AccountFamilyName.clear();
+	  elements.AccountFamilyName.sendKeys("Arnon");
+	  System.out.println(elements.AccountHomeairportInput.getAttribute("value"));
+	  elements.AccountEmail.clear();
+	  elements.AccountEmail.sendKeys("arnonelad1@gmail.com");
+	  elements.AccountAddress1Input.sendKeys("Address1");
+	  elements.AccountAddress2Input.sendKeys("Address2");
+	  elements.AccountCityInput.sendKeys("Holon");
+	  elements.AccountStateInput.sendKeys("");
+	  elements.AccountPostalCodeInput.sendKeys("11111");
+	  System.out.println(elements.AccountCountryIDInput.getAttribute("value"));
+	  System.out.println(elements.AccountCountryPhoneCodeInput.getAttribute("value"));
+	  elements.AccountPhonenumberInput.sendKeys("0546860720");
+	  elements.AccountPageSaveButton.click();
+	  FuncFile.waitForTimeThread(1000);
+	  driver.navigate().refresh();
+	  
+	  boolean found1 = elements.AccountFirstName.getAttribute("value").equals("Elad");
+	  boolean found2 = elements.AccountFamilyName.getAttribute("value").equals("Arnon");
+	  boolean found3 = elements.AccountEmail.getAttribute("value").equals("arnonelad1@gmail.com");
+	  boolean found4 = elements.AccountAddress1Input.getAttribute("value").equals("Address1");
+	  boolean found5 = elements.AccountAddress2Input.getAttribute("value").equals("Address2");
+	  boolean found6 = elements.AccountCityInput.getAttribute("value").equals("Holon");
+	  boolean found7 = elements.AccountPhonenumberInput.getAttribute("value").equals("0546860720");
+	  
+	  if(found1 && found2 && found3 && found4 && found5 && found6 && found7) {
+		  test.log(stepStatus.PASS, "Update account details is valid");
+	  }else {
+		  test.log(stepStatus.FAIL, "Update account details is not valid");
+		  ResultsBuilder.SendTestImage(test, driver, "PASS", testName, browser);
+		  Assert.fail("Update account details is not valid");
+	  }
+	  
+	  /* Step 10 */
+	  try {
+		  System.out.println("TestCase3.1.1 Step 10");
+		  FuncFile.waitForTimeThread(3000);
+		  elements.initElements(driver);
+		  elements.SignOutSeesions.click();
+		  elements.continueSignOut.click();
+		  if (FuncFile.searchClickableElement(driver, elements.signOutAccountNotification)) {
+			  test.log(stepStatus.PASS, "Valid accounts sign out process");
+		  } else {
+			  test.log(stepStatus.FAIL, "Accounts sign out process is not validated");  
+			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
+			  Assert.fail("Accounts sign out process is not validated");
+		  }
+		  elements.signOutCloseButton.click();
+		} catch (Exception e) {
+			System.out.println("error " +e);
+		}
+	  
+	  /* Step 11 */
+	  System.out.println("TestCase3.1.1 Step 11");
+	  elements.accountSettingMenuButton.click();
+	  elements.accountSettingMenuSubscribers.click();
+	  FuncFile.waitForTextPresence(driver, elements.subscribersSettingHeadline, "‪Email preferences‬");
+	  String siteAddress2 = driver.getCurrentUrl();
+	  /* Updating step pass/fail in results file */
+	  if (siteAddress2.equals("https://www.tripadvisor.co.il/Settings-cs")) {
+		  test.log(stepStatus.PASS, "Account page was opened");
+	  }else {
+		  test.log(stepStatus.FAIL, "Account page was not opened");
+		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
+		  Assert.fail("Account page was not opened");
+	  }
+	  
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = false, priority = 2)
+  @Test(enabled = true, priority = 2)
   public void TestCase4_1_2(String browser, String path) throws IOException, ParserConfigurationException, SAXException, InterruptedException {
 	  String testName = "Group4_ProcessesTest_TestCase4.1.2";
 	  String Description = "4.1.2 Create trip process";
@@ -555,7 +774,7 @@ public class Group4_ProcessesTest extends HeadClass{
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = false, priority = 3)
+  @Test(enabled = true, priority = 3)
   public void TestCase4_1_3(String browser, String path) throws IOException, InterruptedException, ParserConfigurationException, SAXException {
 	  String testName = "Group4_ProcessesTest_TestCase4.1.3";
 	  String Description = "4.1.3 Create reference process";
@@ -631,7 +850,7 @@ public class Group4_ProcessesTest extends HeadClass{
 		  elements.initElements(driver);
 		  
 		  elements.ReferenceAddImageButton.click();
-		  FuncFile.waitForTimeThread(1000);
+		  FuncFile.waitForTimeThread(3000);
 		  FuncFile.searchClickableElement(driver, elements.ReferenceInnerAddImageButton);
 		  elements.ReferenceInnerAddImageButton.click();
 		  FuncFile.waitForTimeThread(2000);
@@ -659,9 +878,12 @@ public class Group4_ProcessesTest extends HeadClass{
 		  elements.imageCategory.get(1).click();
 		  elements.ReferenceLoadImageAgreement.click();
 		  elements.ReferenceLoadImageButton.click();
+		  FuncFile.waitForTimeThread(3000);
 		  boolean foundImage = FuncFile.searchElement(driver, elements.referenceImages.get(0));
 		  if (foundImage) {
+			  driver.switchTo().alert().accept();
 			  test.log(stepStatus.PASS, "Loading image is valid");
+			  
 		  	}else {
 			  test.log(stepStatus.FAIL, "Loading image is not valid");
 			  ResultsBuilder.SendTestImage(test, driver, "FAIL", testName, browser);
@@ -674,38 +896,48 @@ public class Group4_ProcessesTest extends HeadClass{
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = false, priority = 4)
+  @Test(enabled = true, priority = 4)
   public void TestCase4_1_4(String browser, String path) throws IOException, ParserConfigurationException, SAXException, InterruptedException {
 	  String testName = "Group4_ProcessesTest_TestCase4.1.4";
-	  String Description = "4.1.4 Find places menu";
+	  String Description = "4.14 Create reference process";
 	  test = report.createTest(testName + "_"+browser, Description);
 	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 
 	  /* Step 1 */
-	  System.out.println("4_1_3 Trips test Step 1");
-	  driver.get(path);
-	  FuncFile.waitForTimeThread(1000);
-	  elements.initElements(driver);
-	  FuncFile.searchClickableElement(driver, elements.hotels);
-      String email = FuncFile.importConfigurationsData("email");
-      String password = FuncFile.importConfigurationsData("password");
-	  FuncFile.connectProfile(driver, email, password);////
-	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
-	  FuncFile.waitForTimeThread(1000);
-	  elements.initElements(driver);
-	  elements.hotels.click();
-	  FuncFile.waitForTimeThread(1000);
-	  elements.initElements(driver);
-	  elements.searchHotelItems.get(1).click();
-	  driver.navigate().back();
-	  FuncFile.waitForTimeThread(1000);
-	  elements.initElements(driver);
-	  elements.thingsToDo.click();
-	  elements.thingsToDoMenuItems.get(1).click();
-	  FuncFile.waitForTimeThread(1000);
-	  elements.initElements(driver);
-	  elements.thingsToDoEilat.get(2).click();
-	  driver.close();
+	  try {
+		  FuncFile.waitForTimeThread(4000);
+		  System.out.println("4_1_4 Trips test Step 1");
+		  driver.switchTo().newWindow(WindowType.WINDOW);
+		  driver.get(path);
+		  System.out.println("here");
+		  FuncFile.waitForTimeThread(1000);
+		  elements.initElements(driver);
+		  FuncFile.searchClickableElement(driver, elements.hotels);
+	      String email = FuncFile.importConfigurationsData("email");
+	      String password = FuncFile.importConfigurationsData("password");
+		  //FuncFile.connectProfile(driver, email, password);////
+		  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+		  FuncFile.waitForTimeThread(1000);
+		  elements.initElements(driver);
+		  elements.hotels.click();
+		  elements.hotelsSearchInput.sendKeys("אילת");
+		  elements.hotelsSearchInput.sendKeys(Keys.ENTER);
+		  FuncFile.waitForTimeThread(1000);
+		  elements.initElements(driver);
+		  driver.navigate().back();
+		  FuncFile.waitForTimeThread(1000);
+		  elements.initElements(driver);
+		  elements.thingsToDo.click();
+		  elements.thingsToDoSearchInput.sendKeys("אילת");
+		  elements.thingsToDoSearchInput.sendKeys(Keys.ENTER);
+		  elements.initElements(driver);
+		  test.log(stepStatus.PASS, "Search in site process is valid");
+		} catch (Exception e) {
+			test.log(stepStatus.FAIL, "Search in site process is not valid");
+			ResultsBuilder.SendTestImage(test, driver, "FAIL", testName, browser);
+			Assert.fail("Search in site process is not valid");
+			System.out.println("Error " + e);
+		}
 	  
 	
   }
