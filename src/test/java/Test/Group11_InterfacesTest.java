@@ -63,35 +63,30 @@ public class Group11_InterfacesTest extends HeadClass{
 	  System.out.println("TestCase11.1 Step 1");
 	  driver.get(path);
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
-	  FuncFile.waitForTimeThread(1000);
 	  elements.initElements(driver);
 	  elements.instagram.click();
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
-	  FuncFile.waitForTimeThread(2000);
-	  String siteName = driver.getCurrentUrl();
-	  System.out.println(siteName);
-	  if (siteName.equals("https://www.instagram.com/accounts/login/?next=/tripadvisor/")) {
+	  boolean foundPath1 =FuncFile.waitForSitePath(driver, "https://www.instagram.com/accounts/login/?next=/tripadvisor/");
+	  boolean foundPath2 =FuncFile.waitForSitePath(driver, "https://www.instagram.com/tripadvisor/");
+	  if (foundPath1 || foundPath2) {
 		  test.log(stepStatus.PASS, "Instagram tripadvisor page opened");
 	  }else {
 		  test.log(stepStatus.FAIL, "Instagram tripadvisor page not opened");
 		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-		  //Assert.fail("Instagram tripadvisor page not opened");
+		  Assert.fail("Instagram tripadvisor page not opened");
 	  }
 	  
 	  /* Step 2 */
 	  System.out.println("TestCase11.1 Step 2");
 	  driver.get(path);
-	  FuncFile.waitForTimeThread(1000);
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
 	  elements.twitter.click();
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
-	  FuncFile.waitForTimeThread(3000);
 	  elements.initElements(driver);
-	  String siteName1 = driver.getCurrentUrl();
-	  System.out.println(siteName1);
-	  if (siteName1.equals("https://twitter.com/TripAdvisor")) {
+	  boolean foundPath3 =FuncFile.waitForSitePath(driver, "https://twitter.com/TripAdvisor");
+	  if (foundPath3) {
 		  test.log(stepStatus.PASS, "Twitter tripadvisor page opened");
 	  }else {
 		  test.log(stepStatus.FAIL, "Twitter tripadvisor page not opened");
@@ -102,22 +97,19 @@ public class Group11_InterfacesTest extends HeadClass{
 	  /* Step 3 */
 	  System.out.println("TestCase11.1 Step 3");
 	  driver.get(path);
-	  FuncFile.waitForTimeThread(1000);
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
-	  //elements.facebook.click();
-
-//	  try {
-//		  System.out.println("here1");
-//		  boolean found1 = FuncFile.searchClickableElement(driver, elements.facebookLogo);
-//		  System.out.println("here2");
-//		  test.log(stepStatus.PASS, "Facebook tripadvisor page opened");
-//		} catch (Exception e) {
-//			test.log(stepStatus.FAIL, "Facebook tripadvisor page not opened");
-//			ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-//			//Assert.fail("Facebook tripadvisor page not opened");
-//			System.out.println("Error " + e);
-//		}
+	  elements.facebook.click();
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  elements.initElements(driver);
+	  boolean foundPath4 =FuncFile.waitForSitePath(driver, "https://www.facebook.com/Tripadvisor/");
+	  if (foundPath4) {
+		  test.log(stepStatus.PASS, "Twitter tripadvisor page opened");
+	  }else {
+		  test.log(stepStatus.FAIL, "Twitter tripadvisor page not opened");
+		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
+		  Assert.fail("Twitter tripadvisor page not opened");
+	  }
   }
   
   @Parameters({"browser", "path"})
@@ -130,9 +122,7 @@ public class Group11_InterfacesTest extends HeadClass{
 	  
 	  /* Step 1 */
 	  System.out.println("TestCase11.2 Step 1");
-	  FuncFile.waitForTimeThread(2000);
 	  driver.get(path);
-	  FuncFile.waitForTimeThread(2000);
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
       String email = FuncFile.importConfigurationsData("email");
@@ -156,54 +146,56 @@ public class Group11_InterfacesTest extends HeadClass{
 	  elements.initElements(driver);
 	  elements.hotelsSearchInput.sendKeys("אילת");
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
-	  FuncFile.waitForTimeThread(1000);
 	  elements.initElements(driver);
-	  elements.searchHotelItems.get(0).click();
-	  FuncFile.waitForTimeThread(1000);
+	  FuncFile.searchClickableElement(driver, elements.searchHotelItems.get(0));
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
-	  try {
-		  boolean found1 = FuncFile.searchClickableElement(driver, elements.eilatHotelsCalendarDay);
+	  FuncFile.waitForTimeThread(1000);
+	  elements.searchHotelItems.get(0).click();
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  elements.initElements(driver);
+	  boolean found1 = FuncFile.waitForSitePathContainsText(driver, "https://www.tripadvisor.co.il/Hotels");
+	  if (found1) {
 		  test.log(stepStatus.PASS, "Eilat hotels page opened");
-		} catch (Exception e) {
-			test.log(stepStatus.FAIL, "Eilat hotels page not opened");
-			ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			Assert.fail("Eilat hotels page not opened");
-			System.out.println("Error " + e);
-		}
+	  }else {
+		  test.log(stepStatus.FAIL, "Eilat hotels page not opened");
+		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
+		  Assert.fail("Eilat hotels page not opened"); 
+	  }
 	  
 	  /* Step 3 */
 	  try {
 		  System.out.println("TestCase11.2 Step 3");
-		  FuncFile.waitForTimeThread(2000);
-		  elements.initElements(driver);
 		  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 		  elements.initElements(driver);
-		  /* 
-		  elements.hotelsCalendar1Today.click();
-		  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
-		  FuncFile.waitForTimeThread(2000);
+		  /* Set dates in calendar if calendar is closed*/
+		  boolean found2 = FuncFile.searchClickableElement(driver, elements.hotelsCalendar1Today);
+		  if (found2) {
+			  elements.hotelsCalendar1Today.click();
+			  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+			  FuncFile.waitForTimeThread(2000);
+			  elements.initElements(driver);
+			  elements.hotelsCalendar2FirstDay.click();
+			  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+			  FuncFile.waitForTimeThread(2000);
+			  elements.initElements(driver);
+			  elements.searchHotelsUpdateButton.click();
+			  FuncFile.waitForTimeThread(2000);
+			  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+			  elements.initElements(driver);
+		  }
+
 		  elements.initElements(driver);
-		  elements.hotelsCalendar2FirstDay.click();
-		  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
-		  FuncFile.waitForTimeThread(2000);
-		  elements.initElements(driver);
-		  elements.searchHotelsUpdateButton.click();
-		  FuncFile.waitForTimeThread(2000);
-		  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
-		  elements.initElements(driver);
-		  */
 		  elements.hotelsViewDeal.get(26).click();
 		  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 		  elements.initElements(driver);
-		  FuncFile.waitForTimeThread(3000);
 		  List<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		  driver.switchTo().window(tabs.get(1));
 		  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
-		  FuncFile.waitForTimeThread(4000);
 		  elements.initElements(driver);
-		  String siteName = driver.getCurrentUrl();
-		  if (!siteName.contains("tripadvisor")) {
+		  boolean foundSitePath = FuncFile.waitForSitePathContainsText(driver, "tripadvisor");
+		  FuncFile.waitForTimeThread(3000);
+		  if (!foundSitePath) {
 			  test.log(stepStatus.PASS, "Hotel deals page opened");
 		  }else {
 			  test.log(stepStatus.FAIL, "Hotel deals  page not opened");
@@ -228,7 +220,6 @@ public class Group11_InterfacesTest extends HeadClass{
 	  
 	  /* Step 1 */
 	  System.out.println("TestCase11.3 Step 1");
-	  FuncFile.waitForTimeThread(4000);
 	  driver.get(path);
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
@@ -238,13 +229,14 @@ public class Group11_InterfacesTest extends HeadClass{
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
 	  elements.moreButton.click();
+	  FuncFile.waitForTimeThread(1000);
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
 	  elements.flights.click();
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
-	  String siteName = driver.getCurrentUrl();
-	  if (siteName.contains("https://www.tripadvisor.co.il/Flights")) {
+	  boolean foundSitPath1 = FuncFile.waitForSitePathContainsText(driver, "https://www.tripadvisor.co.il/Flights");
+	  if (foundSitPath1) {
 		  test.log(stepStatus.PASS, "Flights deals page opened");
 	  }else {
 		  test.log(stepStatus.FAIL, "Flights deals  page not opened");
@@ -253,61 +245,70 @@ public class Group11_InterfacesTest extends HeadClass{
 	  }
 	  
 	  /* Step 2 */
-	  System.out.println("TestCase11.2 Step 2");
-	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
-	  elements.initElements(driver);
-	  elements.flightWhereInput.sendKeys("london");
-	  FuncFile.waitForTimeThread(1000);
-	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
-	  elements.initElements(driver);
-	  elements.searchFlightsButton.click();
-	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
-	  FuncFile.waitForTimeThread(1000);
-	  elements.initElements(driver);
-	  
 	  try {
+		  System.out.println("TestCase11.3 Step 2");
+		  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+		  elements.initElements(driver);
+		  boolean found = FuncFile.searchClickableElement(driver, elements.flightWhereInput.get(1));
+		  System.out.println("result " + found);
+		  elements.initElements(driver);
+		  System.out.println("From " + elements.flightWhereInput.get(0).getAttribute("value"));
+		  if (found && (elements.flightWhereInput.get(1).getAttribute("value").isBlank())) {
+			  elements.flightWhereInput.get(1).click();
+			  elements.flightWhereInput.get(1).sendKeys("לונדון");
+		  }
+		  FuncFile.waitForTimeThread(1000);
+		  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+		  elements.initElements(driver);
+		  elements.searchFlightsButton.click();
+		  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+		  elements.initElements(driver);
 		  boolean found1 = FuncFile.searchClickableElement(driver, elements.innerSearchFlightsButton);
-		  test.log(stepStatus.PASS, "Flight search results page opened");
+		  FuncFile.waitForTimeThread(3000);
+		  if(found1) {
+			  test.log(stepStatus.PASS, "Flight search results page opened");
+		  }else {
+			  test.log(stepStatus.FAIL, "Flight search results page not opened");
+			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
+			  Assert.fail("Flight search results page not opened");
+		  }
 		} catch (Exception e) {
-			test.log(stepStatus.FAIL, "Flight search results page not opened");
-			ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			Assert.fail("Flight search results page not opened");
 			System.out.println("Error " + e);
 		}
 	  
+	  
 	  /* Step 3 */
-	  System.out.println("TestCase11.2 Step 3");
+	  System.out.println("TestCase11.3 Step 3");
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
+	  boolean found3 = FuncFile.searchClickableElement(driver, elements.viewFlightDeal);
 	  elements.viewFlightDeal.click();
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
-	  
-	  try {
-		  boolean found1 = FuncFile.waitForTextPresence(driver, elements.viewFlightHeadline, "הצג את פרטי הטיסה שלך");
+	  boolean found2 = FuncFile.waitForTextPresence(driver, elements.viewFlightHeadline, "הצג את פרטי הטיסה שלך");
+	  FuncFile.waitForTimeThread(3000);
+	  if(found2) {
 		  test.log(stepStatus.PASS, "Flight search results card opened");
-		} catch (Exception e) {
-			test.log(stepStatus.FAIL, "Flight search results card not opened");
-			ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			Assert.fail("Flight search results card not opened");
-			System.out.println("Error " + e);
-		}
+	  }else {
+		  test.log(stepStatus.FAIL, "Flight search results card not opened");
+		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
+		  Assert.fail("Flight search results card not opened");
+	  }
 	  
 	  /* Step 4 */
-	  System.out.println("TestCase11.2 Step 4");
+	  System.out.println("TestCase11.3 Step 4");
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
 	  elements.viewInnerFlightDeal.get(0).click();
+	  FuncFile.waitForTimeThread(3000);
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
-	  FuncFile.waitForTimeThread(4000);
 	  List<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 	  driver.switchTo().window(tabs.get(1));
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
-	  
-	  String siteName1 = driver.getCurrentUrl();
-	  if (!siteName1.contains("tripadvisor")) {
+	  boolean foundSitePath = FuncFile.waitForSitePathContainsText(driver, "tripadvisor");
+	  if (!foundSitePath) {
 		  test.log(stepStatus.PASS, "Flights deals page opened");
 	  }else {
 		  test.log(stepStatus.FAIL, "Flights deals page not opened");

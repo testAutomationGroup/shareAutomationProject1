@@ -33,6 +33,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -41,6 +42,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.locators.RelativeLocator;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -138,6 +140,49 @@ public class FuncFile extends HeadClass{
 		public static WebElement waitForElementToBeRefreshedAndClickable(WebDriver driver, WebElement element) {
 			return new WebDriverWait(driver, Duration.ofMillis(4000))
 					.until(ExpectedConditions.elementToBeClickable(element));
+		}
+		
+		/* Wait for site address presence in 5 seconds*/
+		public static boolean waitForSitePath(WebDriver driver, String expectedPath) {
+			String pathNow = driver.getCurrentUrl();
+			StopWatch stopper = new StopWatch();
+			stopper.start();
+			double timeNow = 0.0;
+			
+			while(timeNow < 5000) {
+				pathNow = driver.getCurrentUrl();
+				if (pathNow.equals(expectedPath)) {
+					System.out.println(pathNow);
+					return true;
+				}
+				timeNow = stopper.getTime();
+			}
+			stopper.stop();
+			return false;
+		}
+		
+		/* Wait for site address presence in 5 seconds that contains text*/
+		public static boolean waitForSitePathContainsText(WebDriver driver, String expectedPath) {
+			String pathNow = driver.getCurrentUrl();
+			StopWatch stopper = new StopWatch();
+			stopper.start();
+			double timeNow = 0.0;
+			while(timeNow < 5000) {
+				pathNow = driver.getCurrentUrl();
+				if (pathNow.contains(expectedPath)) {
+					System.out.println(pathNow);
+					return true;
+				}
+				timeNow = stopper.getTime();
+			}
+			stopper.stop();
+			return false;
+		}
+		
+		/* Highlight text */
+		static public void highlightText(WebElement elementContent) {
+			Actions builder = new Actions(driver);
+		    builder.moveToElement(elementContent, 0, 0).clickAndHold().moveToElement(elementContent, elementContent.getSize().getWidth()/2, elementContent.getSize().getHeight()/2).release().build().perform();
 		}
 		
 		/*Find whether element is clickable*/

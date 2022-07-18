@@ -486,11 +486,23 @@ public class Elements extends HeadClass{
 	@FindBy(css = ".hakMy img")
 	WebElement sharedLoadImage;
 	
-	@FindBy(css = "button .fOtGX")
+	@FindBy(css = "button.bMrpo .fOtGX")
 	List<WebElement> currencyLanguageButtons;
+	
+	@FindBy(css = "#menu-item-USD")
+	WebElement currencyUSD;
+	
+	@FindBy(css = "#menu-item-ILS")
+	WebElement currencyILS;
+	
+	@FindBy(css = ".price-wrap .price")
+	List<WebElement>  hotelsPrices;
 	
 	@FindBy(css = "#menu-item-0")
 	WebElement englishUnitedStates;
+	
+	@FindBy(css = "#menu-item-49")
+	WebElement hebrewIsrael;
 	
 	@FindBy(css = "[title='‪Instagram‬']")
 	WebElement instagram;
@@ -510,8 +522,8 @@ public class Elements extends HeadClass{
 	@FindBy(css = "button.primary")
 	WebElement innerSearchFlightsButton;
 	
-	@FindBy(css = ".Kpztm [name='אל']")
-	WebElement flightWhereInput;
+	@FindBy(css = ".Kpztm input")
+	List<WebElement> flightWhereInput;
 	
 	@FindBy(css = ".KgxGZ button")
 	WebElement viewFlightDeal;
@@ -527,6 +539,15 @@ public class Elements extends HeadClass{
 	
 	@FindBy(css = ".fb_logo")
 	WebElement facebookLogo;
+	
+	@FindBy(css = "#menu-item-9")
+	WebElement travelersChoice;
+	
+	@FindBy(css = "p")
+	List<WebElement> travelersChoiceTextP;
+	
+	@FindBy(css = "[href='/TravelersChoice-Destinations-g1']")
+	WebElement travelersChoiceImageLink;
 	
 	Elements(WebDriver driver){
 		System.out.println("Elements constructor");
