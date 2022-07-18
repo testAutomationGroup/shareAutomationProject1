@@ -66,7 +66,7 @@ public class Group10_AccessibilityTest extends HeadClass{
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
 	  try {
-		  boolean found1 = FuncFile.searchClickableElement(driver, elements.searchResultsTitles.get(2));
+		  boolean found1 = FuncFile.searchClickableElement(driver, elements.searchResultsHeadlines.get(2));
 		  test.log(stepStatus.PASS, "Accessibility Hebrew results found");
 	  } catch (Exception e) {
 		  test.log(stepStatus.FAIL, "Accessibility Hebrew results not found");
@@ -95,7 +95,7 @@ public class Group10_AccessibilityTest extends HeadClass{
 	  elements.mainSearchInput.sendKeys(org.openqa.selenium.Keys.RETURN);
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
-	  boolean found = FuncFile.searchClickableElement(driver, elements.searchResultsTitles.get(2));
+	  boolean found = FuncFile.searchClickableElement(driver, elements.searchResultsHeadlines.get(2));
 	  if (found) {
 		  test.log(stepStatus.PASS, "Accessibility English results found");
 	  }else {

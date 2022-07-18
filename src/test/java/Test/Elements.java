@@ -51,8 +51,29 @@ public class Elements extends HeadClass{
 	@FindBy(css = ".AeLHi .ttuOS")
 	WebElement placeFormInnerContinueButton;
 	
+	@FindBy(css = ".gWELN .AeLHi")
+	WebElement placeFormInner2ContinueButton;
+	
+	@FindBy(css = ".RLAnL .Wb")
+	WebElement completePlaceForm;
+	
 	@FindBy(css = ".RCAPL")
 	List<WebElement> placeCategory;
+	
+	@FindBy(css = ".QHaGY")
+	List<WebElement> addFoodTypes;
+	
+	@FindBy(css = ".fpcja")
+	List<WebElement> foodTypes;
+	
+	@FindBy(css = ".RLAnL .sOtnj")
+	WebElement saveFoodTypes;
+	
+	@FindBy(css = "[for='disclaimer'] .I")
+	WebElement createPlaceAgrreement;
+	
+	@FindBy(css = ".RLAnL .AeLHi")
+	WebElement sendPlaceDetailes;
 	
 	@FindBy(css = ".UZwOE")
 	List<WebElement> placeAdressInpuItems;
@@ -60,8 +81,17 @@ public class Elements extends HeadClass{
 	@FindBy(css = "main [role='search'] [role='searchbox']")
 	WebElement mainSearchInput;
 	
+	@FindBy(css = ".result-title")
+	List<WebElement> searchResultsHeadlines;
+	
 	@FindBy(css = ".search-results-title")
-	List<WebElement> searchResultsTitles;
+	List<WebElement> searchResultsImages;
+	
+	@FindBy(css = ".frame .inner")
+	List<WebElement> ReferenceSearchResultsImages;
+	
+	@FindBy(css = ".partial_entry")
+	List<WebElement> referenceListContents;
 	
 	@FindBy(css = ".kaEuY [role='search'] input[role='searchbox']")
 	WebElement hotelsSearchInput;

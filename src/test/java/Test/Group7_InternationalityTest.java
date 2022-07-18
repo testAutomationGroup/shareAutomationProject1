@@ -294,7 +294,7 @@ public class Group7_InternationalityTest extends HeadClass{
 	  ResultsBuilder.SendTestImage(test,driver, "PASS", testName, browser);
 	  
 	  /* Step 1 */
-	  System.out.println("TestCase7.1 Step 1");
+	  System.out.println("TestCase7.4 Step 1");
 	  driver.get(path);
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
