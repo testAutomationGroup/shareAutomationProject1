@@ -93,7 +93,7 @@ public class Group1_SanityTest extends HeadClass{
 		  } else {
 			  test.log(stepStatus.FAIL, "Homepage logo is clickable");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Homepage logo is clickable");
+			  //Assert.fail("Homepage logo is clickable");
 		  }
 		  
 		  /* Step 2 */
@@ -120,7 +120,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Trips logo is not clickable");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Trips logo is not clickable");
+			  //Assert.fail("Trips logo is not clickable");
 		  }
 
 	  }
@@ -150,7 +150,7 @@ public class Group1_SanityTest extends HeadClass{
 			System.out.println(e);
 			test.log(stepStatus.FAIL, "Connectivity windows not opened");
 			ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			Assert.fail("Connectivity windows not opened");
+			//Assert.fail("Connectivity windows not opened");
 			
 		  }
 		  
@@ -185,7 +185,7 @@ public class Group1_SanityTest extends HeadClass{
 			  }else {
 				  test.log(stepStatus.FAIL, "Profile page was not opened");
 				  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-				  Assert.fail("Profile page was not opened");
+				  //Assert.fail("Profile page was not opened");
 			  }
 			} catch (Exception e) {
 				System.out.println("Page not loaded " + e);
@@ -233,7 +233,7 @@ public class Group1_SanityTest extends HeadClass{
 			  }else {
 				  test.log(stepStatus.FAIL, "Account page was not opened");
 				  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-				  Assert.fail("Account page was not opened");
+				  //Assert.fail("Account page was not opened");
 			  }
 			} catch (Exception e) {
 				System.out.println(e);
@@ -250,7 +250,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Account details is not valid");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Account details is not valid");
+			  //Assert.fail("Account details is not valid");
 		  }	  
 		  
 		  /* Step 5 */
@@ -264,7 +264,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Details saving is not valid");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Details saving is not valid");
+			  //Assert.fail("Details saving is not valid");
 		  }
 		  	
 		  FuncFile.waitForTimeThread(3000);
@@ -285,7 +285,7 @@ public class Group1_SanityTest extends HeadClass{
 			  } else {
 				  test.log(stepStatus.FAIL, "Accounts sign out process is not validated");  
 				  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-				  Assert.fail("Accounts sign out process is not validated");
+				  //Assert.fail("Accounts sign out process is not validated");
 			  }
 			  elements.signOutCloseButton.click();
 			} catch (Exception e) {
@@ -317,7 +317,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Notifications page not opened");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Notifications page not opened");
+			  //Assert.fail("Notifications page not opened");
 		  }	  
 		  
 		  /* Step 2 */
@@ -330,7 +330,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Search row not valid");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Search row not valid");
+			  //Assert.fail("Search row not valid");
 		  }	  
 		  
 		  /* Step 3 */
@@ -345,7 +345,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Archive page not opened");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Archive page not opened");
+			  //Assert.fail("Archive page not opened");
 		  }	
 		  
 		  /* Step 4 */
@@ -363,7 +363,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Settings page not opened");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Settings page not opened");
+			  //Assert.fail("Settings page not opened");
 		  }	
 		  driver.close();
 		  driver.switchTo().window(tabs.get(0));
@@ -386,7 +386,7 @@ public class Group1_SanityTest extends HeadClass{
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
 			  driver.close();
 			  driver.switchTo().window(tabs.get(0));
-			  Assert.fail("Questions page not opened");
+			  //Assert.fail("Questions page not opened");
 		  }	
 		  driver.close();
 		
@@ -414,7 +414,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Trips page not opened");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Trips page not opened");
+			  //Assert.fail("Trips page not opened");
 		  }
 		  
 		  /* Step 2 */
@@ -426,7 +426,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Created trip window not opened");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Created trip window not opened");
+			  //Assert.fail("Created trip window not opened");
 		  }
 		  
 		  /* Step 3 and 4*/
@@ -443,7 +443,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Created trip  page not opened");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Created trip  page not opened");
+			  //Assert.fail("Created trip  page not opened");
 		  }
 		  
 		  /* Step 5 */
@@ -459,7 +459,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Cannot add place to trip");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Created trip  page not opened");
+			  //Assert.fail("Created trip  page not opened");
 		  }
 		  
 		  /* Step 6 */
@@ -485,7 +485,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Linked saving is not valid");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Linked saving is not valid");
+			  //Assert.fail("Linked saving is not valid");
 		  }
 		  driver.close();
 		  driver.switchTo().window(tabs.get(0));
@@ -513,7 +513,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Saving trip dates is not valid");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Saving trip dates is not valid");
+			  //Assert.fail("Saving trip dates is not valid");
 		  }
 		  
 		  /* Step 8 */
@@ -539,7 +539,7 @@ public class Group1_SanityTest extends HeadClass{
 			  }else {
 				  test.log(stepStatus.FAIL, "Saving trip description is not valid");
 				  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-				  //Assert.fail("Saving trip description is not valid");
+				  ////Assert.fail("Saving trip description is not valid");
 			  }
 		} catch (Exception e) {
 			System.out.println("Error " + e);
@@ -563,7 +563,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Saving trip name is not valid");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Saving trip name is not valid");
+			  //Assert.fail("Saving trip name is not valid");
 		  }
 		  
 		  /* Step 10 */
@@ -586,7 +586,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Saving link is not valid");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Saving link is not valid");
+			  //Assert.fail("Saving link is not valid");
 		  }
 		  
 		  /* Step 11 */
@@ -604,7 +604,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Public trip is not valid");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Saving link is not valid");
+			  //Assert.fail("Saving link is not valid");
 		  }
 		  
 		  /* Step 12 */
@@ -624,7 +624,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Saving note is not valid");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Saving note is not valid");
+			  //Assert.fail("Saving note is not valid");
 		  }
 		  
 		  /* Step 13 */
@@ -643,7 +643,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "Saving trip is not valid");
 			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-			  Assert.fail("Saving trip is not valid");
+			  //Assert.fail("Saving trip is not valid");
 		  }
 		  
 		  /* Step 14 */
@@ -666,7 +666,7 @@ public class Group1_SanityTest extends HeadClass{
 				System.out.println("Error " + e);
 				test.log(stepStatus.FAIL, "Zoom in out map is not valid");
 				ResultsBuilder.SendTestImage(test, driver, "FAIL", testName, browser);
-				Assert.fail("Zoom in out map is not valid");
+				//Assert.fail("Zoom in out map is not valid");
 			}
 
 		  /* Step 15 */
@@ -683,7 +683,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "All trips tab is not valid");
 			  ResultsBuilder.SendTestImage(test, driver, "FAIL", testName, browser);
-			  Assert.fail("All trips tab is not valid"); 
+			  //Assert.fail("All trips tab is not valid"); 
 		  }
 		  
 		  /* Step 16 */
@@ -700,7 +700,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "All private trips tab is not valid");
 			  ResultsBuilder.SendTestImage(test, driver, "FAIL", testName, browser);
-			  Assert.fail("All private trips tab is not valid"); 
+			  //Assert.fail("All private trips tab is not valid"); 
 		  }
 
 		  /* Step 17 */
@@ -718,7 +718,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "All public trips tab is not valid");
 			  ResultsBuilder.SendTestImage(test, driver, "FAIL", testName, browser);
-			  Assert.fail("All public trips tab is not valid"); 
+			  //Assert.fail("All public trips tab is not valid"); 
 		  }
 		  
 		  /* Step 18 */
@@ -736,7 +736,7 @@ public class Group1_SanityTest extends HeadClass{
 		  }else {
 			  test.log(stepStatus.FAIL, "All saved places tab is not valid");
 			  ResultsBuilder.SendTestImage(test, driver, "FAIL", testName, browser);
-			  Assert.fail("All saved places tab is not valid"); 
+			  //Assert.fail("All saved places tab is not valid"); 
 		  }
 		  
 		  

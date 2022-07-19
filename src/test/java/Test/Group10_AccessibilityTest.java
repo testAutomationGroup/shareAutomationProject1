@@ -72,7 +72,7 @@ public class Group10_AccessibilityTest extends HeadClass{
 		  test.log(stepStatus.FAIL, "Accessibility Hebrew results not found");
 		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
 		  /* Active row when we want to stop the test at this point. 
-		   Assert.fail("Accessibility english results not found"); */
+		   //Assert.fail("Accessibility english results not found"); */
 		  System.out.println("Error " + e);
 	  }
 	  
@@ -101,7 +101,7 @@ public class Group10_AccessibilityTest extends HeadClass{
 	  }else {
 		  test.log(stepStatus.FAIL, "Accessibility English results not found");
 		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
-		  Assert.fail("Accessibility Esnglish results not found"); 
+		  //Assert.fail("Accessibility Esnglish results not found"); 
 	  }
 	  
   }
