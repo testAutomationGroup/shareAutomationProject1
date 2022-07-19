@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <parameter name="path" value="https://www.tripadvisor.co.il"/>
-  <parameter name="browser" value="Chrome"/>
+  <parameter name="path" value="param-val-not-found"/>
+  <parameter name="browser" value="param-val-not-found"/>
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test.Group1_SanityTest">
+      <class name="Test.Group6_RecoveryTest">
         <methods>
-          <include name="beforeGroup1_SystemSanityTests"/>
-          <include name="AfterGroup1_SystemSanityTests"/>
-          <include name="TestCase1_2_1" invocation-numbers="0"/>
+          <include name="beforeGroup6_RecoveryTest"/>
+          <include name="TestCase6_1" invocation-numbers="0"/>
+          <include name="AfterGroup6_RecoveryTest"/>
         </methods>
-      </class> <!-- Test.Group1_SanityTest -->
+      </class> <!-- Test.Group6_RecoveryTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

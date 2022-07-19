@@ -12,8 +12,8 @@
     <classes>
       <class name="Test.Group4_ProcessesTest">
         <methods>
+          <include name="TestCase4_1_2" invocation-numbers="0"/>
           <include name="AfterGroup4_ProcessesTest"/>
-          <include name="TestCase4_1_1" invocation-numbers="0"/>
           <include name="beforeGroup4_ProcessesTest"/>
         </methods>
       </class> <!-- Test.Group4_ProcessesTest -->

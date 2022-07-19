@@ -1,4 +1,4 @@
-package Test;
+package Tests;
 import java.awt.AWTException;
 import java.awt.datatransfer.Clipboard;
 import java.io.IOException;
@@ -34,6 +34,10 @@ import org.xml.sax.SAXException;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+
+import Functions.FuncFile;
+import HeadClass.HeadClass;
+import Tools.ResultsFileBuilder;
 
 public class Group1_SanityTest extends HeadClass{
 	  

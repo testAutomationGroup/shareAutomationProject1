@@ -1,4 +1,4 @@
-package Test;
+package HeadClass;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+
+import Elements.Elements;
 
 //Class for all mutual classes, properties and configuration parameters
 public class HeadClass {

@@ -1,6 +1,10 @@
-package Test;
+package Tests;
 
 import org.testng.annotations.Test;
+
+import Functions.FuncFile;
+import HeadClass.HeadClass;
+import Tools.ResultsFileBuilder;
 
 import java.io.IOException;
 import java.time.Duration;

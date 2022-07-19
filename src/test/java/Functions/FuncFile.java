@@ -1,4 +1,4 @@
-package Test;
+package Functions;
 
 import java.awt.AWTException;
 import java.awt.Rectangle;
@@ -51,6 +51,7 @@ import org.sikuli.script.Screen;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+import HeadClass.HeadClass;
 import atu.testrecorder.ATUTestRecorder;
 import atu.testrecorder.exceptions.ATUTestRecorderException;
 import io.github.bonigarcia.wdm.WebDriverManager;

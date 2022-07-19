@@ -1,7 +1,11 @@
-package Test;
+package Tests;
 
 import org.testng.annotations.Test;
 import org.xml.sax.SAXException;
+
+import Functions.FuncFile;
+import HeadClass.HeadClass;
+import Tools.ResultsFileBuilder;
 
 import java.awt.AWTException;
 import java.awt.Robot;
