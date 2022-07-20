@@ -2,6 +2,9 @@
 <environment>
   <TestImagesPath>"C:\\my files\\TestCaseImages"</TestImagesPath>
   <TestResultsPath>"\\C:\\my files\\ResultsFile\\"</TestResultsPath>
+  <path>https://www.tripadvisor.co.il</path>
+  <countriesFilePath>C:\\my files\\projectFiles\\countriesFile.xlsx</countriesFilePath>
+  <currenciesFilePath>C:\\my files\\projectFiles\\currenciesFile.xlsx</currenciesFilePath>
   <PageLoadingTime>500</PageLoadingTime>
   <browser1>Chrome</browser1>
   <browser2>Firefox</browser2>
