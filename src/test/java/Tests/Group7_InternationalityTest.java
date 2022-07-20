@@ -5,10 +5,12 @@ import org.xml.sax.SAXException;
 
 import Functions.FuncFile;
 import HeadClass.HeadClass;
+import Tools.Country;
 import Tools.ResultsFileBuilder;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -221,6 +223,24 @@ public class Group7_InternationalityTest extends HeadClass{
 		  //Assert.fail("Price currency is not valid"); 
 	  }
 	  
+	  /* Step 6 validate currencies */
+	  try {
+		  System.out.println("TestCase7.2 Step 6");
+		  driver.get(path);
+		  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+		  elements.initElements(driver);
+		  FuncFile.searchClickableElement(driver, elements.trips);
+		  boolean currenciesValidated = FuncFile.validateAllcurrencies(driver, currencies);
+		  if (currenciesValidated) {
+			  test.log(stepStatus.PASS, "Currencies signs are valid");
+		  }else {
+			  test.log(stepStatus.FAIL, "Currencies signs are not valid");
+			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
+			  //Assert.fail("Currencies signs are not valid"); 
+		  }
+		} catch (Exception e) {
+			System.out.println("Error " + e);
+		}
   }
   
   @Parameters({"browser", "path"})
@@ -273,9 +293,10 @@ public class Group7_InternationalityTest extends HeadClass{
 		  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 		  FuncFile.waitForTimeThread(2000);
 		  elements.initElements(driver);
-		  String foundCurrencyType = elements.currencyLanguageButtons.get(1).getText();
-		  System.out.println("currency type is " + foundCurrencyType);
-		  if (foundCurrencyType.equals("ישראל")) {
+		  String foundCountry = elements.currencyLanguageButtons.get(1).getText();
+		  System.out.println("Country name is " + foundCountry);
+		  System.out.println("Validate Hebrew language " + FuncFile.validateLanguage(driver, countries ,49));
+		  if (foundCountry.equals("ישראל")) {
 			  test.log(stepStatus.PASS, "Language type selected");
 		  }else {
 			  test.log(stepStatus.FAIL, "Language type not selected");
@@ -285,7 +306,26 @@ public class Group7_InternationalityTest extends HeadClass{
 		} catch (Exception e) {
 			System.out.println("Error " + e);
 		}
-	 
+	  
+	  /* Step 3 validate languages */
+	  try {
+		  System.out.println("TestCase7.3 Step 3");
+		  driver.get(path);
+		  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+		  elements.initElements(driver);
+		  FuncFile.searchClickableElement(driver, elements.trips);
+		  boolean countriesValidated = FuncFile.validateAllLanguages(driver, countries);
+		  if (countriesValidated) {
+			  test.log(stepStatus.PASS, "Countries languages are valid");
+		  }else {
+			  test.log(stepStatus.FAIL, "Countries languages are not valid");
+			  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
+			  //Assert.fail("Countries languages are not valid"); 
+		  }
+		} catch (Exception e) {
+			System.out.println("Error " + e);
+		}
+	  
 	
   }
   

@@ -517,14 +517,23 @@ public class Elements extends HeadClass{
 	@FindBy(css = ".hakMy img")
 	public WebElement sharedLoadImage;
 	
-	@FindBy(css = "button.bMrpo .fOtGX")
+	@FindBy(css = "button.bMrpo")
 	public List<WebElement> currencyLanguageButtons;
+	
+	@FindBy(css = ".biGQs p")
+	public WebElement versionLanguage;
+	
+	@FindBy(css = "[role='menu'] li")
+	public List<WebElement> countries;
 	
 	@FindBy(css = "#menu-item-USD")
 	public WebElement currencyUSD;
 	
 	@FindBy(css = "#menu-item-ILS")
 	public WebElement currencyILS;
+	
+	@FindBy(css = ".IIbRQ li")
+	public List<WebElement> currencies;
 	
 	@FindBy(css = ".price-wrap .price")
 	public List<WebElement>  hotelsPrices;

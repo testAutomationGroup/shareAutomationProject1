@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -29,8 +30,13 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.time.StopWatch;
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -40,6 +46,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.v100.log.Log;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -52,6 +60,8 @@ import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 import HeadClass.HeadClass;
+import Tools.Country;
+import Tools.Currency;
 import atu.testrecorder.ATUTestRecorder;
 import atu.testrecorder.exceptions.ATUTestRecorderException;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -474,92 +484,254 @@ public class FuncFile extends HeadClass{
 	        	  return false;
 	          }
 		}
-		/*Create excel file*/
-	/*	public static String createFile(String folder) throws IOException {
-			SimpleDateFormat formatter = new SimpleDateFormat("ddMMyy_HHmmss"); 
-			Date date = new Date(System.currentTimeMillis());
-			String fileName = "testFile_" + formatter.format(date);
-			String path = folder + "\\" + fileName + ".xlsx";
-			System.out.println("Path is " + path);
-			
+		
+		/* Save browser log into array list */
+		public static List<String> saveBrowserConsoleLog(WebDriver driver, String browserName){
+			List<String> consoleLog = new ArrayList<String>();
+			if (browserName.equals("Chrome")){
+				DevTools tools = ((ChromeDriver)driver).getDevTools();
+				tools.createSession();
+				tools.send(Log.enable());
+				tools.addListener(Log.entryAdded(), entry->{
+					consoleLog.add("Log: " + entry.getText());
+					consoleLog.add("Level: " + entry.getLevel());
+				});
+			}
+			return consoleLog;
+		}
+		
+		/* Validates whether the website language is presented in specific language. Text Element is tested */
+		public static boolean validateLanguage(WebDriver driver, List<Country> countries , int countryNumber) {
+			String expectedTranslation = countries.get(countryNumber).tripsTranslated;
+			String textFromSite = elements.trips.getText();
+			String countryName = countries.get(countryNumber).countryName;
+			String countryLanguage = countries.get(countryNumber).countryLanguage;
+			System.out.println("Expected translated trips for country number " + countryNumber + " with name " + countryName + " with language " + countryLanguage + " is " + expectedTranslation);
+			return textFromSite.equals(expectedTranslation); /*"טיולים"*/
+		}
+		
+		/* Validate all languages transation */
+		public static boolean validateAllLanguages(WebDriver driver, List<Country> countries) throws InterruptedException {
+
+			boolean validateLanguages = true;
+			boolean validateThisLanguage = true;
 			try {
-				System.out.println("Path is " + path);
-				try (XSSFWorkbook workbook = new XSSFWorkbook()) {
-					XSSFSheet sheet = workbook.createSheet("Java Books");
-					
-					Row row = sheet.createRow(0);
-					Cell cell = row.createCell(0);
-					cell.setCellValue(1);
-					try(FileOutputStream outputStream = new FileOutputStream(new File(path))){
-						System.out.println("Excel File has been created successfully."); 
-						workbook.write(outputStream);
-						outputStream.close();
-					}catch(Exception e){
-						System.out.println(e.getMessage());
+				elements.currencyLanguageButtons.get(1).click();
+				driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+				elements.initElements(driver);
+				int size = elements.countries.size();
+				elements.currencyLanguageButtons.get(1).click();
+				driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+				elements.initElements(driver);
+				System.out.println("Size is " + size);
+				
+				for(int i = 0; i<size; i++) {
+						/* Click country button to select country langauge. In china where button is not clickable navigate back to open menu( Country 32 中国  旅行) */
+						if (i==31) {
+							System.out.println("Country china menu is not clickable");
+							continue;
+						}
+						if(i==13) {
+							System.out.println("Alert window in Germany web site. Continue validate");
+							continue;
+						}
+						elements.currencyLanguageButtons.get(1).click();
+						driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+						elements.initElements(driver);
+						FuncFile.searchClickableElement(driver, elements.countries.get(i));
+						FuncFile.waitForTimeThread(1000);
+						/* Click selected country and validate */
+						elements.countries.get(i).click();
+						driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+						elements.initElements(driver);
+						FuncFile.searchClickableElement(driver, elements.trips);
+						FuncFile.waitForTimeThread(1000);
+						validateThisLanguage = FuncFile.validateLanguage(driver, countries, i);
+						if(!validateThisLanguage) {
+							validateLanguages = false;
+							System.out.println("Transaltion for country " + countries.get(i).countryNumber + countries.get(i).countryName + " is not valid");
+						}else {
+							System.out.println("Country language " + countries.get(i).countryNumber + " is valid");
+						}
+						driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+						elements.initElements(driver);
+					}	
+			} catch (Exception e) {
+				System.out.println("Error " + e);
+			}
+			return validateLanguages;
+		}
+		
+		/* Create countries object ArrayList from filepath */
+		public static List<Country> createCountriesListFromFile(String filePath) throws IOException{
+			System.out.println("here1");
+			List<Country> countries = new ArrayList<Country>();
+			System.out.println("here2");
+			FileInputStream fileinsputstream = new FileInputStream("C:\\my files\\projectFiles\\saved files\\countriesFile.xlsx");
+			System.out.println("here3");
+			try {
+				XSSFWorkbook workbook = new XSSFWorkbook(fileinsputstream);
+				System.out.println("here4");
+				XSSFSheet sheet = workbook.getSheet("Countries Languages");
+				int firstRow = sheet.getFirstRowNum();
+				int lastRow = sheet.getLastRowNum();
+				int lastCell = 4;
+				for(int i = firstRow; i <= lastRow; i++) {
+					Row row = sheet.getRow(i);
+					if (row!=null) {
+						lastCell = row.getLastCellNum();
+						Country country = new Country();
+						for(int k=0;k < lastCell; k++) {
+							Cell cell = row.getCell(i);
+							if (cell!=null) {
+								if (k==0) {
+									country.countryNumber = (int) cell.getNumericCellValue();
+								}
+								if(k==1) {
+									country.countryName = cell.getStringCellValue();
+								}
+								if(k==2) {
+									country.countryLanguage = cell.getStringCellValue();
+								}
+								if(k==3) {
+									country.tripsTranslated = cell.getStringCellValue();
+								}
+							}
+							
+						}
+						countries.add(country);
 					}
 				}
-			  	
 			} catch (Exception e) {
-			
-				System.out.println("Error" + e.getMessage());
+				System.out.println("Error " + e);
 			}
-			return path; 
-			
-			
-		}*/
+			return countries;
+		}
 		
-		/*Read data from excel file*/
-		/*Add data into existing excel file*/
-		/*public static void addFileData(String filePath, String value, int rowNumber, int cellNumber) throws IOException {
+		/* Insert all countries information into excel file */
+		public static void insertCountriesToFile(WebDriver driver, List<Country> countries, String filePath) throws FileNotFoundException {
+			try {
 				
-				FileInputStream inputstream = new FileInputStream(filePath);
-				System.out.println("before workbook");
-				XSSFWorkbook workbook = null;
-				try {
-					workbook = new XSSFWorkbook(inputstream);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.getMessage();
-					e.printStackTrace();
-				}
-				System.out.println("after workbook");
-				org.apache.poi.ss.usermodel.Sheet sheet = workbook.getSheetAt(0);
-				Row row = sheet.getRow(rowNumber);
-				if (row==null) {
-					row = sheet.createRow(rowNumber);
-				}
-				org.apache.poi.ss.usermodel.Cell cell = row.getCell(cellNumber);
-				if (cell==null) {
-					cell = row.createCell(cellNumber);
-				}
-				cell.setCellValue(value);
+				int size = countries.size();
+				int rowNumber = 0;
+				int cellNumber = 0;
+				File countryFile = new File(filePath);
+				FileInputStream inputStream = new FileInputStream(countryFile);
+				XSSFWorkbook workbook = new XSSFWorkbook();
+				/* Open existing countriesFile from saved path */
+				XSSFSheet sheet = workbook.createSheet("Countries Languages");
 				
-				FileOutputStream outputstream = new FileOutputStream(filePath);
-				try {
+				System.out.println("Start insert countries languages into file");
+				
+				/* Insert listArray objects */
+				for(Country ctry : countries) {
+					Row row = sheet.createRow(rowNumber++);
+					if (row==null) {
+						row = sheet.createRow(rowNumber);
+					}
+					Cell cell1 = row.createCell(0);
+					cell1.setCellValue(ctry.countryNumber);//Integer(ctry.countryNumber)
+					Cell cell2 = row.createCell(1);
+					cell2.setCellValue(ctry.countryName);//String(ctry.countryName)
+					Cell cell3 = row.createCell(2);
+					cell3.setCellValue(ctry.countryLanguage);//String()
+					Cell cell4 = row.createCell(3);
+					cell4.setCellValue(ctry.tripsTranslated);//String(ctry.tripsTranslated)
+				}
+				
+				/* Save and close file */
+				try(FileOutputStream outputstream = new FileOutputStream(countryFile)) {
+					System.out.println("File been created");
 					workbook.write(outputstream);
-					//workbook.setSheetName(0, "names");
-					workbook.close();
+					//workbook.setSheetName(0, "Countries languages");
+					//workbook.close();
 					outputstream.close();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					System.out.println(e.getMessage());
 				}
 				
-		}*/
-		/*Delete data from existing excel file*/
-		/*Create test case report excel file*/
-		/* Open a file*//*
-			try {
-				///String path = FuncFile.createFile(testExcelFilesPath);
-				String filePath =  "C:\\my files\\testExcelFiles\\testFile1.xlsx";
-				///addFileData1(filePath,"בדיקה 1 בדיקה בדיקה",0,0);
-				System.out.println("Here1 " + filePath);
 			} catch (Exception e) {
-				System.out.println(e.getMessage());
-			}*/
+				System.out.println("Error " + e);
+			}
+			
+
+		}
 		
+		public static void writeCountry(Country country, Row row) {
+			Cell cell = row.createCell(1);
+			cell.setCellValue(country.countryNumber);
+			cell = row.createCell(2);
+			cell.setCellValue(country.countryName);
+			cell = row.createCell(3);
+			cell.setCellValue(country.countryLanguage);
+			cell = row.createCell(4);
+			cell.setCellValue(country.tripsTranslated);
+		}
+		
+		/* Create countries objects array from site*/
+		public static List<Country> createCountriesArrayFromSite (WebDriver driver) throws InterruptedException{
+
+			System.out.println("Start create countries objects array ");
+			driver.get("https://www.tripadvisor.co.il/");
+			driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+			elements.initElements(driver);
+			List<Country> countries = new ArrayList<Country>();
+			try {
+				System.out.println("here1");
+				elements.currencyLanguageButtons.get(1).click();
+				driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+				elements.initElements(driver);
+				int size = elements.countries.size();
+				elements.currencyLanguageButtons.get(1).click();
+				driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+				elements.initElements(driver);
+				System.out.println("Size is " + size);
+				for(int i = 47; i < size; i++) {	
+					Country country = new Country();
+					country.countryNumber = i+1;
+					/* Click country button to select country langauge. In china where button is not clickable navigate back to open menu( Country 32 中国  旅行) */
+					if (country.countryNumber==33) {
+						System.out.println("Country 33");
+						elements.initElements(driver);
+						driver.navigate().back();
+						driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+						elements.initElements(driver);
+					}
+					if(country.countryNumber==14) {
+						continue;
+					}
+					elements.currencyLanguageButtons.get(1).click();
+					FuncFile.searchClickableElement(driver, elements.countries.get(i));
+					//FuncFile.waitForTimeThread(400);
+					driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+					elements.initElements(driver);
+					/* Click selected country, create object and add */
+					country.countryName = elements.countries.get(i).getText();
+					elements.countries.get(i).click();
+					FuncFile.searchClickableElement(driver, elements.trips);
+					//FuncFile.waitForTimeThread(400);
+					driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+					elements.initElements(driver);
+					/* Print version language text when presented */
+					try {
+						System.out.println(country.countryNumber + " " + elements.versionLanguage.getText());
+					} catch (Exception e) {
+						System.out.println("VersionLanguage not found");
+					}
+					country.countryLanguage = "";
+					country.tripsTranslated = elements.trips.getText();
+					countries.add(country);
+					country.printCountry();
+				}	
+			} catch (Exception e) {
+				System.out.println("Error " + e);
+			}
+
+			return countries;
+		}
+	
 		/*Add data into existing excel file*/
-		/*public static void addFileData1(String filePath, String value, int rowNumber, int cellNumber) throws IOException {
+		public static void addFileData1(String filePath, String value, int rowNumber, int cellNumber) throws IOException, EncryptedDocumentException, InvalidFormatException {
 				
 				FileInputStream inputstream = new FileInputStream(new File(filePath));
 				System.out.println("before workbook");
@@ -571,7 +743,7 @@ public class FuncFile extends HeadClass{
 					e.getMessage();
 					e.printStackTrace();
 				}
-				System.out.println("after workbook");
+				System.out.println("Here1");
 				org.apache.poi.ss.usermodel.Sheet sheet = workbook.getSheetAt(0);
 				Row row = sheet.getRow(rowNumber);
 				if (row==null) {
@@ -594,6 +766,177 @@ public class FuncFile extends HeadClass{
 					e.printStackTrace();
 				}
 				
-		} */
+		} 
+		
+		/* Create currencies objects array from site*/
+		public static List<Currency> createCurrencyArrayFromSite (WebDriver driver) throws InterruptedException{
+
+			System.out.println("Start create currencies objects array ");
+			driver.get("https://www.tripadvisor.co.il/");
+			driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+			elements.initElements(driver);
+			List<Currency> currencies = new ArrayList<Currency>();
+			try {
+				System.out.println("CreateCurrencyArrayFromSite here1");
+				elements.currencyLanguageButtons.get(0).click();
+				driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+				FuncFile.searchClickableElement(driver, elements.currencies.get(1));
+				elements.initElements(driver);
+				int size = elements.currencies.size();
+				System.out.println("Size is " + size);
+				for(int i = 0; i < size; i++) {	
+					Currency currency = new Currency();
+					currency.currencyNumber = i;
+					/* Click currency button to select */
+					driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+					elements.initElements(driver);
+					/* Click selected currency, create object and add */
+					String[] currencyLine = elements.currencies.get(i).getText().split(" ", 2);
+					currency.currencyName = currencyLine[1];
+					currency.currencySign =  currencyLine[0];
+					currencies.add(currency);
+					currency.printCurrency();
+				}	
+			} catch (Exception e) {
+				System.out.println("Error " + e);
+			}
+
+			return currencies;
+		}
+		
+		/* Insert all currencies information into excel file */
+		public static void insertCurrenciesToFile(WebDriver driver, List<Currency> currencies, String filePath) throws FileNotFoundException {
+			try {
+				
+				int size = countries.size();
+				int rowNumber = 0;
+				int cellNumber = 0;
+				File countryFile = new File(filePath);
+				FileInputStream inputStream = new FileInputStream(countryFile);
+				XSSFWorkbook workbook = new XSSFWorkbook();
+				/* Open existing countriesFile from saved path */
+				XSSFSheet sheet = workbook.createSheet("Currencies signs");		
+				System.out.println("Start insert currencies signs into file");
+				
+				/* Insert listArray objects */
+				for(Currency curr : currencies) {
+					Row row = sheet.createRow(rowNumber++);
+					if (row==null) {
+						row = sheet.createRow(rowNumber);
+					}
+					Cell cell1 = row.createCell(0);
+					cell1.setCellValue(curr.currencyNumber);
+					Cell cell2 = row.createCell(1);
+					cell2.setCellValue(curr.currencyName);
+					Cell cell3 = row.createCell(2);
+					cell3.setCellValue(curr.currencySign);
+				}
+				
+				/* Save and close file */
+				try(FileOutputStream outputstream = new FileOutputStream(countryFile)) {
+					System.out.println("File been created");
+					workbook.write(outputstream);
+					//workbook.setSheetName(0, "Countries languages");
+					//workbook.close();
+					outputstream.close();
+				} catch (IOException e) {
+					System.out.println(e.getMessage());
+				}
+				
+			} catch (Exception e) {
+				System.out.println("Error " + e);
+			}
+		}
+		
+		/* Create currencies object ArrayList from filepath */
+		public static List<Currency> createCurrenciesListFromFile(String filePath) throws IOException{
+			System.out.println("here1");
+			List<Currency> currencies = new ArrayList<Currency>();
+			System.out.println("here2");
+			FileInputStream fileinsputstream = new FileInputStream("C:\\my files\\projectFiles\\saved files\\currenciesFile.xlsx");
+			System.out.println("here3");
+			try {
+				XSSFWorkbook workbook = new XSSFWorkbook(fileinsputstream);
+				System.out.println("here4");
+				XSSFSheet sheet = workbook.getSheet("Countries Languages");
+				int firstRow = sheet.getFirstRowNum();
+				int lastRow = sheet.getLastRowNum();
+				int lastCell = 3;
+				for(int i = firstRow; i <= lastRow; i++) {
+					Row row = sheet.getRow(i);
+					if (row!=null) {
+						lastCell = row.getLastCellNum();
+						Currency currency = new Currency();
+						for(int k=0;k < lastCell; k++) {
+							Cell cell = row.getCell(i);
+							if (cell!=null) {
+								if (k==0) {
+									currency.currencyNumber = (int) cell.getNumericCellValue();
+								}
+								if(k==1) {
+									currency.currencyName = cell.getStringCellValue();
+								}
+								if(k==2) {
+									currency.currencySign = cell.getStringCellValue();
+								}
+							}
+							
+						}
+						currencies.add(currency);
+					}
+				}
+			} catch (Exception e) {
+				System.out.println("Error " + e);
+			}
+			return currencies;
+		}
+		
+		/* Validates whether the website currency is presented. Text sign is searched in page */
+		public static boolean validateCurrency(WebDriver driver, List<Currency> currencies , int currencyNumber) {
+			String expectedCurrency = currencies.get(currencyNumber).currencySign.trim();
+			String currencyName = currencies.get(currencyNumber).currencyName;
+			System.out.println("Expected currency for currency number " + currencyNumber + " and name " + currencyName + " is " + expectedCurrency);
+			return driver.getPageSource().contains(expectedCurrency); /*"₪"*/
+		}
+		
+		/* Validate all currencies signs */
+		public static boolean validateAllcurrencies(WebDriver driver, List<Currency> currencies) throws InterruptedException {
+			boolean validateCurrencies = true;
+			boolean validateThisCurrency = true;
+			elements.currencyLanguageButtons.get(0).click();
+			driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+			elements.initElements(driver);
+			int size = elements.currencies.size();
+			elements.currencyLanguageButtons.get(0).click();
+			driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+			elements.initElements(driver);
+			System.out.println("Size is " + size);
+			
+			for(int i=0; i<size; i++) {
+					/* Click currency button to select from menu */
+					
+					elements.currencyLanguageButtons.get(0).click();
+					driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+					elements.initElements(driver);
+					FuncFile.searchClickableElement(driver, elements.currencies.get(i));
+					FuncFile.waitForTimeThread(1000);
+					/* Click selected currency and validate */
+					elements.currencies.get(i).click();
+					driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+					elements.initElements(driver);
+					FuncFile.searchClickableElement(driver, elements.trips);
+					FuncFile.waitForTimeThread(1000);
+					validateThisCurrency = FuncFile.validateCurrency(driver, currencies, i);
+					if(!validateThisCurrency) {
+						validateCurrencies = false;
+						System.out.println("Currency sign " + currencies.get(i).currencyNumber + currencies.get(i).currencyName + " is not valid");
+					}else {
+						System.out.println("Currency sign " + currencies.get(i).currencyName + " is valid");
+					}
+					driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+					elements.initElements(driver);
+				}	
+			return validateCurrencies;
+		}
 			
 }
