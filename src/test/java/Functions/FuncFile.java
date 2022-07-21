@@ -989,16 +989,17 @@ public class FuncFile extends HeadClass{
 			int width = 828;
 			int height = 1792;
 			int pixelRatio = 100;
+			int previewScale = 3;
 			if (deviceName.equals("iPhone11")){
-				width = 828;
-				height = 1792;
-				pixelRatio = 50;
+				width = 828/previewScale;
+				height = 1792/previewScale;
+				pixelRatio = 100;
 				System.out.println("Device is set for " + deviceName);
 			}
 			if (deviceName.equals("A5_2017")){
-				width = 1080;
-				height = 1920;
-				pixelRatio = 50;
+				width = 1080/3;
+				height = 1920/3;
+				pixelRatio = 100;
 				System.out.println("Device is set for " + deviceName);
 			}
 			boolean mobile = true;
