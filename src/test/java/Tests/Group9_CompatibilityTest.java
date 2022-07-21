@@ -56,7 +56,7 @@ public class Group9_CompatibilityTest extends HeadClass{
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = true, priority = 1)
+  @Test(enabled = false, priority = 1)
   public void TestCase9_1(String browser, String path) throws IOException, InterruptedException {
 	  String testName = "Group9_CompatibilityTest_TestCase9.1";
 	  String Description = "9.1 Compatible with various browsers";
@@ -80,7 +80,7 @@ public class Group9_CompatibilityTest extends HeadClass{
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = true, priority = 2)
+  @Test(enabled = false, priority = 2)
   public void TestCase9_2(String browser, String path) throws IOException, InterruptedException {
 	  String testName = "Group9_CompatibilityTest_TestCase9.2";
 	  String Description = "9.2 Compatible with various screen sizes";
@@ -113,6 +113,10 @@ public class Group9_CompatibilityTest extends HeadClass{
 
 	  /* Step 1 */
 	  System.out.println("TestCase9.1 Step 2");
+	  FuncFile.setScreenSize(driver, "iPhone11");
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  elements.initElements(driver);
+	  FuncFile.waitForTimeThread(1000);
 	  driver.get(path);
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
@@ -128,7 +132,7 @@ public class Group9_CompatibilityTest extends HeadClass{
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = true, priority = 4)
+  @Test(enabled = false, priority = 4)
   public void TestCase9_4(String browser, String path) throws IOException, InterruptedException {
 	  String testName = "Group9_CompatibilityTest_TestCase9.4";
 	  String Description = "9.4 Compatible with various windows sizes";

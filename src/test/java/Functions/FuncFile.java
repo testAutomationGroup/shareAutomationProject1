@@ -980,5 +980,33 @@ public class FuncFile extends HeadClass{
 				System.out.println("My location in Israel is " + myLocation);
 				return myLocation;
 			}
-		}		
+		}	
+		
+		/* Set window size to mobile device screen size with Dev Tools device mode */
+		public static void setScreenSize(WebDriver driver, String deviceName) {
+			DevTools tools = ((ChromeDriver)driver).getDevTools();
+			tools.createSession();
+			int width = 828;
+			int height = 1792;
+			int pixelRatio = 100;
+			if (deviceName.equals("iPhone11")){
+				width = 828;
+				height = 1792;
+				pixelRatio = 50;
+				System.out.println("Device is set for " + deviceName);
+			}
+			if (deviceName.equals("A5_2017")){
+				width = 1080;
+				height = 1920;
+				pixelRatio = 50;
+				System.out.println("Device is set for " + deviceName);
+			}
+			boolean mobile = true;
+			try {
+				tools.send(Emulation.setDeviceMetricsOverride(width, height, pixelRatio, mobile, Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty()));
+			} catch (Exception e) {
+				System.out.println("Error " + e);
+			}
+			
+		}
 }
