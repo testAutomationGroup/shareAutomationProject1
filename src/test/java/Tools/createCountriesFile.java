@@ -94,7 +94,7 @@ public class createCountriesFile extends HeadClass{
 		countries.add(new Country(37,"New Zealand" , "English", "Trips"));
 		countries.add(new Country(38,"Philippines" , "English", "Trips"));
 		countries.add(new Country(39,"Singapore" , "English", "Trips"));
-		countries.add(new Country(40,"Indonesia" , "English", "Trips"));
+		countries.add(new Country(40,"Indonesia" , "English", "Trip"));
 		countries.add(new Country(41,"대한민국" , "Korean", "여행"));
 		countries.add(new Country(42,"ไทย" , "Thai", "ทริป"));
 		countries.add(new Country(43,"Việt Nam" , "Vietnamese", "Chuyến đi"));
@@ -102,7 +102,7 @@ public class createCountriesFile extends HeadClass{
 		countries.add(new Country(45,"Hong Kong SAR" , "English", "Trips"));
 		countries.add(new Country(46,"香港特別行政區" , "Chinese", "旅程"));
 		countries.add(new Country(47,"العربية" , "Arabic", "رحلات"));
-		countries.add(new Country(48,"رحلات" , "Arabic", "مصر"));
+		countries.add(new Country(48,"مصر" , "Arabic", "رحلات"));
 		countries.add(new Country(49,"South Africa" , "English", "Trips"));
 		countries.add(new Country(50,"ישראל" , "English", "טיולים"));
 		for(Country ctry : countries) {

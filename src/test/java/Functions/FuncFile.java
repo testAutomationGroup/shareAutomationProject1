@@ -22,6 +22,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import javax.imageio.ImageIO;
 import javax.xml.parsers.DocumentBuilder;
@@ -47,6 +48,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.v100.emulation.Emulation;
 import org.openqa.selenium.devtools.v100.log.Log;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -912,14 +914,14 @@ public class FuncFile extends HeadClass{
 			elements.initElements(driver);
 			System.out.println("Size is " + size);
 			
-			for(int i=0; i<size; i++) {
+			for(int i = 0; i<size; i++) {
 					/* Click currency button to select from menu */
 					
 					elements.currencyLanguageButtons.get(0).click();
 					driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 					elements.initElements(driver);
 					FuncFile.searchClickableElement(driver, elements.currencies.get(i));
-					FuncFile.waitForTimeThread(1000);
+					//FuncFile.waitForTimeThread(1000);
 					/* Click selected currency and validate */
 					elements.currencies.get(i).click();
 					driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
@@ -938,5 +940,45 @@ public class FuncFile extends HeadClass{
 				}	
 			return validateCurrencies;
 		}
+		
+		/* Set geolocation via development tools */
+		public static void setLocation(String city) {
+			DevTools tools = ((ChromeDriver)driver).getDevTools();
+			tools.createSession();
+			/* latitude, longtitude, accuracy */
+			if(city.equals("San Francisco")) {
+				tools.send((Emulation.setGeolocationOverride(Optional.of(37.774929), Optional.of(-122.419416), Optional.of(100))));
+				System.out.println("Location is set to Sun Fransisco");
+			}
+			if(city.equals("Holon")) {
+				tools.send((Emulation.setGeolocationOverride(Optional.of(32.0167), Optional.of(34.7667), Optional.of(100))));
+				System.out.println("Location is set to Holon");
+			}
+		}
+		
+		/* Find my google location */
+		public static String findMyLocation(WebDriver driver) throws InterruptedException {
+			System.out.println("Find my location function started");
+			String myLocation = "";
+			driver.get("https://www.google.co.il/");
+			driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+			elements.initElements(driver);
+			FuncFile.waitForTimeThread(1000);
+			elements.googleSearchInput.sendKeys("My location");
+			driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+			elements.initElements(driver);
+			elements.googleSearchInput.sendKeys(Keys.RETURN);
+			driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+			elements.initElements(driver);
 			
+			try {
+				myLocation = elements.overseasLocation.getText().split(",", 2)[0];
+				System.out.println("My location is set to " + myLocation);
+				return myLocation;
+			} catch (Exception e) {
+				myLocation = elements.israelLocation.getText();
+				System.out.println("My location in Israel is " + myLocation);
+				return myLocation;
+			}
+		}		
 }

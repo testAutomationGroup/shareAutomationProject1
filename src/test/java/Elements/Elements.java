@@ -589,6 +589,15 @@ public class Elements extends HeadClass{
 	@FindBy(css = "[href='/TravelersChoice-Destinations-g1']")
 	public WebElement travelersChoiceImageLink;
 	
+	@FindBy(css = ".desktop-title-subcontent")
+	public WebElement overseasLocation;
+	
+	@FindBy(css = ".desktop-title-content")
+	public WebElement israelLocation;
+	
+	@FindBy(css = "input.gLFyf")
+	public WebElement googleSearchInput;
+	
 	public Elements(WebDriver driver){
 		System.out.println("Elements constructor");
 		this.driver = driver;

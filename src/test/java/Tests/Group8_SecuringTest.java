@@ -86,9 +86,21 @@ public class Group8_SecuringTest extends HeadClass{
 	  
 	  /* Step 1 */
 	  System.out.println("TestCase8.2 Step 1");
+	  /* Set my location to test hotels search in the area */
+	  FuncFile.setLocation("San Francisco");
+	  String myLocation = FuncFile.findMyLocation(driver);
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  elements.initElements(driver);
+	  /* Start website location test. Then set English language for best search */
 	  driver.get(path);
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  FuncFile.waitForTimeThread(2000);
+	  elements.initElements(driver);
+	  elements.currencyLanguageButtons.get(1).click();
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  elements.initElements(driver);
+	  elements.countries.get(0).click();
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
 	  /* FuncFile.connectProfile(driver, email, password); */
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
@@ -108,11 +120,13 @@ public class Group8_SecuringTest extends HeadClass{
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
 	  FuncFile.waitForTimeThread(1000);
-	  System.out.println(elements.searchHotelItems.get(0));
+	  System.out.println(elements.searchHotelItems.get(0).getText());
 	  elements.searchHotelItems.get(0).click();
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
-	  boolean found1 = FuncFile.waitForSitePathContainsText(driver, "https://www.tripadvisor.co.il/");
+	  FuncFile.waitForTimeThread(2000);
+	  System.out.println("My location is " + myLocation);
+	  boolean found1 = driver.getPageSource().contains(myLocation);
 	  if (found1) {
 		  test.log(stepStatus.PASS, "Location share setting is valid");
 	  }else {
@@ -120,6 +134,7 @@ public class Group8_SecuringTest extends HeadClass{
 		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
 		  //Assert.fail("Location share setting is not valid"); 
 	  }
+	  
   }
   
   @Parameters({"browser", "path"})

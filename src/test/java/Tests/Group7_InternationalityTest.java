@@ -57,7 +57,7 @@ public class Group7_InternationalityTest extends HeadClass{
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = true, priority = 1)
+  @Test(enabled = false, priority = 1)
   public void TestCase7_1(String browser, String path) throws IOException, ParserConfigurationException, SAXException, InterruptedException {
 	  String testName = "Group7_InternationalityTest_TestCase7.1";
 	  String Description = "7.1 Open google translate in differnet browsers";
@@ -244,7 +244,7 @@ public class Group7_InternationalityTest extends HeadClass{
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = true, priority = 3)
+  @Test(enabled = false, priority = 3)
   public void TestCase7_3(String browser, String path) throws IOException, ParserConfigurationException, SAXException, InterruptedException {
 	  String testName = "Group7_InternationalityTest_TestCase7.3";
 	  String Description = "7.3 Translate all contect to proposed languages";
@@ -330,7 +330,7 @@ public class Group7_InternationalityTest extends HeadClass{
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = true, priority = 4)
+  @Test(enabled = false, priority = 4)
   public void TestCase7_4(String browser, String path) throws IOException, ParserConfigurationException, SAXException, InterruptedException {
 	  String testName = "Group7_InternationalityTest_TestCase7.4";
 	  String Description = "7.4 English pages to integrate with hebrew";
