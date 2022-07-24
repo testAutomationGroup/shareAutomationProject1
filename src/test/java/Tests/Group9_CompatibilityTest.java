@@ -56,7 +56,7 @@ public class Group9_CompatibilityTest extends HeadClass{
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = false, priority = 1)
+  @Test(enabled = true, priority = 1)
   public void TestCase9_1(String browser, String path) throws IOException, InterruptedException {
 	  String testName = "Group9_CompatibilityTest_TestCase9.1";
 	  String Description = "9.1 Compatible with various browsers";
@@ -80,7 +80,7 @@ public class Group9_CompatibilityTest extends HeadClass{
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = false, priority = 2)
+  @Test(enabled = true, priority = 2)
   public void TestCase9_2(String browser, String path) throws IOException, InterruptedException {
 	  String testName = "Group9_CompatibilityTest_TestCase9.2";
 	  String Description = "9.2 Compatible with various screen sizes";
@@ -132,7 +132,7 @@ public class Group9_CompatibilityTest extends HeadClass{
   }
   
   @Parameters({"browser", "path"})
-  @Test(enabled = false, priority = 4)
+  @Test(enabled = true, priority = 4)
   public void TestCase9_4(String browser, String path) throws IOException, InterruptedException {
 	  String testName = "Group9_CompatibilityTest_TestCase9.4";
 	  String Description = "9.4 Compatible with various windows sizes";

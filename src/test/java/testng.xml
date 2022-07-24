@@ -11,14 +11,14 @@
       <classes>
          <!--<class name = "Tests.Group1_SanityTest"/>
          <class name = "TestCases.Group2_GUITest"/>
-         <class name = "Tests.Group3_UsefulnessTest"/>
+         <class name = "Tests.Group3_UsefulnessTest"/>-->
          <class name = "Tests.Group4_ProcessesTest"/>
-         <class name = "Tests.Group5_ConnectivityTest"/>
+         <!--<class name = "Tests.Group5_ConnectivityTest"/>
          <class name = "Tests.Group6_RecoveryTest"/>
          <class name = "Tests.Group7_InternationalityTest"/>
-         <class name = "Tests.Group8_SecuringTest"/>-->
+         <class name = "Tests.Group8_SecuringTest"/>
          <class name = "Tests.Group9_CompatibilityTest"/>
-         <!--<class name = "Tests.Group10_AccessibilityTest"/>
+         <class name = "Tests.Group10_AccessibilityTest"/>
          <class name = "Tests.Group11_InterfacesTest"/>-->
       </classes>
    </test>
