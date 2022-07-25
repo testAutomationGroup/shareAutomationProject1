@@ -123,9 +123,9 @@ public class Group9_CompatibilityTest extends HeadClass{
 	  FuncFile.waitForTimeThread(3000);
 	  String siteName = driver.getCurrentUrl();
 	  if (siteName.equals("https://www.tripadvisor.co.il/")) {
-		  test.log(stepStatus.PASS, "Tripadvisor home page is opened");
+		  test.log(stepStatus.PASS, "Tripadvisor home page is opened in mobile screen size");
 	  }else {
-		  test.log(stepStatus.FAIL, "Tripadvisor home page is not opened");
+		  test.log(stepStatus.FAIL, "Tripadvisor home page is not opened in mobile screen size");
 		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
 		  //Assert.fail("Tripadvisor home page is not opened");
 	  }
@@ -141,6 +141,10 @@ public class Group9_CompatibilityTest extends HeadClass{
 	  
 	  /* Step 1 */
 	  System.out.println("TestCase9.4 Step 1");
+	  FuncFile.setScreenSize(driver, "Computer");
+	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
+	  elements.initElements(driver);
+	  FuncFile.waitForTimeThread(1000);
 	  driver.get(path);
 	  JavascriptExecutor javascript = (JavascriptExecutor)driver;
 	  Actions builder= new Actions(driver);

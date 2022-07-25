@@ -87,9 +87,7 @@ public class FuncFile extends HeadClass{
 		
 		public static WebDriver openBrowser(WebDriver driver, String browserName, String path) {
 			if (browserName.equals("Chrome")){
-				/*WebDriverManager.chromedriver().setup();*/
-				/* Define chrome driver path manually for chrome improved beta version 104 */ 
-				System.setProperty("webdriver.chrome.driver", "C:\\my files\\Selenium\\chromeDriver104\\chromedriver.exe");
+				WebDriverManager.chromedriver().setup();
 				
 				ChromeOptions options = new ChromeOptions(); 
 				/* Continue when the is password message in browser */
@@ -103,8 +101,6 @@ public class FuncFile extends HeadClass{
 				options.setExperimentalOption("prefs", prefs);
 				/* Continue when there is not secured message in browser*/
 				options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
-				/* Add chrome 104 beta improved version menually */
-				options.setBinary("C:\\Program Files\\Google\\Chrome Beta\\Application\\chrome.exe");
 				driver = new ChromeDriver(options); 
 				
 			}else if (browserName.equals("Firefox")){
@@ -990,6 +986,7 @@ public class FuncFile extends HeadClass{
 			int height = 1792;
 			int pixelRatio = 100;
 			int previewScale = 3;
+			boolean mobile = true;
 			if (deviceName.equals("iPhone11")){
 				width = 828/previewScale;
 				height = 1792/previewScale;
@@ -1002,7 +999,13 @@ public class FuncFile extends HeadClass{
 				pixelRatio = 100;
 				System.out.println("Device is set for " + deviceName);
 			}
-			boolean mobile = true;
+			if (deviceName.equals("Computer")){
+				width = 1920;
+				height = 1080;
+				pixelRatio = 100;
+				mobile = false;
+				System.out.println("Device is set for " + deviceName);
+			}
 			try {
 				tools.send(Emulation.setDeviceMetricsOverride(width, height, pixelRatio, mobile, Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty()));
 			} catch (Exception e) {

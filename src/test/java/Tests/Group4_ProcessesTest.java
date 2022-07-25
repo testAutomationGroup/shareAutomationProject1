@@ -302,7 +302,7 @@ public class Group4_ProcessesTest extends HeadClass{
 		  }
 		  
 		  /* Step 8*/
-		  System.out.println("TestCase3.1.1 Step 8");
+		  System.out.println("TestCase4.1.1 Step 8");
 		  try {
 			  driver.get(path);
 			} catch (Exception e) {
@@ -389,7 +389,7 @@ public class Group4_ProcessesTest extends HeadClass{
 	  
 	  /* Step 10 */
 	  try {
-		  System.out.println("TestCase3.1.1 Step 10");
+		  System.out.println("TestCase4.1.1 Step 10");
 		  FuncFile.waitForTimeThread(3000);
 		  elements.initElements(driver);
 		  elements.SignOutSeesions.click();
@@ -407,7 +407,7 @@ public class Group4_ProcessesTest extends HeadClass{
 		}
 	  
 	  /* Step 11 */
-	  System.out.println("TestCase3.1.1 Step 11");
+	  System.out.println("TestCase4.1.1 Step 11");
 	  elements.accountSettingMenuButton.click();
 	  elements.accountSettingMenuSubscribers.click();
 	  FuncFile.waitForTextPresence(driver, elements.subscribersSettingHeadline, "‪Email preferences‬");
