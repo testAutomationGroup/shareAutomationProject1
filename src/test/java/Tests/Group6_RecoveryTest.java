@@ -387,11 +387,8 @@ public class Group6_RecoveryTest extends HeadClass{
 	  elements.profileButton.click();
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  elements.initElements(driver);
-	  elements.createPlaceButton.click();
-	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
-	  elements.initElements(driver);
 	  List<WebElement> menuItems1 = driver.findElements(elements.profileMenuItem);
-	  WebElement viewProfile = menuItems1.get(1);
+	  WebElement viewProfile = menuItems1.get(0);
 	  boolean found = FuncFile.searchClickableElement(driver, viewProfile);
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  if (found) {
@@ -429,9 +426,9 @@ public class Group6_RecoveryTest extends HeadClass{
 	  boolean found1 = FuncFile.searchClickableElement(driver, elements.shareLoadImagesButton);
 	  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(4000));
 	  if (found1) {
-		  test.log(stepStatus.PASS, "Image load card opned");
+		  test.log(stepStatus.PASS, "Image load card opened");
 	  }else {
-		  test.log(stepStatus.FAIL, "Image load card not opned");
+		  test.log(stepStatus.FAIL, "Image load card not opened");
 		  ResultsBuilder.SendTestImage(test,driver, "FAIL", testName, browser);
 		  //Assert.fail("Image load card not opned"); 
 	  }
@@ -444,7 +441,8 @@ public class Group6_RecoveryTest extends HeadClass{
 
 	  FuncFile.waitForTimeThread(1000);
 	  
-	  StringSelection path1 = new StringSelection("C:\\my files\\Selenium\\bat yam.jpg");
+	  System.out.println(System.getProperty("user.dir")+"\\Images\\bat yam.jpg");
+	  StringSelection path1 = new StringSelection(System.getProperty("user.dir")+"\\Images\\bat yam.jpg");//  "C:\\my files\\Selenium\\bat yam.jpg"
 	  Toolkit.getDefaultToolkit().getSystemClipboard().setContents(path1, null);
 	  Robot robot = new Robot();
 	  robot.keyPress(KeyEvent.VK_CONTROL);

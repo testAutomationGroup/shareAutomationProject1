@@ -767,7 +767,7 @@ public class Group3_UsefulnessTest extends HeadClass{
 		  Robot robot = new Robot();
 		 
 		  /* Copy file path to Clipboard */
-		  StringSelection str = new StringSelection("C:\\my files\\Selenium\\bat yam.jpg");
+		  StringSelection str = new StringSelection(System.getProperty("user.dir")+"\\Images\\bat yam.jpg");
 		  Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
 		 
 		  /* Click Control+V and paste */

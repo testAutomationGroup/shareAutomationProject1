@@ -254,7 +254,7 @@ public class Group4_ProcessesTest extends HeadClass{
 		  elements.shareLoadImagesButton.click();
 		  FuncFile.waitForTimeThread(1000);
 		  
-		  StringSelection path1 = new StringSelection("C:\\my files\\Selenium\\bat yam.jpg");
+		  StringSelection path1 = new StringSelection(System.getProperty("user.dir")+"\\Images\\bat yam.jpg");
 		  Toolkit.getDefaultToolkit().getSystemClipboard().setContents(path1, null);
 		  Robot robot = new Robot();
 		  robot.keyPress(KeyEvent.VK_CONTROL);
@@ -862,7 +862,7 @@ public class Group4_ProcessesTest extends HeadClass{
 		  Robot robot = new Robot();
 		 
 		  /* Copy file path to Clipboard */
-		  StringSelection str = new StringSelection("C:\\my files\\Selenium\\bat yam.jpg");
+		  StringSelection str = new StringSelection(System.getProperty("user.dir")+"\\Images\\bat yam.jpg");
 		  Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
 		 
 		  /* Click Control+V and paste */

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <environment>
-  <TestImagesPath>"C:\\my files\\TestCaseImages"</TestImagesPath>
   <TestResultsPath>"\\C:\\my files\\ResultsFile\\"</TestResultsPath>
   <path>https://www.tripadvisor.co.il</path>
   <countriesFilePath>C:\\my files\\projectFiles\\countriesFile.xlsx</countriesFilePath>

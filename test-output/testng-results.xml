@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="4" passed="0" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-25T10:03:12 IDT" name="TestAll" finished-at="2022-07-25T10:03:41 IDT" duration-ms="28535">
+  <suite started-at="2022-07-25T18:16:21 IDT" name="TestAll" finished-at="2022-07-25T18:17:37 IDT" duration-ms="76277">
     <groups>
     </groups>
-    <test started-at="2022-07-25T10:03:12 IDT" name="chromeTest" finished-at="2022-07-25T10:03:41 IDT" duration-ms="28535">
+    <test started-at="2022-07-25T18:16:21 IDT" name="chromeTest" finished-at="2022-07-25T18:17:37 IDT" duration-ms="76277">
       <class name="Tests.Group4_ProcessesTest">
-        <test-method is-config="true" signature="beforeGroup4_ProcessesTest(java.lang.String,java.lang.String)[pri:0, instance:Tests.Group4_ProcessesTest@1bb5a082]" started-at="2022-07-25T10:03:12 IDT" name="beforeGroup4_ProcessesTest" finished-at="2022-07-25T10:03:38 IDT" duration-ms="26064" status="PASS">
+        <test-method is-config="true" signature="beforeGroup4_ProcessesTest(java.lang.String,java.lang.String)[pri:0, instance:Tests.Group4_ProcessesTest@1bb5a082]" started-at="2022-07-25T18:16:21 IDT" name="beforeGroup4_ProcessesTest" finished-at="2022-07-25T18:16:25 IDT" duration-ms="4174" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,7 +23,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeGroup4_ProcessesTest -->
-        <test-method signature="TestCase4_1_1(java.lang.String,java.lang.String)[pri:1, instance:Tests.Group4_ProcessesTest@1bb5a082]" started-at="2022-07-25T10:03:38 IDT" name="TestCase4_1_1" finished-at="2022-07-25T10:03:38 IDT" duration-ms="21" status="FAIL">
+        <test-method signature="TestCase4_1_1(java.lang.String,java.lang.String)[pri:1, instance:Tests.Group4_ProcessesTest@1bb5a082]" started-at="2022-07-25T18:16:25 IDT" name="TestCase4_1_1" finished-at="2022-07-25T18:16:58 IDT" duration-ms="33115" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -36,16 +36,42 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.IllegalArgumentException">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[ScreenCapture path cannot be null or empty]]>
+              <![CDATA[chrome not reachable
+  (Session info: chrome=103.0.5060.134)
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'LAPTOP-NB3AD5GO', ip: '192.168.100.41', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bb803dab37ed9192fdda81e9dedbc7df, getWindowHandles {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.134, chrome: {chromedriverVersion: 103.0.5060.134 (8ec6fce403b..., userDataDir: C:\Users\arnon\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:61373}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61373/devtoo..., se:cdpVersion: 103.0.5060.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: bb803dab37ed9192fdda81e9dedbc7df]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: ScreenCapture path cannot be null or empty
-at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
-at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
-at Tools.ResultsFileBuilder.SendTestImage(ResultsFileBuilder.java:88)
-at Tests.Group4_ProcessesTest.TestCase4_1_1(Group4_ProcessesTest.java:75)
+              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=103.0.5060.134)
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'LAPTOP-NB3AD5GO', ip: '192.168.100.41', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bb803dab37ed9192fdda81e9dedbc7df, getWindowHandles {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.134, chrome: {chromedriverVersion: 103.0.5060.134 (8ec6fce403b..., userDataDir: C:\Users\arnon\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:61373}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61373/devtoo..., se:cdpVersion: 103.0.5060.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: bb803dab37ed9192fdda81e9dedbc7df
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:626)
+at org.openqa.selenium.remote.RemoteWebDriver.getWindowHandles(RemoteWebDriver.java:472)
+at Tests.Group4_ProcessesTest.TestCase4_1_1(Group4_ProcessesTest.java:190)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -71,11 +97,11 @@ at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecut
 at java.base/java.lang.Thread.run(Thread.java:833)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase4_1_1 -->
-        <test-method signature="TestCase4_1_2(java.lang.String,java.lang.String)[pri:2, instance:Tests.Group4_ProcessesTest@1bb5a082]" started-at="2022-07-25T10:03:38 IDT" name="TestCase4_1_2" finished-at="2022-07-25T10:03:38 IDT" duration-ms="2" status="FAIL">
+        <test-method signature="TestCase4_1_2(java.lang.String,java.lang.String)[pri:2, instance:Tests.Group4_ProcessesTest@1bb5a082]" started-at="2022-07-25T18:16:58 IDT" name="TestCase4_1_2" finished-at="2022-07-25T18:17:11 IDT" duration-ms="12203" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -127,7 +153,7 @@ at java.base/java.lang.Thread.run(Thread.java:833)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase4_1_2 -->
-        <test-method signature="TestCase4_1_3(java.lang.String,java.lang.String)[pri:3, instance:Tests.Group4_ProcessesTest@1bb5a082]" started-at="2022-07-25T10:03:38 IDT" name="TestCase4_1_3" finished-at="2022-07-25T10:03:38 IDT" duration-ms="2" status="FAIL">
+        <test-method signature="TestCase4_1_3(java.lang.String,java.lang.String)[pri:3, instance:Tests.Group4_ProcessesTest@1bb5a082]" started-at="2022-07-25T18:17:11 IDT" name="TestCase4_1_3" finished-at="2022-07-25T18:17:23 IDT" duration-ms="12214" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -179,7 +205,7 @@ at java.base/java.lang.Thread.run(Thread.java:833)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase4_1_3 -->
-        <test-method signature="TestCase4_1_4(java.lang.String,java.lang.String)[pri:4, instance:Tests.Group4_ProcessesTest@1bb5a082]" started-at="2022-07-25T10:03:38 IDT" name="TestCase4_1_4" finished-at="2022-07-25T10:03:38 IDT" duration-ms="2" status="FAIL">
+        <test-method signature="TestCase4_1_4(java.lang.String,java.lang.String)[pri:4, instance:Tests.Group4_ProcessesTest@1bb5a082]" started-at="2022-07-25T18:17:23 IDT" name="TestCase4_1_4" finished-at="2022-07-25T18:17:35 IDT" duration-ms="12197" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -231,7 +257,7 @@ at java.base/java.lang.Thread.run(Thread.java:833)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase4_1_4 -->
-        <test-method is-config="true" signature="AfterGroup4_ProcessesTest(java.lang.String)[pri:0, instance:Tests.Group4_ProcessesTest@1bb5a082]" started-at="2022-07-25T10:03:38 IDT" name="AfterGroup4_ProcessesTest" finished-at="2022-07-25T10:03:41 IDT" duration-ms="2385" status="PASS">
+        <test-method is-config="true" signature="AfterGroup4_ProcessesTest(java.lang.String)[pri:0, instance:Tests.Group4_ProcessesTest@1bb5a082]" started-at="2022-07-25T18:17:35 IDT" name="AfterGroup4_ProcessesTest" finished-at="2022-07-25T18:17:37 IDT" duration-ms="2328" status="PASS">
           <params>
             <param index="0">
               <value>
