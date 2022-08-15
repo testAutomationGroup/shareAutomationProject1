@@ -6,7 +6,7 @@
    	  <parameter name = "browser" value = "Chrome"/>
       <classes>
          <!--<class name = "Tests.Group1_SanityTest"/>
-         <class name = "TestCases.Group2_GUITest"/>
+         <class name = "Tests.Group2_GUITest"/>
          <class name = "Tests.Group3_UsefulnessTest"/>-->
          <class name = "Tests.Group4_ProcessesTest"/>
          <!--<class name = "Tests.Group5_ConnectivityTest"/>
